@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Router, Route , Switch} from 'react-router-dom'
 
 import Header from './Header'
 import Home from './Home'
@@ -13,17 +14,25 @@ class App extends Component {
   render() {
     return (
       <div>
-        App
-      <Header/>
-        <Home/>
-        <About/>
-        <Contact/>
-        <Policy/>
-        <Catalogue/>
-        <Cart/>
-      <Footer/>
+          <Header/>
+
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/about" exact component={About} />
+            <Route path="/contact" exact component={Contact} />
+            <Route path="/policy" exact component={Policy} />
+            <Route path="/catalogue" exact component={Catalogue} />
+            <Route path="/cart" exact component={Cart} />
+          </Switch>
+          <Footer/>
       </div>
     )
   }
 }
 export default App
+
+
+// <Contact/>
+// <Policy/>
+// <Catalogue/>
+// <Cart/>
