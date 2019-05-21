@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { productList, skinTypes } from '../ressources/ProductList'
 
+import NoMatch from './NoMatch'
+
 const Catalogue = (props) => {
 
   // const [prodList, setProdList] = useState(productList);
@@ -27,7 +29,7 @@ const Catalogue = (props) => {
       <div className="product-list">{renderList()}</div>
     </div>
   ) : (
-    <p>hello</p>
+    <NoMatch />
   )
   )
 }
