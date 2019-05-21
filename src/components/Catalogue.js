@@ -1,19 +1,34 @@
 import React, { useState } from 'react';
-import { productList } from '../ressources/ProductList'
+import { productList, skinTypes } from '../ressources/ProductList'
 
-const Catalogue = () => {
+const Catalogue = (props) => {
 
- const [prodList, setProdList] = useState(productList);
+  // const [prodList, setProdList] = useState(productList);
+  // The STATE MOTHER FUCKER
+  const [prodList] = useState(productList);
 
-  return(
+  const skinType = props.match.params.id
+
+  const renderList = () => {
+    return prodList.filter( prod => prod.skinType.includes(skinType)).map(prod => {
+    return (
+      <div key={prod.id} className="product-container">
+        <h3>{prod.name} {prod.subName}</h3>
+        <p>{prod.description}</p>
+      </div>
+        )
+    })
+  }
+
+  return ( skinTypes.includes(skinType) ? (
     <div>
       <h1>CATALOGUE</h1>
-      {prodList.map((prod) => {
-        return (
-          <h3>{prod.name}</h3>
-        )
-      })}
+      <h2>{skinType} product</h2>
+      <div className="product-list">{renderList()}</div>
     </div>
+  ) : (
+    <p>hello</p>
+  )
   )
 }
 
