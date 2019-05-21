@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Router, Route , Switch} from 'react-router-dom'
+import { Route , Switch} from 'react-router-dom'
 
 import Header from './Header'
 import Home from './Home'
@@ -8,6 +8,7 @@ import Contact from './Contact'
 import Policy from './Policy'
 import Catalogue from './Catalogue'
 import Cart from './Cart'
+import NoMatch from './NoMatch'
 import Footer from './Footer'
 
 class App extends Component {
@@ -21,9 +22,13 @@ class App extends Component {
             <Route path="/about" exact component={About} />
             <Route path="/contact" exact component={Contact} />
             <Route path="/policy" exact component={Policy} />
-            <Route path="/catalogue" exact component={Catalogue} />
+            {/*<Route path="/catalogue/:type/:id"  component={Catalogue} /> */}
+            {/*<Route path={["/catalogue/skin-type/dry", "/catalogue/skin-type/oily"]}  component={Catalogue} />*/}
+            <Route path={"/catalogue/skin-type/:id"}  component={Catalogue} />
             <Route path="/cart" exact component={Cart} />
+            <Route component={NoMatch}/>
           </Switch>
+
           <Footer/>
       </div>
     )
