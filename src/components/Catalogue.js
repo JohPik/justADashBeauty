@@ -30,7 +30,7 @@ const Catalogue = (props) => {
     }
   }
 
-  return ( skinTypes.includes(pageId) || prodTypes.includes(pageId) ? (
+  return ( (pageType === "skin-type" && skinTypes.includes(pageId)) || ( pageType === "product-type" && prodTypes.includes(pageId)) ? (
     <div>
       <h1>CATALOGUE</h1>
       <h2>{pageId} product</h2>
