@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { productList, skinTypes } from '../ressources/ProductList'
+import { productList, skinTypes, prodTypes} from '../ressources/ProductList'
 
 import NoMatch from './NoMatch'
 
@@ -9,10 +9,10 @@ const Catalogue = (props) => {
   // The STATE MOTHER FUCKER
   const [prodList] = useState(productList);
 
-  const skinType = props.match.params.id
+  const PageType = props.match.params.id
 
   const renderList = () => {
-    return prodList.filter( prod => prod.skinType.includes(skinType)).map(prod => {
+    return prodList.filter( prod => prod.skinType.includes(PageType)).map(prod => {
     return (
       <div key={prod.id} className="product-container">
         <h3>{prod.name} {prod.subName}</h3>
@@ -22,10 +22,10 @@ const Catalogue = (props) => {
     })
   }
 
-  return ( skinTypes.includes(skinType) ? (
+  return ( skinTypes.includes(PageType) || prodTypes.includes(PageType) ? (
     <div>
       <h1>CATALOGUE</h1>
-      <h2>{skinType} product</h2>
+      <h2>{PageType} product</h2>
       <div className="product-list">{renderList()}</div>
     </div>
   ) : (

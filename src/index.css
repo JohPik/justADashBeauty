@@ -21,13 +21,13 @@ code {
   width: 100%
 }
 
-.header ul {
+ul.header-list {
   text-decoration: none;
 }
 
-.header ul li {
-  display: inline;
-  padding-right: 5rem;
+.header ul li.main-list-element {
+  display: inline-block;
+  padding-right: 10px;
 }
 
 /* Footer */
