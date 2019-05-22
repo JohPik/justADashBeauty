@@ -9,23 +9,31 @@ const Catalogue = (props) => {
   // The STATE MOTHER FUCKER
   const [prodList] = useState(productList);
 
-  const PageType = props.match.params.id
+  // the page id Either a skin type or a product type ex: oily, dry, cleanser
+  const pageId = props.match.params.id
+  const pageType = props.match.params.type
 
+  const singleItem = (prod) => (
+    <div key={prod.id} className="product-container">
+      <h3>{prod.name} {prod.subName}</h3>
+      <p>{prod.description}</p>
+    </div>
+  )
+
+
+  // Find the right product to display on the page
   const renderList = () => {
-    return prodList.filter( prod => prod.skinType.includes(PageType)).map(prod => {
-    return (
-      <div key={prod.id} className="product-container">
-        <h3>{prod.name} {prod.subName}</h3>
-        <p>{prod.description}</p>
-      </div>
-        )
-    })
+    if (pageType === "skin-type") {
+      return prodList.filter( prod => prod.skinType.includes(pageId)).map(prod => singleItem(prod) )
+    } else if (pageType === "product-type") {
+      return prodList.filter( prod => prod.productType.includes(pageId)).map( prod => singleItem(prod) )
+    }
   }
 
-  return ( skinTypes.includes(PageType) || prodTypes.includes(PageType) ? (
+  return ( skinTypes.includes(pageId) || prodTypes.includes(pageId) ? (
     <div>
       <h1>CATALOGUE</h1>
-      <h2>{PageType} product</h2>
+      <h2>{pageId} product</h2>
       <div className="product-list">{renderList()}</div>
     </div>
   ) : (

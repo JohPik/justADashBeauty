@@ -24,7 +24,7 @@ class App extends Component {
             <Route path="/policy" exact component={Policy} />
             {/*<Route path="/catalogue/:type/:id"  component={Catalogue} /> */}
             {/*<Route path={["/catalogue/skin-type/dry", "/catalogue/skin-type/oily"]}  component={Catalogue} />*/}
-            <Route path={"/catalogue/skin-type/:id"}  component={Catalogue} />
+            <Route path={"/catalogue/:type/:id"}  component={Catalogue} />
             <Route path="/cart" exact component={Cart} />
             <Route path={["/error404", "/:id"]} component={NoMatch}/>
           </Switch>
