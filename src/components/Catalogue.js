@@ -13,10 +13,11 @@ const Catalogue = (props) => {
   const pageId = props.match.params.id
   const pageType = props.match.params.type
 
-  const singleItem = (prod) => (
-    <div key={prod.id} className="product-container">
-      <h3>{prod.name} {prod.subName}</h3>
-      <p>{prod.description}</p>
+  const singleItem = ({ id, name, subName, description, img  }) => (
+    <div key={id} className="product-container">
+      <h3>{name}</h3>
+      <h4>{subName}</h4>
+      <img src={img} alt="product image" className="image-thumbnail"/>
     </div>
   )
 

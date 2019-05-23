@@ -6,12 +6,12 @@ const Header = () => {
     <div className="header">
       <h3>Just A Dash beauty</h3>
 
-        <div class="navbar">
+        <div className="navbar">
           <Link to="/">Home</Link>
 
-          <div class="dropdown">
-            <button class="dropbtn">Skin Type</button>
-              <div class="dropdown-content">
+          <div className="dropdown">
+            <button className="dropbtn">Skin Type</button>
+              <div className="dropdown-content">
                 <Link to="/catalogue/skin-type/oily">Oily</Link>
                 <Link to="/catalogue/skin-type/dry">Dry</Link>
                 <Link to="/catalogue/skin-type/sensitive">Sensitive</Link>
@@ -20,9 +20,9 @@ const Header = () => {
               </div>
           </div>
 
-          <div class="dropdown">
-            <button class="dropbtn">Product Type</button>
-              <div class="dropdown-content">
+          <div className="dropdown">
+            <button className="dropbtn">Product Type</button>
+              <div className="dropdown-content">
                 <Link to="/catalogue/product-type/cleanser">cleanser</Link>
                 <Link to="/catalogue/product-type/toningMist">toningMist</Link>
                 <Link to="/catalogue/product-type/exfoliant">exfoliant</Link>
