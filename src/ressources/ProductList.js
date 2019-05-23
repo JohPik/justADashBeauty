@@ -394,3 +394,6 @@ export const prodTypes = [
   "moisturiser",
   "treatment"
 ]
+
+
+export const currentProductSelected = null

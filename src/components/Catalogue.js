@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
-import { productList, skinTypes, prodTypes} from '../ressources/ProductList'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+
+import { productList, skinTypes, prodTypes, currentProductSelected } from '../ressources/ProductList'
 
 import NoMatch from './NoMatch'
 
@@ -8,6 +10,7 @@ const Catalogue = (props) => {
   // const [prodList, setProdList] = useState(productList);
   // The STATE MOTHER FUCKER
   const [prodList] = useState(productList);
+  const [prodSelected, setProdSelected] = useState(currentProductSelected);
 
   // the page id Either a skin type or a product type ex: oily, dry, cleanser
   const pageId = props.match.params.id
@@ -17,7 +20,9 @@ const Catalogue = (props) => {
     <div key={id} className="product-container">
       <h3>{name}</h3>
       <h4>{subName}</h4>
-      <img src={img} alt="product image" className="image-thumbnail"/>
+      <Link to="/">
+      <img src={img} alt={name} className="image-thumbnail"/>
+      </Link>
     </div>
   )
 
