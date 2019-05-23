@@ -7,6 +7,7 @@ import About from './About'
 import Contact from './Contact'
 import Policy from './Policy'
 import Catalogue from './Catalogue'
+import Detail from './Detail'
 import Cart from './Cart'
 import NoMatch from './NoMatch'
 import Footer from './Footer'
@@ -24,7 +25,8 @@ class App extends Component {
             <Route path="/policy" exact component={Policy} />
             {/*<Route path="/catalogue/:type/:id"  component={Catalogue} /> */}
             {/*<Route path={["/catalogue/skin-type/dry", "/catalogue/skin-type/oily"]}  component={Catalogue} />*/}
-            <Route path={"/catalogue/:type/:id"}  component={Catalogue} />
+            <Route path={"/catalogue/product-detail/:id"} exact component={Detail} />
+            <Route path={"/catalogue/:type/:id"}  exact component={Catalogue} />
             <Route path="/cart" exact component={Cart} />
             <Route path={["/error404", "/:id"]} component={NoMatch}/>
           </Switch>
