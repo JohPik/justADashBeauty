@@ -35,14 +35,14 @@ const Detail = (props) => {
       subName,
       skinType,
       productType,
-      description
+      description,
       // loveList,
       // directions,
       // ingedients,
       // size,
       // price,
       // img,
-      // inCart
+      inCart
     } = currentProduct
 
     return (
@@ -51,7 +51,9 @@ const Detail = (props) => {
         <h2>{name} <span>{subName}</span></h2>
         <h3>{skinType}/{productType}</h3>
         <p>{description}</p>
-        <button onClick={ () => addToCart() }>Add to Cart</button>
+        <button disabled={inCart} onClick={ () => addToCart() }>
+          { inCart ? <p>in cart</p> : <p>Add to Cart</p>}
+        </button>
       </Fragment>
     )
   }
