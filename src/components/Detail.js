@@ -1,7 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react'
 
-import { Link } from 'react-router-dom'
-
 import { productList, prodNames } from '../ressources/ProductList'
 import NoMatch from './NoMatch'
 
@@ -11,7 +9,7 @@ const Detail = (props) => {
 
   // The State Mother Fucker
   const [ currentProduct, setCurrentProduct ] = useState(null)
-  // const [ inCart, setInCart ] = useState(false)
+  const [ inCart, setInCart ] = useState(false)
 
   useEffect(
     () => {
@@ -19,9 +17,14 @@ const Detail = (props) => {
         prod => prod.url.includes(pageId)
       )
       setCurrentProduct(product[0])
+      setInCart(product[0].inCart)
       // console.log(currentProduct);
     }, [currentProduct, pageId] // Do not Understand why it does this
   )
+
+  const addToCart = () => {
+    console.log("I have been clicked");
+  }
 
   const renderPage = () => {
 
@@ -44,10 +47,11 @@ const Detail = (props) => {
 
     return (
       <Fragment>
-        <button onClick={() => window.history.back()}>go back</button>
+        <button onClick={ () => window.history.back() }>go back</button>
         <h2>{name} <span>{subName}</span></h2>
         <h3>{skinType}/{productType}</h3>
         <p>{description}</p>
+        <button onClick={ () => addToCart() }>Add to Cart</button>
       </Fragment>
     )
   }

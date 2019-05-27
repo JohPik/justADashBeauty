@@ -415,3 +415,22 @@ export const prodNames = [
   'summerFruitSalad',
   'escapeInBoraBora'
 ]
+
+
+
+  // id,
+  // name,
+  // url,
+  // subName,
+  // skinType,
+  // productType,
+  // description,
+  // loveList,
+  // directions,
+  // ingedients,
+  // size,
+  // price,
+  // img,
+  // inCart
+
+  // id, name, url, subName, skinType, productType, description, loveList, directions, ingedients, size, price, img, inCart
