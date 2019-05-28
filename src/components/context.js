@@ -13,6 +13,6 @@ class ProductProvider extends  Component {
   }
 }
 
-const ProductConsumer = ProductContext.ProductConsumer
+const ProductConsumer = ProductContext.Consumer
 
 export { ProductProvider, ProductConsumer }

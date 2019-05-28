@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
+import { ProductConsumer } from '../context'
 import { productList, skinTypes, prodTypes } from '../../ressources/ProductList'
 
 import NoMatch from './NoMatch'
 
 const Catalogue = (props) => {
 
-  // const [prodList, setProdList] = useState(productList);
   // The STATE MOTHER FUCKER
   const [prodList] = useState(productList);
 
@@ -39,7 +39,12 @@ const Catalogue = (props) => {
     <div>
       <h1>CATALOGUE</h1>
       <h2>{pageId} product</h2>
-      <div className="product-list">{renderList()}</div>
+      {/* <div className="product-list">{renderList()}</div> */}
+      <ProductConsumer>
+        { (value) => {
+          return <h1>{value}</h1>
+        }}
+      </ProductConsumer>
     </div>
     ):(
     <NoMatch />
