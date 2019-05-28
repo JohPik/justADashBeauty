@@ -1,15 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 
 import { ProductConsumer } from '../context'
-import { productList, skinTypes, prodTypes } from '../../ressources/ProductList'
+import { skinTypes, prodTypes } from '../../ressources/ProductList'
 
 import NoMatch from './NoMatch'
 
 const Catalogue = (props) => {
 
   // The STATE MOTHER FUCKER
-  const [prodList] = useState(productList);
+  //const [prodList] = useState(productList);
 
   // the page id Either a skin type or a product type ex: oily, dry, cleanser
   const pageId = props.match.params.id
@@ -25,15 +25,14 @@ const Catalogue = (props) => {
     </div>
   )
 
-
-  // Find the right list of product to display on the page
-  const renderList = () => {
+  const renderList = (value) => {
     if (pageType === "skin-type") {
-      return prodList.filter( prod => prod.skinType.includes(pageId)).map(prod => singleItem(prod) )
+      return value.productList.filter( prod => prod.skinType.includes(pageId)).map(prod => singleItem(prod) )
     } else if (pageType === "product-type") {
-      return prodList.filter( prod => prod.productType.includes(pageId)).map( prod => singleItem(prod) )
+      return value.productList.filter( prod => prod.productType.includes(pageId)).map( prod => singleItem(prod) )
     }
   }
+
 
   return ( (pageType === "skin-type" && skinTypes.includes(pageId)) || ( pageType === "product-type" && prodTypes.includes(pageId)) ? (
     <div>
@@ -41,9 +40,7 @@ const Catalogue = (props) => {
       <h2>{pageId} product</h2>
       {/* <div className="product-list">{renderList()}</div> */}
       <ProductConsumer>
-        { (value) => {
-          return <h1>{value}</h1>
-        }}
+        { (value) => renderList(value) }
       </ProductConsumer>
     </div>
     ):(

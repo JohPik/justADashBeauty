@@ -9,7 +9,6 @@ const Detail = (props) => {
 
   // The State Mother Fucker
   const [ currentProduct, setCurrentProduct ] = useState(null)
-  const [ inCart, setInCart ] = useState(false)
 
   useEffect(
     () => {
@@ -17,8 +16,7 @@ const Detail = (props) => {
         prod => prod.url.includes(pageId)
       )
       setCurrentProduct(product[0])
-      setInCart(product[0].inCart)
-      // console.log(currentProduct);
+          // console.log(currentProduct);
     }, [currentProduct, pageId] // Do not Understand why it does this
   )
 
