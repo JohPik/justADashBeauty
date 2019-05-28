@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import { productList, skinTypes, prodTypes } from '../ressources/ProductList'
+import { productList, skinTypes, prodTypes } from '../../ressources/ProductList'
 
 import NoMatch from './NoMatch'
 

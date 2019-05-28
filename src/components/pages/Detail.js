@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect } from 'react'
 
-import { productList, prodNames } from '../ressources/ProductList'
+import { productList, prodNames } from '../../ressources/ProductList'
 import NoMatch from './NoMatch'
 
 const Detail = (props) => {

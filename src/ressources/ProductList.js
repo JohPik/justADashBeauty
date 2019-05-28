@@ -416,7 +416,7 @@ export const prodNames = [
   'escapeInBoraBora'
 ]
 
-
+export const cart = []
 
   // id,
   // name,

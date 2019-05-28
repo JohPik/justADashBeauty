@@ -2,15 +2,16 @@ import React, { Component } from 'react';
 import { Route , Switch} from 'react-router-dom'
 
 import Header from './Header'
-import Home from './Home'
-import About from './About'
-import Contact from './Contact'
-import Policy from './Policy'
-import Catalogue from './Catalogue'
-import Detail from './Detail'
-import Cart from './Cart'
-import NoMatch from './NoMatch'
 import Footer from './Footer'
+import Home from './pages/Home'
+import About from './pages/About'
+import Contact from './pages/Contact'
+import Policy from './pages/Policy'
+import Catalogue from './pages/Catalogue'
+import Detail from './pages/Detail'
+import Cart from './pages/Cart'
+import NoMatch from './pages/NoMatch'
+
 
 class App extends Component {
   render() {
