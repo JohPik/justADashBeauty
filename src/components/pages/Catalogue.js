@@ -8,9 +8,6 @@ import NoMatch from './NoMatch'
 
 const Catalogue = (props) => {
 
-  // The STATE MOTHER FUCKER
-  //const [prodList] = useState(productList);
-
   // the page id Either a skin type or a product type ex: oily, dry, cleanser
   const pageId = props.match.params.id
   const pageType = props.match.params.type
@@ -38,7 +35,6 @@ const Catalogue = (props) => {
     <div>
       <h1>CATALOGUE</h1>
       <h2>{pageId} product</h2>
-      {/* <div className="product-list">{renderList()}</div> */}
       <ProductConsumer>
         { (value) => renderList(value) }
       </ProductConsumer>
