@@ -19,7 +19,7 @@ const Detail = (props) => {
         <h2>{name} <span>{subName}</span></h2>
         <h3>{skinType}/{productType}</h3>
         <p>{description}</p>
-          <button disabled={inCart} onClick={ () => console.log(value.getItem(id)) }>
+          <button disabled={inCart} onClick={ () => console.log(value.addToCart(id)) }>
             { inCart ? <p>in cart</p> : <p>Add to Cart</p>}
           </button>
       </Fragment>
