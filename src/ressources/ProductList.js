@@ -17,7 +17,9 @@ export const productList = [
     size: "200ml",
     price: 30,
     img: "/images/products/Good-Bye-Sunshine-Facial-Wash_Just-A-Dash.jpg",
-    inCart: false
+    inCart: false,
+    count: 0,
+    total:0
   },
   { id: 2,
     name: 'All Under Control',
@@ -38,7 +40,9 @@ export const productList = [
     size: "150ml",
     price: 30,
     img: "/images/products/All-Under-Control-Toning-Mist_Just-A-Dash.jpg",
-    inCart: false
+    inCart: false,
+    count: 0,
+    total:0
   },
   { id: 3,
     name: 'Lemon Candy',
@@ -59,7 +63,9 @@ export const productList = [
     size: '60ml',
     price: 30,
     img: "/images/products/Lemon-Candy-Active-Peel_Just-A-Dash.jpg",
-    inCart: false
+    inCart: false,
+    count: 0,
+    total:0
   },
   { id: 4,
     name: 'Seal the Deal',
@@ -80,7 +86,9 @@ export const productList = [
     size: '30ml',
     price: 30,
     img: "/images/products/Seal-The-Deal-Gel-Serum_Just-A-Dash.jpg",
-    inCart: false
+    inCart: false,
+    count: 0,
+    total:0
   },
   { id: 5,
     name: 'The Porefect',
@@ -101,7 +109,9 @@ export const productList = [
     size: '60ml',
     price: 30,
     img: "/images/products/The-Porefect-Day-Cream_Just-A-Dash.jpg",
-    inCart: false
+    inCart: false,
+    count: 0,
+    total:0
   },
   { id: 6,
     name: 'Cool As Cucumber',
@@ -122,7 +132,9 @@ export const productList = [
     size: '200ml',
     price: 30,
     img: "/images/products/Cool-As-Cucumber-Milk-Cleanser_Just-A-Dash.jpg",
-    inCart: false
+    inCart: false,
+    count: 0,
+    total:0
   },
   { id: 7,
     name: 'Quick Fix',
@@ -143,7 +155,9 @@ export const productList = [
     size: '150ml',
     price: 30,
     img: "/images/products/Quick-Fix-Toning-Mist_Just-A-Dash.jpg",
-    inCart: false
+    inCart: false,
+    count: 0,
+    total:0
   },
   { id: 8,
     name: 'No Handyman Needed',
@@ -164,7 +178,9 @@ export const productList = [
     size: '60ml',
     price: 30,
     img: "/images/products/No-Handyman-Needed-Day-Cream_Just-A-Dash.jpg",
-    inCart: false
+    inCart: false,
+    count: 0,
+    total:0
   },
   { id: 9,
     name: 'Green Cocktail',
@@ -186,7 +202,9 @@ export const productList = [
     size: '200ml',
     price: 30,
     img: "/images/products/Green-Cocktail-Foam-Cleanser_Just-A-Dash.jpg",
-    inCart: false
+    inCart: false,
+    count: 0,
+    total:0
   },
   { id: 10,
     name: 'Berry Fresh',
@@ -207,7 +225,9 @@ export const productList = [
     size: '150ml',
     price: 30,
     img: "/images/products/Berry-Fresh-Toning-Mist_Just-A-Dash.jpg",
-    inCart: false
+    inCart: false,
+    count: 0,
+    total:0
   },
   { id: 11,
     name: 'All About Moisture',
@@ -225,7 +245,9 @@ export const productList = [
     size: '30ml',
     price: 30,
     img: "/images/products/All-About-Moisture-Hyaluronic-Serum_Just-A-Dash.jpg",
-    inCart: false
+    inCart: false,
+    count: 0,
+    total:0
   },
   { id: 12,
     name: 'Acai Bowl on my face',
@@ -246,7 +268,9 @@ export const productList = [
     size: '60ml',
     price: 30,
     img: "/images/products/Açaí-Bowl-On-My-Face-Day-Cream_Just-A-Dash.jpg",
-    inCart: false
+    inCart: false,
+    count: 0,
+    total:0
   },
   { id: 13,
     name: 'Land of Wonders',
@@ -267,7 +291,9 @@ export const productList = [
     size: '30ml',
     price: 30,
     img: "/images/products/Land-Of-Wonders-Oil-Serum_Just-A-Dash.jpg",
-    inCart: false
+    inCart: false,
+    count: 0,
+    total:0
   },
   { id: 14,
     name: 'Sunny Day in Paradise',
@@ -290,7 +316,9 @@ export const productList = [
     size: '30ml',
     price: 30,
     img: "/images/products/Sunny-Day-In-Paradise-Brightening-Serum_Just-A-Dash.jpg",
-    inCart: false
+    inCart: false,
+    count: 0,
+    total:0
   },
   { id: 15,
     name: 'Easy As',
@@ -310,7 +338,9 @@ export const productList = [
     size: '30ml',
     price: 30,
     img: "/images/products/Easy-As-Blemish-Spot-Remover_Just-A-Dash.jpg",
-    inCart: false
+    inCart: false,
+    count: 0,
+    total:0
   },
   { id: 16,
     name: 'Rescue Me',
@@ -330,7 +360,9 @@ export const productList = [
     size: '60ml',
     price: 30,
     img: "/images/products/Rescue-Me-Acne-Lotion_Just-A-Dash.jpg",
-    inCart: false
+    inCart: false,
+    count: 0,
+    total:0
   },
   { id: 17,
     name: 'Summer Fruit Salad',
@@ -351,7 +383,9 @@ export const productList = [
     size: '60ml',
     price: 30,
     img: "/images/products/Summer-Fruit-Salad-Face-Scrub_Just-A-Dash.jpg",
-    inCart: false
+    inCart: false,
+    count: 0,
+    total:0
   },
   { id: 18,
     name: 'Escape in Bora Bora',
@@ -372,7 +406,9 @@ export const productList = [
     size: '220g',
     price: 30,
     img: "/images/products/Escape-in-Bora-Bora-Body-Scrub_Just-A-Dash.jpg",
-    inCart: false
+    inCart: false,
+    count: 0,
+    total:0
   }
 ]
 
