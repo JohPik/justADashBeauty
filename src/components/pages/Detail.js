@@ -11,7 +11,7 @@ const Detail = (props) => {
 
   const renderProduct = (value) => {
     const currentProduct = value.productList.filter( prod => prod.url.includes(pageId))
-    console.log(currentProduct);
+    // console.log(currentProduct);
     const { name, subName, skinType, productType, description, inCart} = currentProduct[0]
     return (
       <Fragment>
@@ -19,7 +19,7 @@ const Detail = (props) => {
         <h2>{name} <span>{subName}</span></h2>
         <h3>{skinType}/{productType}</h3>
         <p>{description}</p>
-          <button disabled={inCart}>
+          <button disabled={inCart} onClick={ () => console.log("added to the cart") }>
             { inCart ? <p>in cart</p> : <p>Add to Cart</p>}
           </button>
       </Fragment>
@@ -29,7 +29,7 @@ const Detail = (props) => {
   return ( (prodNames.includes(pageId)) ? (
         <ProductConsumer>
           {(value) => {
-          console.log(value)
+          // console.log(value)
           return renderProduct(value)
           }}
         </ProductConsumer>

@@ -9,7 +9,7 @@ class ProductProvider extends  Component {
     productList: []
   }
 
-  componentDidMount(){
+  componentWillMount(){
     this.setProducts()
   }
 

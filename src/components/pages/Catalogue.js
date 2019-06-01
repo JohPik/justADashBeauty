@@ -9,8 +9,8 @@ import NoMatch from './NoMatch'
 const Catalogue = (props) => {
 
   // the page id Either a skin type or a product type ex: oily, dry, cleanser
-  const pageId = props.match.params.id
-  const pageType = props.match.params.type
+  const pageType = props.match.params.type // skin-type or product-type
+    const pageId = props.match.params.id // ex: oily, normal, cleanser, toning-mist
 
   const singleItem = (prod) => (
     <div key={prod.id} className="product-container">
