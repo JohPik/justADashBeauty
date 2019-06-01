@@ -12,14 +12,14 @@ const Detail = (props) => {
   const renderProduct = (value) => {
     const currentProduct = value.productList.filter( prod => prod.url.includes(pageId))
     // console.log(currentProduct);
-    const { name, subName, skinType, productType, description, inCart} = currentProduct[0]
+    const { id, name, subName, skinType, productType, description, inCart} = currentProduct[0]
     return (
       <Fragment>
         <button onClick={ () => window.history.back() }>go back</button>
         <h2>{name} <span>{subName}</span></h2>
         <h3>{skinType}/{productType}</h3>
         <p>{description}</p>
-          <button disabled={inCart} onClick={ () => console.log("added to the cart") }>
+          <button disabled={inCart} onClick={ () => console.log(value.getItem(id)) }>
             { inCart ? <p>in cart</p> : <p>Add to Cart</p>}
           </button>
       </Fragment>
