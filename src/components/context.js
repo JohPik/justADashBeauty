@@ -28,15 +28,15 @@ class ProductProvider extends  Component {
     console.log("hello from detail");
   }
 
-  addToCart = (id) => {
+  addToCart = (id, qty) => {
     let tempProducts = [ ...this.state.productList ]
     const index = tempProducts.indexOf(this.getItem(id))
     const product = tempProducts[index]
     product.inCart = true
-    product.count = 1
-    product.total = product.price
+    product.count = qty
+    product.total = product.price * qty
     this.setState({ productList: tempProducts, cart: [ ...this.state.cart, product ]})
-    // console.log(this.state);
+    console.log(this.state);
     // this.setState( () => {
     // return {  productList: tempProducts, cart: [ ...this.state.cart, product ] }
     // }, () => console.log(this.state))
