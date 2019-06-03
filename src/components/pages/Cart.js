@@ -4,9 +4,11 @@ import { ProductConsumer } from '../context'
 const Cart = () => {
 
   const renderProduct = (value) => {
-    return(
-      <p>Number of product in the cart is equal to: {value.cart.length}</p>
-    )
+     const { cart } = value
+     return cart.length > 0 ?
+    (<p>Number of product in the cart is equal to: {cart.length}</p>
+    ) : ( <p>Cart is empty</p>)
+
   }
 
   return(
