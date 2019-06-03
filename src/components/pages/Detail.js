@@ -31,7 +31,7 @@ const Detail = (props) => {
           <div className="prod-qty-section">
             { qty }
             <button onClick={() => setQty(qty + 1)}>+</button>
-            <button onClick={() => setQty(qty - 1)}>-</button>
+            <button onClick={() => qty === 1 ? null : setQty(qty - 1)}>-</button>
           </div>
           <button className="add-to-cart" disabled={inCart} onClick={ () => value.addToCart(id, qty) }>
             { inCart ? <p>in cart</p> : <p>Add to Cart</p> }
