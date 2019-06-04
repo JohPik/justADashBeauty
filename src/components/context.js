@@ -7,7 +7,8 @@ class ProductProvider extends  Component {
 
   state = {
     productList: [],
-    cart: []
+    cart: [],
+    modalOpen: true
   }
 
   componentWillMount(){
@@ -40,6 +41,10 @@ class ProductProvider extends  Component {
     // this.setState( () => {
     // return {  productList: tempProducts, cart: [ ...this.state.cart, product ] }
     // }, () => console.log(this.state))
+  }
+
+  openModal = () => {
+
   }
 
   getItem = (id) => {

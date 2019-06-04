@@ -11,6 +11,7 @@ import Catalogue from './pages/Catalogue'
 import Detail from './pages/Detail'
 import Cart from './pages/Cart'
 import NoMatch from './pages/NoMatch'
+import ModalCart from './ModalCart'
 
 
 class App extends Component {
@@ -31,7 +32,7 @@ class App extends Component {
             <Route path="/cart" exact component={Cart} />
             <Route path={["/error404", "/:id"]} component={NoMatch}/>
           </Switch>
-
+          <ModalCart />
           <Footer/>
       </div>
     )
