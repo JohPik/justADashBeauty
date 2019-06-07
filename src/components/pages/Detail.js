@@ -35,7 +35,7 @@ const Detail = (props) => {
               <button onClick={() => qty === 1 ? null : setQty(qty - 1)}>-</button>
             </div>
           }
-          <button className="add-to-cart" disabled={inCart} onClick={ () => value.addToCart(id, qty) }>
+          <button className="add-to-cart" disabled={inCart} onClick={ () => { value.addToCart(id, qty); value.openModal() } }>
             { inCart ? <p>in cart</p> : <p>Add to Cart</p> }
           </button>
         </div>

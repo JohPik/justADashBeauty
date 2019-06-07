@@ -3,24 +3,32 @@ import { ProductConsumer } from './context'
 import { Link } from 'react-router-dom'
 
 export default class Modal extends Component {
-  render() {
+
+render() {
+  console.log(this.location);
     return (
       <ProductConsumer>
         {(value) => {
-          console.log(value);
           const { cart } = value
           const product = cart[cart.length - 1]
-          if (cart.length > 0) {
+          if (value.modalOpen) {
             return (
-              <div>
+              <div className="modal">
                 <h3>Product has been added to the cart</h3>
                 <p>{product.name}</p>
-                <button>keep Shopping</button>
-                <Link to="/cart"><button>Cart</button></Link>
+                <button onClick={()=> value.closeModal()}>
+                  keep Shopping
+                </button>
+
+                <button onClick={()=> value.closeModal()}>
+                  <Link to="/cart">
+                  Cart
+                  </Link>
+                </button>
+
               </div>
             )
           } else {
-
             return null
           }
         }
