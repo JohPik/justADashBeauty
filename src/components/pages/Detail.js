@@ -1,21 +1,30 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import { ProductConsumer } from '../context'
 
 import { prodNames } from '../../ressources/ProductList'
 
 import NoMatch from './NoMatch'
+import ModalCart from '../ModalCart'
 
 const Detail = (props) => {
-  // The STATE MOTHER FUCKER
-  const [qty, setQty] = useState(1);
 
+  const [qty, setQty] = useState(1) //Page State
   // the id of the page contained in the url ex: goodByeSunshine
   const pageId = props.match.params.id
 
-  const renderProduct = (value) => {
-    const currentProduct = value.productList.filter( prod => prod.url.includes(pageId))
-    // console.log(currentProduct);
+  useEffect(() => {
+    const { modalOpen } = props.value
+    !modalOpen ? console.log("False") : console.log("TRUE");
+     console.log("props", props.value)
+  }, [props.value]);
+
+
+  // The actual content component rendering
+  const renderProduct = () => {
+    const currentProduct = props.value.productList.filter( prod => prod.url.includes(pageId))
     const { id, name, subName, skinType, productType, description, inCart, price} = currentProduct[0]
+
+    const { addToCart, modalOpen, openModal } = props.value
 
     return (
       <Fragment>
@@ -35,26 +44,29 @@ const Detail = (props) => {
               <button onClick={() => qty === 1 ? null : setQty(qty - 1)}>-</button>
             </div>
           }
-          <button className="add-to-cart" disabled={inCart} onClick={ () => { value.addToCart(id, qty); value.openModal() } }>
+          <button className="add-to-cart" disabled={inCart} onClick={ () => { addToCart(id, qty); openModal() } }>
             { inCart ? <p>in cart</p> : <p>Add to Cart</p> }
           </button>
         </div>
-
+      {modalOpen ? <ModalCart /> : null}
       </Fragment>
     )
   }
 
-  return ( (prodNames.includes(pageId)) ? (
-        <ProductConsumer>
-          {(value) => {
-          return renderProduct(value)
-          }}
-        </ProductConsumer>
 
-  ) : (
-    <NoMatch />
-  )
+  return ( (prodNames.includes(pageId)) ? (
+        renderProduct()
+    ) : (
+      <NoMatch />
     )
+  )
 }
 
-export default Detail
+// export default Detail
+
+
+export default React.forwardRef((props, ref) => (
+  <ProductConsumer>
+    {value => <Detail {...props} value={value} ref={ref} />}
+  </ProductConsumer>
+));

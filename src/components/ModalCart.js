@@ -5,34 +5,29 @@ import { Link } from 'react-router-dom'
 export default class Modal extends Component {
 
 render() {
-  console.log(this.location);
     return (
       <ProductConsumer>
         {(value) => {
           const { cart } = value
           const product = cart[cart.length - 1]
-          if (value.modalOpen) {
-            return (
-              <div className="modal">
-                <h3>Product has been added to the cart</h3>
-                <p>{product.name}</p>
-                <button onClick={()=> value.closeModal()}>
-                  keep Shopping
-                </button>
 
-                <button onClick={()=> value.closeModal()}>
-                  <Link to="/cart">
-                  Cart
-                  </Link>
-                </button>
+          return (
+            <div className="modal">
+              <h3>Product has been added to the cart</h3>
+              <p>{product.name}</p>
+              <button onClick={()=> value.closeModal()}>
+                keep Shopping
+              </button>
 
-              </div>
-            )
-          } else {
-            return null
-          }
+              <button onClick={()=> value.closeModal()}>
+                <Link to="/cart">
+                Cart
+                </Link>
+              </button>
+            </div>
+          )
         }
-        }
+      }
       </ProductConsumer>
     )
   }
