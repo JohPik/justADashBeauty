@@ -11,11 +11,12 @@ import Catalogue from './pages/Catalogue'
 import Detail from './pages/Detail'
 import Cart from './pages/Cart'
 import NoMatch from './pages/NoMatch'
-import ModalCart from './ModalCart'
-
 
 class App extends Component {
+
+
   render() {
+
     return (
       <div>
           <Header/>
@@ -30,9 +31,9 @@ class App extends Component {
             <Route path={"/catalogue/product-detail/:id"} exact component={Detail} />
             <Route path={"/catalogue/:type/:id"}  exact component={Catalogue} />
             <Route path="/cart" exact component={Cart} />
-            <Route path={["/error404", "/:id"]} component={NoMatch}/>
+            {/* <Route path={["/error404", "/:id"]} component={NoMatch}/> */}
+            <Route path={"/"} component={NoMatch}/>
           </Switch>
-          <ModalCart />
           <Footer/>
       </div>
     )
