@@ -12,19 +12,19 @@ const Detail = (props) => {
   // the id of the page contained in the url ex: goodByeSunshine
   const pageId = props.match.params.id
 
+  const { addToCart, modalOpen, openModal, closeModal } = props.value
+  const checkModal = () => !modalOpen ? null : closeModal()
+
   useEffect(() => {
-    const { modalOpen } = props.value
-    !modalOpen ? console.log("False") : console.log("TRUE");
-     console.log("props", props.value)
-  }, [props.value]);
+    checkModal();
+  }, []);
+
 
 
   // The actual content component rendering
   const renderProduct = () => {
-    const currentProduct = props.value.productList.filter( prod => prod.url.includes(pageId))
-    const { id, name, subName, skinType, productType, description, inCart, price} = currentProduct[0]
-
-    const { addToCart, modalOpen, openModal } = props.value
+    let currentProduct = props.value.productList.filter( prod => prod.url.includes(pageId))
+    let { id, name, subName, skinType, productType, description, inCart, price} = currentProduct[0]
 
     return (
       <Fragment>
