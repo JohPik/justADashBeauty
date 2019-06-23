@@ -15,6 +15,9 @@ class ProdProvider extends  Component {
 
   componentWillMount(){
     this.setProducts()
+  }
+
+  componentDidMount(){
     this.checkCookies()
   }
 
@@ -46,7 +49,6 @@ class ProdProvider extends  Component {
     // this.setState( () => {
     // return {  productList: tempProducts, cart: [ ...this.state.cart, product ] }
     // }, () => this.addToCookies())
-
     // console.log(this.state);
     // this.setState( () => {
     // return {  productList: tempProducts, cart: [ ...this.state.cart, product ] }
@@ -66,10 +68,26 @@ class ProdProvider extends  Component {
 
   checkCookies = () => {
     const cookieCart  = this.props.allCookies.cart
-    console.log("cookieCart", cookieCart);
+    // console.log("cookieCart", cookieCart);
+    const cart = []
+
     if (cookieCart) {
       this.setState({ cartCookieList: cookieCart })
+      cookieCart.map( el => {
+      return cart.push(this.restoreCart(el.id, el.qty))
+      })
     }
+    this.setState({ cart })
+  }
+
+  restoreCart = (id, qty) => {
+    let tempProducts = [ ...this.state.productList ]
+    const index = tempProducts.indexOf(this.getItem(id))
+    const product = tempProducts[index]
+    product.inCart = true
+    product.count = qty
+    product.total = product.price * qty
+    return product
   }
 
 
