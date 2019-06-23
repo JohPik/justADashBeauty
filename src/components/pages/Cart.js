@@ -7,8 +7,6 @@ const Cart = () => {
 
      const { cart } = value
 
-
-
      // Funtion in charge of counting Total
      const CountTotal = () => {
        // Array of Prices in cart
@@ -17,8 +15,6 @@ const Cart = () => {
        const total = priceArray.reduce( (sum, price) => sum + price, 0)
        return total
      }
-
-
 
      if (cart.length > 0) {
        return (
@@ -42,9 +38,6 @@ const Cart = () => {
      } else {
       return ( <p>Cart is empty</p> )
      }
-    //  return cart.length > 0 ?
-    // (<p>Number of product in the cart is equal to: {cart.length}</p>
-    // ) : ( <p>Cart is empty</p>)
   }
 
   return(
