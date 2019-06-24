@@ -5,12 +5,13 @@ import { prodNames } from '../../ressources/ProductList'
 
 import NoMatch from './NoMatch'
 import ModalCart from '../ModalCart'
+import BreadCrumb from '../BreadCrumb'
 
 class Detail extends Component {
 
   state = { qty: 1 }
 
-  pageId = this.props.match.params.id
+  pageId = this.props.match.params.prodId
 
   checkModal = () => this.props.value.modalOpen ? this.props.value.closeModal() : null;
 
@@ -30,9 +31,10 @@ class Detail extends Component {
       let qty = this.state.qty
       let currentProduct = props.value.productList.filter( prod => prod.url.includes(this.pageId))
       let { id, name, subName, skinType, productType, description, inCart, price} = currentProduct[0]
-
+      console.log("Product props", this.props)
       return (
         <Fragment>
+          <BreadCrumb match={props.match} location={props.location} prodName={name}/>
           <h2 className="lol">{this.modalOpen}</h2>
           <button onClick={ () => window.history.back() }>go back</button>
 

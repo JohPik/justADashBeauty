@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { ProductConsumer } from '../context'
 import { skinTypes, prodTypes } from '../../ressources/ProductList'
 
+import BreadCrumb from '../BreadCrumb'
 import NoMatch from './NoMatch'
 
 const Catalogue = (props) => {
@@ -12,15 +13,23 @@ const Catalogue = (props) => {
   const pageType = props.match.params.type // skin-type or product-type
     const pageId = props.match.params.id // ex: oily, normal, cleanser, toning-mist
 
-  const singleItem = (prod) => (
-    <div key={prod.id} className="product-container">
-      <h3>{prod.name}</h3>
-      <h4>{prod.subName}</h4>
-      <Link to={`/catalogue/product-detail/${prod.url}`}>
-      <img src={prod.img} alt={prod.name} className="image-thumbnail"/>
-      </Link>
-    </div>
-  )
+  const singleItem = (prod) => {
+    return (
+      <div key={prod.id} className="product-container">
+        <h3>{prod.name}</h3>
+        <h4>{prod.subName}</h4>
+        <Link to={{
+            pathname: `/catalogue/product-detail/${prod.url}`,
+            state: {
+              type: pageType,
+              id: pageId
+            }
+          }}>
+        <img src={prod.img} alt={prod.name} className="image-thumbnail"/>
+        </Link>
+      </div>
+    )
+  }
 
   const renderList = (value) => {
     if (pageType === "skin-type") {
@@ -33,6 +42,7 @@ const Catalogue = (props) => {
 
   return ( (pageType === "skin-type" && skinTypes.includes(pageId)) || ( pageType === "product-type" && prodTypes.includes(pageId)) ? (
     <div>
+      <BreadCrumb match={props.match}/>
       <h1>CATALOGUE</h1>
       <h2>{pageId} product</h2>
       <ProductConsumer>
