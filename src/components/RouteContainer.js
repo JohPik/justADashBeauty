@@ -19,7 +19,7 @@ const RouteContainer = () => {
         <Route path="/about" exact component={About} />
         <Route path="/contact" exact component={Contact} />
         <Route path="/policy" exact component={Policy} />
-        <Route path={"/catalogue/product-detail/:id"} exact component={Detail} />
+        <Route path={"/catalogue/product-detail/:prodId"} exact component={Detail} />
         <Route path={"/catalogue/:type/:id"}  exact component={Catalogue} />
         <Route path="/cart" exact component={Cart} />
         <Route path={"/"} component={NoMatch}/>
