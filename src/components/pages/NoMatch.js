@@ -1,10 +1,8 @@
 import React from 'react';
 
-const NoMatch = () => {
+const NoMatch = (props) => {
   return(
-    <div>
-      Error 404
-    </div>
+    <div>Error 404</div>
   )
 }
 
