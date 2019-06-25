@@ -5,8 +5,8 @@ const BreadCrumb = (props) => {
 
   const renderMe = () => {
     const { type, id, prodId } = props.match.params
-    console.log("BreadCrumb Props", props)
-
+    // console.log("BreadCrumb Props", props)
+    
     if (type && id) { //Product Category
       return(
         <div className="breadcrumb-container">

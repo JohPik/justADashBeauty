@@ -14,6 +14,7 @@ import NoMatch from './pages/NoMatch'
 const RouteContainer = () => {
 
   return (
+    <div className="main">
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/about" exact component={About} />
@@ -24,6 +25,7 @@ const RouteContainer = () => {
         <Route path="/cart" exact component={Cart} />
         <Route path={"/"} component={NoMatch}/>
       </Switch>
+    </div>
   )
 }
 

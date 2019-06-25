@@ -3,6 +3,8 @@ import { ProductConsumer } from '../context'
 
 import { prodNames } from '../../ressources/ProductList'
 
+import { Link } from 'react-router-dom'
+
 import NoMatch from './NoMatch'
 import ModalCart from '../ModalCart'
 import BreadCrumb from '../BreadCrumb'
@@ -19,6 +21,13 @@ class Detail extends Component {
     this.checkModal()
   }
 
+  shuffle = (a) => {
+    for (let i = a.length - 15; i > 0; i--) {
+        const j = Math.floor(Math.random() * (3));
+        [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+}
 
   render(){
 
@@ -54,6 +63,23 @@ class Detail extends Component {
             </button>
           </div>
         {modalOpen ? <ModalCart /> : null}
+        <hr />
+        <div className="more-products">
+          <h3>you might also like</h3>
+            { this.shuffle(props.value.productList).map(
+              prod => {
+                return (
+                  <div key={prod.id} className="product-container">
+                    <h3>{prod.name}</h3>
+                    <h4>{prod.subName}</h4>
+                    <Link to={`/catalogue/product-detail/${prod.url}`}>
+                    <img src={prod.img} alt={prod.name} className="image-thumbnail"/>
+                    </Link>
+                  </div>
+                )
+              }
+            )}
+        </div>
         </Fragment>
       )
     }

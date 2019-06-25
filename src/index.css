@@ -101,6 +101,11 @@ code {
   width: 100%;
 }
 
+/* Main */
+
+.main {
+  padding: 14px 16px;
+  }
 
 /* Catalogue */
 
@@ -114,6 +119,11 @@ code {
     box-shadow: 0px 14px 18px 0px lightgrey;
 }
 
+/* Detail */
+
+button.add-to-cart {
+  margin: 16px 0;
+}
 
 /* Animations */
 
