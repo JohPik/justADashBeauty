@@ -30,19 +30,17 @@ class Detail extends Component {
       let props = this.props
       let qty = this.state.qty
       let currentProduct = props.value.productList.filter( prod => prod.url.includes(this.pageId))
-      let { id, name, subName, skinType, productType, description, inCart, price} = currentProduct[0]
+      let { id, name, subName, skinType, productType, description, inCart, price, img } = currentProduct[0]
       console.log("Product props", this.props)
       return (
         <Fragment>
           <BreadCrumb match={props.match} location={props.location} prodName={name}/>
-          <h2 className="lol">{this.modalOpen}</h2>
-          <button onClick={ () => window.history.back() }>go back</button>
-
           <h2>{name} <span>{subName}</span></h2>
-          <h3>{skinType}/{productType}</h3>
-          <h3>${price}</h3>
+          <h4 className="prod-page-skin-type">Skin Type: {skinType.join(', ')}</h4>
+          <h4 className="prod-page-prod-type">Prod Type: {productType}</h4>
+          <h4 className="prod-page-price">${price}</h4>
+          <img src={img} alt={name} className="image-thumbnail"/>
           <p>{description}</p>
-
           <div className="button-section">
             { inCart ? null :
               <div className="prod-qty-section">
