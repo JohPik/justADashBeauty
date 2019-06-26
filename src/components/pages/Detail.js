@@ -22,16 +22,16 @@ class Detail extends Component {
   }
 
   shuffle = (a) => {
-    for (let i = a.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [a[i], a[j]] = [a[j], a[i]];
-    }
-    return a;
-}
+      for (let i = a.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a.slice(0, 3)
+  }
 
   render(){
 
-    const { addToCart, modalOpen } = this.props.value
+    const { productList, addToCart, modalOpen } = this.props.value
 
     const openModal = () => this.props.value.openModal()
 
@@ -40,7 +40,10 @@ class Detail extends Component {
       let qty = this.state.qty
       let currentProduct = props.value.productList.filter( prod => prod.url.includes(this.pageId))
       let { id, name, subName, skinType, productType, description, inCart, price, img } = currentProduct[0]
-      console.log("Product props", this.props)
+
+      // productList without currentProduct
+      let filteredProdList = productList.filter( prod => (prod.id !== currentProduct[0].id) )
+
       return (
         <Fragment>
           <BreadCrumb match={props.match} location={props.location} prodName={name}/>
@@ -66,7 +69,7 @@ class Detail extends Component {
         <hr />
         <div className="more-products">
           <h3>you might also like</h3>
-            { this.shuffle(props.value.productList).map(
+            { this.shuffle(filteredProdList).map(
               prod => {
                 return (
                   <div key={prod.id} className="product-container">
