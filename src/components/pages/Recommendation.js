@@ -2,6 +2,8 @@ import React, { PureComponent } from 'react'
 
 import { Link } from 'react-router-dom'
 
+import { productList } from '../../ressources/ProductList'
+
 class Recommendation extends PureComponent {
 
   shuffle = (a) => {
@@ -14,7 +16,11 @@ class Recommendation extends PureComponent {
 
   render(){
     console.log(this.props);
-    const { filteredProdList } = this.props
+    const { currentProduct } = this.props
+
+    // productList without currentProduct
+    let filteredProdList = productList.filter( prod => (prod.id !== currentProduct.id) )
+
     return (
       <div className="product-Recommendation">
         <h3>you might also like</h3>

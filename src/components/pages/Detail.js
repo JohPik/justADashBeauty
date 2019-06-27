@@ -23,7 +23,7 @@ class Detail extends Component {
 
   render(){
 
-    const { productList, addToCart, modalOpen } = this.props.value
+    const { addToCart, modalOpen } = this.props.value
 
     const openModal = () => this.props.value.openModal()
 
@@ -32,9 +32,6 @@ class Detail extends Component {
       let qty = this.state.qty
       let currentProduct = props.value.productList.filter( prod => prod.url.includes(this.pageId))
       let { id, name, subName, skinType, productType, description, inCart, price, img } = currentProduct[0]
-
-      // productList without currentProduct
-      let filteredProdList = productList.filter( prod => (prod.id !== currentProduct[0].id) )
 
       return (
         <Fragment>
@@ -59,7 +56,7 @@ class Detail extends Component {
           </div>
         {modalOpen ? <ModalCart /> : null}
         <hr />
-        <Recommendation filteredProdList={filteredProdList}/>
+        <Recommendation currentProduct={currentProduct[0]} />
         </Fragment>
       )
     }
