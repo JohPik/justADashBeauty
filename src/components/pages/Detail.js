@@ -11,18 +11,31 @@ import BreadCrumb from '../BreadCrumb'
 
 class Detail extends Component {
 
-  state = { qty: 1 }
+  state = { qty: 1, location: "hello", pageId: ""}
 
-  pageId = this.props.match.params.prodId
 
   checkModal = () => this.props.value.modalOpen ? this.props.value.closeModal() : null;
+
+  componentWillMount(){
+    this.setState({ pageId: this.props.match.params.prodId })
+  }
+
+  componentDidUpdate(){
+    let { prodId } = this.props.match.params
+    let { pageId } = this.state
+    if (prodId === pageId) {
+      console.log("no Commenet")
+    } else {
+      this.setState({ pageId: this.props.match.params.prodId })
+    }
+  }
 
   componentWillUnmount(){
     this.checkModal()
   }
 
   render(){
-
+    console.log("I just rendered Again");
     const { addToCart, modalOpen } = this.props.value
 
     const openModal = () => this.props.value.openModal()
@@ -30,8 +43,11 @@ class Detail extends Component {
     const renderProduct = () => {
       let props = this.props
       let qty = this.state.qty
-      let currentProduct = props.value.productList.filter( prod => prod.url.includes(this.pageId))
+      let currentProduct = props.value.productList.filter( prod => prod.url.includes(this.state.pageId))
       let { id, name, subName, skinType, productType, description, inCart, price, img } = currentProduct[0]
+
+      console.log(this.state.pageId);
+      console.log("currentProduct", currentProduct[0]);
 
       return (
         <Fragment>
@@ -61,7 +77,7 @@ class Detail extends Component {
       )
     }
 
-    return ( (prodNames.includes(this.pageId)) ? (
+    return ( (prodNames.includes(this.state.pageId)) ? (
           renderProduct()
       ) : (
         <NoMatch />

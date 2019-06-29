@@ -15,7 +15,6 @@ class Recommendation extends PureComponent {
   }
 
   render(){
-    console.log(this.props);
     const { currentProduct } = this.props
 
     // productList without currentProduct
