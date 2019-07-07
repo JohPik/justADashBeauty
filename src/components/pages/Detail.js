@@ -1,4 +1,4 @@
-import React, { Fragment, Component } from 'react'
+import React, { Component } from 'react'
 import { ProductConsumer } from '../context'
 
 import { prodNames } from '../../ressources/ProductList'
@@ -50,7 +50,7 @@ class Detail extends Component {
       console.log("currentProduct", currentProduct[0]);
 
       return (
-        <Fragment>
+        <div className="single-product-page">
           <BreadCrumb match={props.match} location={props.location} prodName={name}/>
           <h2>{name} <span>{subName}</span></h2>
           <h4 className="prod-page-skin-type">Skin Type: {skinType.join(', ')}</h4>
@@ -73,7 +73,7 @@ class Detail extends Component {
         {modalOpen ? <ModalCart /> : null}
         <hr />
         <Recommendation currentProduct={currentProduct[0]} />
-        </Fragment>
+        </div>
       )
     }
 
