@@ -1,17 +1,3 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
 
 /*** Animations ***/
 
@@ -47,14 +33,23 @@ code {
 }
 
 
+/************** General **************/
 
+body {
+  margin: 0;
+  PADDING: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
 
-
-
-/* CSS 2.0 */
-
-/* General */
 
 a {
   color: #000;
@@ -62,78 +57,92 @@ a {
 
 }
 
-/* Header */
+/************** Header **************/
+
+nav {
+  background-color: white;
+   width: 100%;
+}
+
 .shipping-banner {
   background-color: #AAFFE5;
   font-weight: bold;
   text-align: center;
-  padding: 10px;
+  padding: 11px 0;
+  font-size: 16px;
+  width: 100%;
+  display:block;
 }
-
 
 .header-navigation {
-  background: #fff;
-  display: flex;
-  border-bottom: 0.25px solid #E6E6E6;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 150px;
+  display: relative;
+  box-shadow: inset 0 -1px 0 0 #e5e5e5;
 }
 
-
-img.logo {
-  width: 60px;
+/* Logo */
+.logo-container {
+  display: block;
+  position: absolute;
+  left: 150px;
+  top: 60px;
 }
 
+/* Nav Bar */
 .navbar {
-  display: flex;
-  justify-content: space-between;
+  text-align: center;
 }
 
-.navbar > div, .navbar > a {
-  margin: 0 30px;
-  font-weight: bold;
+ul.nav-menu {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
-.dropdown > a:hover, .navbar > a:hover {
-  text-decoration: underline;
+li.primary-nav-item {
+  display: inline-block;
+  padding: 41px 20px;
+  font-size: 16px;
+}
+
+li.primary-nav-item:hover {
+  box-shadow: inset 0 -2px 0 0 black;
+  cursor: pointer;
 }
 
 .dropdown-content {
-  display: none;
-  position: absolute;
-  /left: 37%;
-  background-color: #fff;
-  border: 0.25px solid #E6E6E6;
-  /* min-width: 160px; */
-  /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
-  z-index: 1;
-}
-
-.dropdown-content span {
-  font-weight:bold;
-}
-
-.dropdown-content a {
-  float: none;
-  color: black;
-  /* padding: 12px 16px; */
-  text-decoration: none;
-  display: block;
+  max-width: 100vw;
+  opacity: 1;
+  visibility: hidden;
+  transition: opacity .1s,visibility 0ms;
+  transition-delay: .3s;
+  overflow: auto;
+  background:white;
+  right: 0;
+  left: 0;
+  top: 140px;
   text-align: left;
-  font-weight: normal;
-  padding: 5px 0;
+  position: absolute;
+  opacity: 0;
+  box-shadow: inset 0 -1px 0 0 #e5e5e5;
+  visibility: hidden;
+  overflow: hidden;
+  z-index: 9000;
+  transition: opacity .1s linear .4s,visibility 0ms linear .41s;
 }
 
-.dropdown-content a:hover {
-  text-decoration: underline;
+.primary-nav-item:hover .dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .1s,visibility 0ms;
+  transition-delay: .3s;
+  overflow: auto
 }
 
-.dropdown:hover .dropdown-content {
-  display: flex;
-  padding: 10px;
-}
-
-.dropdown-col-1, .dropdown-col-2 {
-  padding: 0 20px;
+/* Cart */
+.cart-container {
+  height: 24px;
+  display: block;
+  position: absolute;
+  right: 150px;
+  top: 78px;
 }
