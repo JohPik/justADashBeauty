@@ -104,8 +104,12 @@ ul.nav-menu {
 
 li.primary-nav-item {
   display: inline-block;
-  padding: 41px 20px;
   font-size: 16px;
+}
+
+li.primary-nav-item > a {
+  display: block;
+  padding: 41px 20px;
 }
 
 li.primary-nav-item:hover {
@@ -133,6 +137,7 @@ li.primary-nav-item:hover {
   z-index: 9000;
   transition: opacity .1s linear .4s,visibility 0ms linear .41s;
 }
+
 
 .primary-nav-item:hover .dropdown-content {
   opacity: 1;

@@ -22,7 +22,7 @@ const Header = () => {
            <div className="navbar">
                 <ul className="nav-menu">
                   <li className="primary-nav-item">
-                    <Link className="main-link" to="/about">SHOP</Link>
+                    <Link to="/404">SHOP</Link>
                     <div className="dropdown-content">
                       <div className="dropdown-col-1">
                         <span>Skin Type</span>
