@@ -38,8 +38,7 @@
 body {
   margin: 0;
   PADDING: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -50,11 +49,12 @@ code {
     monospace;
 }
 
-
+h1, h2, h3, h4, p {
+  margin: 0;
+}
 a {
   color: #000;
   text-decoration: none;
-
 }
 
 /************** Header **************/
@@ -170,6 +170,10 @@ li.primary-nav-item:hover {
   box-shadow: inset -1px 0 0 0 #e5e5e5;
 }
 
+.dropdown-col-1 {
+  box-shadow: inset -1px 0 0 0 #e5e5e5, inset 1px 0 0 0 #e5e5e5;
+}
+
 .dropdown-col-1 > span, .dropdown-col-1 > a, .dropdown-col-2 > span, .dropdown-col-2 > a {
     display: block;
 }
@@ -190,5 +194,102 @@ li.primary-nav-item:hover {
 }
 
 .dropdown-col-1 > a:hover, .dropdown-col-2 > a:hover {
+  text-decoration: line-through;
+}
+
+/************** Main **************/
+
+.main {
+  min-height: calc(100vh - 386px);
+  padding: 20px 150px;
+}
+
+
+/************** Footer **************/
+.main-footer {
+  background-color:  #F7F7F7;
+  display: flex;
+  padding: 40px 150px;
+}
+
+.main-footer span {
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-size: 14px;
+  cursor: default;
+}
+
+.footer-col-1, .footer-col-2, .footer-col-3 {
+  /* padding: 0 20px;
+  box-shadow: inset -1px 0 0 0 #e5e5e5; */
+}
+
+.footer-col-2 {
+  padding-left: 150px;
+}
+
+.footer-col-1 > span, .footer-col-1 > a, .footer-col-2 > span, .footer-col-2 > input {
+  display: block;
+}
+
+.footer-col-1 > a {
+    margin-bottom: 5px;
+    font-size: 12px;
+    text-decoration: none;
+    transition: all .3s;
+}
+
+.footer-col-1 > a:hover {
+  text-decoration: line-through;
+}
+
+.footer-col-2 {
+  font-size: 12px;
+  transition: all .3s;
+}
+
+.footer-col-2 p {
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.footer-col-2 input {
+  width: 280px;
+  height: 30px;
+}
+
+.footer-col-3 {
+  margin-left: auto;
+}
+
+.footer-col-3 .social {
+  height: 26px;
+  transition: all .1s ease-in;
+}
+
+.footer-col-3 .social.instagram {
+  margin: 0 10px;
+}
+
+.footer-col-3 .social:hover {
+  transform: rotate(-20deg);
+}
+
+
+/* Copyright */
+.copyright {
+  font-size: 10px;
+  display: flex;
+  background-color: white;
+  justify-content: space-between;
+  padding: 11px 150px;
+  box-shadow: inset -1px 0 0 0 #e5e5e5;
+}
+
+.copyright a {
+  font-weight: bold;
+}
+
+.copyright a:hover {
   text-decoration: line-through;
 }
