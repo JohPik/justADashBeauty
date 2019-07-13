@@ -52,7 +52,7 @@ class Detail extends Component {
       return (
         <div className="single-product-page">
           <BreadCrumb match={props.match} location={props.location} prodName={name}/>
-          <h2>{name} <span>{subName}</span></h2>
+          <h1>{name} <span>{subName}</span></h1>
           <h4 className="prod-page-skin-type">Skin Type: {skinType.join(', ')}</h4>
           <h4 className="prod-page-prod-type">Prod Type: {productType}</h4>
           <h4 className="prod-page-price">${price}</h4>

@@ -43,7 +43,7 @@ const Catalogue = (props) => {
   return ( (pageType === "skin-type" && skinTypes.includes(pageId)) || ( pageType === "product-type" && prodTypes.includes(pageId)) ? (
     <div>
       <BreadCrumb match={props.match}/>
-      <h1>CATALOGUE</h1>
+      <h1 className="underline">Shop</h1>
       <h2>{pageId} product</h2>
       <ProductConsumer>
         { (value) => renderList(value) }

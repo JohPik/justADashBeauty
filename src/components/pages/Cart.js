@@ -19,7 +19,7 @@ const Cart = () => {
      if (cart.length > 0) {
        return (
          <Fragment>
-         <h2>Number of product in the cart is equal to: {cart.length}</h2>
+         <h1 className="underline">Number of product in the cart is equal to: {cart.length}</h1>
          <ul>
            {cart.map(product => {
              return(

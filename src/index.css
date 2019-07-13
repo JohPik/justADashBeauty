@@ -63,17 +63,21 @@ h1 {
   font-size: 70px;
   margin-bottom: 20px;
   position: relative;
+  font-weight: normal;
 }
 
 h1.underline::before {
   content: "";
   height: 30px;
-  width: 33%;
+  width: 150px;
   background: #FFD1F2;
   position: absolute;
   z-index: -1;
   top: 45px;
-  /* display: absolute; */
+}
+
+p {
+  font-weight: 300;
 }
 
 a {
