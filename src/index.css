@@ -85,6 +85,12 @@ a {
   text-decoration: none;
 }
 
+.main {
+  min-height: calc(100vh - 386px);
+  padding: 20px 150px;
+}
+
+
 /************** Header **************/
 
 nav {
@@ -249,13 +255,6 @@ li.primary-nav-item:hover {
   text-decoration: line-through;
 }
 
-/************** Main **************/
-
-.main {
-  min-height: calc(100vh - 386px);
-  padding: 20px 150px;
-}
-
 
 /************** Footer **************/
 .main-footer {
@@ -345,6 +344,22 @@ li.primary-nav-item:hover {
   text-decoration: line-through;
 }
 
+/************** BreadCrumb **************/
+.breadcrumb-container, .breadcrumb-container a  {
+  color: grey;
+  font-size: 12px;
+  text-transform: lowercase;
+}
+
+.breadcrumb-container span {
+  color: black;
+  font-weight: bold;
+}
+
+
+.breadcrumb-container a:hover {
+  text-decoration: line-through;
+}
 
 /************** About Page **************/
 .about-page {
@@ -361,5 +376,5 @@ li.primary-nav-item:hover {
 }
 
 .about-page img {
-  width:100%;
+  width: 100%;
 }
