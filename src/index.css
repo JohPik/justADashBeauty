@@ -35,6 +35,11 @@
 
 /************** General **************/
 
+@font-face {
+font-family: "selima";
+src: url("/fonts/selima.otf") format("opentype");
+}
+
 body {
   margin: 0;
   PADDING: 0;
@@ -52,6 +57,25 @@ code {
 h1, h2, h3, h4, p {
   margin: 0;
 }
+
+h1 {
+  font-family: selima;
+  font-size: 70px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+h1.underline::before {
+  content: "";
+  height: 30px;
+  width: 33%;
+  background: #FFD1F2;
+  position: absolute;
+  z-index: -1;
+  top: 45px;
+  /* display: absolute; */
+}
+
 a {
   color: #000;
   text-decoration: none;
@@ -154,6 +178,30 @@ li.primary-nav-item:hover {
   position: absolute;
   right: 150px;
   top: 78px;
+  transition: all .2s ease-out;
+}
+
+.cart-container:hover {
+  /* animation: 1s ShakeMeUp ease-in; */
+  transform: rotate(20deg);
+}
+
+@keyframes ShakeMeUp {
+  0% {
+    transform: rotate(-20deg) scale(1.3);
+  }
+  33% {
+     transform: rotate(15deg);
+  }
+  50% {
+     transform: rotate(-10deg);
+  }
+  66% {
+      transform: rotate(5deg);
+  }
+  100% {
+      transform: rotate(0deg) scale(1);
+  }
 }
 
 /* Dropdown */
@@ -264,7 +312,7 @@ li.primary-nav-item:hover {
 
 .footer-col-3 .social {
   height: 26px;
-  transition: all .1s ease-in;
+  transition: all .2s ease-out;
 }
 
 .footer-col-3 .social.instagram {
@@ -274,7 +322,6 @@ li.primary-nav-item:hover {
 .footer-col-3 .social:hover {
   transform: rotate(-20deg);
 }
-
 
 /* Copyright */
 .copyright {
@@ -292,4 +339,23 @@ li.primary-nav-item:hover {
 
 .copyright a:hover {
   text-decoration: line-through;
+}
+
+
+/************** About Page **************/
+.about-page {
+  display: flex;
+  /* background: lightblue; */
+}
+
+.about-page div {
+  flex: 5;
+}
+
+.about-page .text-box {
+  margin-right: 50px;
+}
+
+.about-page img {
+  width:100%;
 }
