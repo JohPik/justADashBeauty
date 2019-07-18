@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Fragment, Component } from 'react'
 import { ProductConsumer } from '../context'
 
 import { prodNames } from '../../ressources/ProductList'
@@ -24,7 +24,7 @@ class Detail extends Component {
     let { prodId } = this.props.match.params
     let { pageId } = this.state
     if (prodId === pageId) {
-      console.log("no Commenet")
+      return
     } else {
       this.setState({ pageId: this.props.match.params.prodId })
     }
@@ -35,45 +35,103 @@ class Detail extends Component {
   }
 
   render(){
-    console.log("I just rendered Again");
     const { addToCart, modalOpen } = this.props.value
 
     const openModal = () => this.props.value.openModal()
+
+    const extraText = () => {
+
+    }
 
     const renderProduct = () => {
       let props = this.props
       let qty = this.state.qty
       let currentProduct = props.value.productList.filter( prod => prod.url.includes(this.state.pageId))
-      let { id, name, subName, skinType, productType, description, inCart, price, img } = currentProduct[0]
+      let { id, name, subName, skinType, productType, description, inCart, price, img, size, loveList, ingredients, directions } = currentProduct[0]
 
-      console.log(this.state.pageId);
-      console.log("currentProduct", currentProduct[0]);
+      /* Toglle Extra Content */
+      let extraContent = document.querySelectorAll(".text-dropdown")
+      let descr = extraContent[0]
+      let ingred = extraContent[1]
+      let direct = extraContent[2]
+
+      let openExtraContent = (div) => {
+        extraContent.forEach( (el) => {
+          el.classList.remove("open")
+        } )
+        div.classList.add("open");
+      }
 
       return (
-        <div className="single-product-page">
+        <Fragment>
+          {modalOpen ? <ModalCart /> : null}
           <BreadCrumb match={props.match} location={props.location} prodName={name}/>
-          <h1>{name} <span>{subName}</span></h1>
-          <h4 className="prod-page-skin-type">Skin Type: {skinType.join(', ')}</h4>
-          <h4 className="prod-page-prod-type">Prod Type: {productType}</h4>
-          <h4 className="prod-page-price">${price}</h4>
-          <img src={img} alt={name} className="image-thumbnail"/>
-          <p>{description}</p>
-          <div className="button-section">
-            { inCart ? null :
-              <div className="prod-qty-section">
-                { qty }
-                  <button onClick={() => this.setState({ qty: qty + 1 }) }>+</button>
-                <button onClick={() => this.state.qty === 1 ? null : this.setState({ qty: this.state.qty - 1 }) }>-</button>
+
+          <section className="single-product-page">
+
+              <div className="img-container">
+                <img src={img} alt={name} className="image-thumbnail"/>
               </div>
-            }
-            <button className="add-to-cart" disabled={inCart} onClick={ () => { addToCart(id, qty); openModal() } }>
-              { inCart ? <p>in cart</p> : <p>Add to Cart</p> }
-            </button>
-          </div>
-        {modalOpen ? <ModalCart /> : null}
-        <hr />
-        <Recommendation currentProduct={currentProduct[0]} />
-        </div>
+
+              <div className="text-box">
+                <h1>{name}</h1>
+                <div className="prod-page-types">
+                  <h2>{subName}</h2>
+                  <div className="prod-page-skins">
+                    <span className="bold">{productType}</span> for <span className="bold">{skinType.join(' / ')}</span> skin
+                  </div>
+                  <span className="prod-page-size">{size}</span>
+                </div>
+                  <span className="prod-page-price">${price}</span>
+                  <div className="button-section">
+                    { inCart ? null :
+                      <div className="prod-qty-section">
+                        Qty:
+                        <button className="qty-slct" onClick={() => this.setState({ qty: qty + 1 }) }>+</button>
+                          { qty }
+                        <button className="qty-slct" onClick={() => this.state.qty === 1 ? null : this.setState({ qty: this.state.qty - 1 }) }>-</button>
+                      </div>
+                    }
+                    <button className="add-to-cart" disabled={inCart} onClick={ () => { addToCart(id, qty); openModal() } }>
+                      { inCart ? <Fragment>in cart</Fragment> : <Fragment>Add to Cart</Fragment> }
+                    </button>
+                  </div>
+
+                  <div className="extra-content-section">
+                    <div className="extra-content">
+                      <h3 onClick={ () => openExtraContent(descr) }>Description</h3>
+                      <div className="text-dropdown open">
+                        <p>
+                          {description}
+                        </p>
+                          <br /><br />
+                          Why we love it:
+                          <ul className="loveList">
+                            {loveList.map( (li, index) => <li key={index}>{li}</li>)}
+                          </ul>
+                      </div>
+                    </div>
+
+                    <div className="extra-content">
+                      <h3 onClick={ () => openExtraContent(ingred) }>Ingredients</h3>
+                      <div className="text-dropdown">
+                        <p>{ingredients}</p>
+                      </div>
+                    </div>
+
+                    <div className="extra-content">
+                      <h3 onClick={ () => openExtraContent(direct) }>Directions</h3>
+                      <div className="text-dropdown">
+                        <p>{directions}</p>
+                      </div>
+                    </div>
+                  </div>
+
+              </div>
+            </section>
+            <hr />
+            <Recommendation currentProduct={currentProduct[0]} />
+        </Fragment>
       )
     }
 

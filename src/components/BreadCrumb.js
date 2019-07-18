@@ -6,7 +6,7 @@ const BreadCrumb = (props) => {
   const renderMe = () => {
     const { type, id, prodId } = props.match.params
     const path  = props.match.path.substring(1)
-    console.log("BreadCrumb Props", props)
+    // console.log("BreadCrumb Props", props)
 
     if (type && id) { //Product Category
       return(
