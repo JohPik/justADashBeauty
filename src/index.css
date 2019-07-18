@@ -500,7 +500,15 @@ button.qty-slct:hover {
 
 .single-product-page .extra-content h3 {
   padding: 10px 0;
+}
+
+.single-product-page .extra-content h3.closed {
   cursor: pointer;
+  transition: all .2s ease-out;
+}
+
+.single-product-page .extra-content h3.closed:hover {
+  transform: skew(-15deg, 0deg);
 }
 
 .text-dropdown {
