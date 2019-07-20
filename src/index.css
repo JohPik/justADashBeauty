@@ -477,7 +477,6 @@ button.qty-slct:hover {
   width: 100%;
   height: 100%;
   display: block;
-  background: #FFD1F2;
   position: absolute;
   border: none;
   z-index: -1;
@@ -486,6 +485,63 @@ button.qty-slct:hover {
   transform: translate(10px, 10px);
   transition: all .1s ease-out;
 }
+
+/* add to cart before color */
+.goodByeSunshine::before {
+  background-color: #e3771c;
+}
+.allUnderControl::before {
+  background-color: #947cb0;
+}
+.lemonCandy::before {
+  background-color: #fbef37;
+}
+.sealTheDeal::before {
+  background-color: #7b2c88;
+}
+.thePorefect::before {
+  background-color: #7eae96;
+}
+.coolAsCucumber::before {
+  background-color: #7dba6a;
+}
+.quickFix::before {
+  background-color: #ebc644;
+}
+.noHandyMan::before {
+  background-color: #ac1684;
+}
+.greenCocktail::before {
+  background-color: #55924d;
+}
+.berryFresh::before {
+  background-color: #615a9d;
+}
+.allAboutMoisture::before {
+  background-color: #5689c8;
+}
+.acaiBowl::before {
+  background-color: #774260;
+}
+.landOfWonders::before {
+  background-color: #5260a9;
+}
+.sunnyDayInParadise::before {
+  background-color: #d6685b;
+}
+.easyAs::before {
+  background-color: #bb65a6;
+}
+.rescueMe::before {
+  background-color: #4c6db2;
+}
+.summerFruitSalad::before {
+  background-color: #ef4244;
+}
+.escapeInBoraBora::before {
+  background-color: #0bbff2;
+}
+
 
 .add-to-cart:hover {
   background-color:  #f2f2f2;

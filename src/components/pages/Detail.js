@@ -43,7 +43,7 @@ class Detail extends Component {
       let props = this.props
       let qty = this.state.qty
       let currentProduct = props.value.productList.filter( prod => prod.url.includes(this.state.pageId))
-      let { id, name, subName, skinType, productType, description, inCart, price, img, size, loveList, ingredients, directions } = currentProduct[0]
+      let { id, name, subName, skinType, productType, description, inCart, price, img, size, loveList, ingredients, directions, color, url } = currentProduct[0]
 
       /* Toglle Extra Content */
       let extraContent = document.querySelectorAll(".text-dropdown")
@@ -82,7 +82,7 @@ class Detail extends Component {
               </div>
 
               <div className="text-box">
-                <h1 style={{ color: 'lightpink' }}>#{name}</h1>
+                <h1 style={{ color: color }}>#{name}</h1>
                 <div className="prod-page-types">
                   <h2>{subName}</h2>
                   <div className="prod-page-skins">
@@ -100,7 +100,7 @@ class Detail extends Component {
                         <button className="qty-slct" onClick={() => this.state.qty === 1 ? null : this.setState({ qty: this.state.qty - 1 }) }>-</button>
                       </div>
                     }
-                    <button className="add-to-cart" disabled={inCart} onClick={ () => { addToCart(id, qty); openModal() } }>
+                    <button className={`add-to-cart ${url}`} disabled={inCart} onClick={ () => { addToCart(id, qty); openModal() } }>
                       { inCart ? <Fragment>in cart</Fragment> : <Fragment>Add to Cart</Fragment> }
                     </button>
                   </div>
