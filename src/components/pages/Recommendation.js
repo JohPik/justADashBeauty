@@ -21,21 +21,28 @@ class Recommendation extends PureComponent {
     let filteredProdList = productList.filter( prod => (prod.id !== currentProduct.id) )
 
     return (
-      <div className="product-Recommendation">
-        <h3>you might also like</h3>
-          { this.shuffle(filteredProdList).map(
-            prod => {
-              return (
-                <div key={prod.id} className="product-container">
-                  <h3>{prod.name}</h3>
-                  <h4>{prod.subName}</h4>
-                  <Link to={`/catalogue/product-detail/${prod.url}`}>
-                  <img src={prod.img} alt={prod.name} className="image-thumbnail"/>
-                  </Link>
-                </div>
-              )
-            }
-          )}
+      <div className="recommendation">
+        <h2>you might also like</h2>
+          <div className="recommendation-container">
+            { this.shuffle(filteredProdList).map(
+              prod => {
+                return (
+                  <div key={prod.id} className="product-container">
+                    <Link to={`/catalogue/product-detail/${prod.url}`}>
+                      <div className="img-container">
+                        <img src={prod.img} alt={prod.name} className="image-thumbnail"/>
+                      </div>
+                    </Link>
+
+                    <Link to={`/catalogue/product-detail/${prod.url}`}>
+                    <h3>#{prod.name}</h3>
+                    </Link>
+                    <h4>{prod.subName}</h4>
+                  </div>
+                )
+              }
+            )}
+          </div>
       </div>
     )
   }

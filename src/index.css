@@ -160,8 +160,6 @@ li.primary-nav-item:hover {
   max-width: 100vw;
   opacity: 1;
   visibility: hidden;
-  transition: opacity .1s,visibility 0ms;
-  transition-delay: .3s;
   overflow: auto;
   background:white;
   right: 0;
@@ -441,6 +439,10 @@ li.primary-nav-item:hover {
 }
 
 /* Buttons */
+.button-section {
+  margin-bottom: 20px;
+}
+
 .prod-qty-section {
   font-family: "bebasNeue";
   font-size: 1.3em;
@@ -499,7 +501,8 @@ button.qty-slct:hover {
 }
 
 .single-product-page .extra-content h3 {
-  padding: 10px 0;
+  padding: 15px 0;
+  font-weight: 500;
 }
 
 .single-product-page .extra-content h3.closed {
@@ -526,4 +529,64 @@ button.qty-slct:hover {
 .text-dropdown p {
   margin-bottom: 1em;
   padding-bottom: 0;
+}
+
+/* you might also like */
+
+.recommendation h2 {
+  margin: 20px 0;
+  text-transform: uppercase;
+  font-family: "bebasNeue";
+  font-weight: normal;
+  text-align: center;
+}
+
+.recommendation-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 50px;
+}
+
+.recommendation-container .product-container {
+  max-width: 270px;
+  width: 100%;
+}
+
+.recommendation-container .img-container {
+  max-width: 270px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.recommendation-container .img-container img {
+  width: 100%;
+  transition: all .2s ease-out;
+}
+
+
+.recommendation-container .product-container img:hover {
+  transform: scale(1.2) rotate(10deg);
+}
+
+.recommendation-container .product-container h3 {
+  font-family: "selima";
+  margin: 10px 0 5px 0;
+  font-size: 1.8em;
+  font-weight: 400;
+  transition: all .2s ease-out;
+}
+
+.recommendation-container .product-container h3:hover {
+  text-decoration: line-through;
+}
+
+.recommendation-container .product-container h4 {
+  text-transform: uppercase;
+  font-family: "bebasNeue";
+  font-weight: normal;
+  font-size: 1.3em;
 }

@@ -82,7 +82,7 @@ class Detail extends Component {
               </div>
 
               <div className="text-box">
-                <h1>#{name}</h1>
+                <h1 style={{ color: 'lightpink' }}>#{name}</h1>
                 <div className="prod-page-types">
                   <h2>{subName}</h2>
                   <div className="prod-page-skins">
