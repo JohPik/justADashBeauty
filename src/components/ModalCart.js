@@ -8,10 +8,9 @@ render() {
     return (
       <ProductConsumer>
         {(value) => {
-          console.log(value);
           const { cart } = value
           const prod = cart[cart.length - 1]
-        
+
           return (
             <div className="modal">
               <div className="modal-container">
