@@ -263,7 +263,6 @@ export const productList = [
   { id: 12,
     name: 'Acai Bowl on my face',
     color: '#774260',
-    color: '#774260',
     url: 'acaiBowl',
     subName: 'Day Cream',
     skinType: ['dry', 'normal'],

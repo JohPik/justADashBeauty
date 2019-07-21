@@ -93,6 +93,8 @@ a {
 .main {
   min-height: calc(100vh - 426px);
   padding: 20px 150px;
+  height: 100%;
+  position: relative;
 }
 
 
@@ -637,7 +639,7 @@ button.qty-slct:hover {
 }
 
 .recommendation-container .product-container h3:hover {
-  text-decoration: line-through;
+  transform: skew(-15deg, 0deg);
 }
 
 .recommendation-container .product-container h4 {
@@ -645,4 +647,85 @@ button.qty-slct:hover {
   font-family: "bebasNeue";
   font-weight: normal;
   font-size: 1.3em;
+}
+
+/* Modal */
+.modal {
+  z-index: 2;
+  background: hsla(0, 0%, 20%, 0.3);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.modal-container {
+  background: white;
+  position: absolute;
+  right: 0;
+  padding: 20px;
+}
+
+.modal h3 {
+  font-family: "bebasNeue";
+  font-weight: 400;
+  font-size: 1.8em;
+}
+
+.modal h3::before {
+  content: url("/images/tick.svg");
+  padding-right: 10px;
+}
+
+.modal-prod-info {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+.modal-prod-info p, .modal-prod-info img {
+  display: inline-block;
+}
+
+.modal-prod-info img {
+  width: 50px;
+}
+
+.modal-prod-info p {
+  margin-left: 20px;
+}
+.modal-name {
+  font-family: "selima";
+  font-size: 1.5em;
+  font-weight: normal;
+}
+
+.modal-price {
+  font-family: "bebasNeue";
+  font-size: 1.2em;
+}
+
+.modal-button-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-button-section > button {
+  margin-right: 20px;
+}
+
+.modal-button-section button {
+  box-shadow: inset 1px 0 0 0 #e5e5e5, inset -1px 0 0 0 #e5e5e5, inset 0 1px 0 0 #e5e5e5, inset 0 -1px 0 0 #e5e5e5;
+  width: 50%;
+  padding: 20px 30px;
+  font-size: 1em;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  transition: all .1s ease-out;
+}
+
+.modal-button-section button:hover {
+  background-color: #e5e5e5;
 }

@@ -8,22 +8,33 @@ render() {
     return (
       <ProductConsumer>
         {(value) => {
+          console.log(value);
           const { cart } = value
-          const product = cart[cart.length - 1]
-
+          const prod = cart[cart.length - 1]
+        
           return (
             <div className="modal">
-              <h3>Product has been added to the cart</h3>
-              <p>{product.name}</p>
-              <button onClick={()=> value.closeModal()}>
-                keep Shopping
-              </button>
+              <div className="modal-container">
+                <h3>Your product as been added to the Cart</h3>
 
-              <button onClick={()=> value.closeModal()}>
-                <Link to="/cart">
-                Cart
-                </Link>
-              </button>
+            <div className="modal-prod-info">
+               <img src= {prod.img} alt={ `${prod.name} in cart`} className="modal-img"/>
+                <p className="modal-name">#{prod.name}</p>
+                  <p className="modal-price">$30</p>
+              </div>
+
+                <div className="modal-button-section">
+                  <button onClick={()=> value.closeModal()}>
+                    Keep Shopping
+                  </button>
+
+                  <button onClick={()=> value.closeModal()}>
+                    <Link to="/cart">
+                    Go to Cart
+                    </Link>
+                  </button>
+                </div>
+              </div>
             </div>
           )
         }
