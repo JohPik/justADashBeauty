@@ -487,6 +487,13 @@ button.qty-slct:hover {
   transform: translate(10px, 10px);
   transition: all .1s ease-out;
 }
+.add-to-cart:disabled {
+  background-color:  #f2f2f2;
+}
+
+.add-to-cart:disabled::before {
+  display: none;
+}
 
 /* add to cart before color */
 .goodByeSunshine::before {
