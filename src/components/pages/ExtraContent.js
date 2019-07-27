@@ -8,6 +8,7 @@ class ExtraContent extends Component {
   }
 
   componentDidMount(){
+    /* manage every single part of the dropDown*/
     let extraContent = document.querySelectorAll(".text-dropdown")
     let descr = extraContent[0]
     let ingred = extraContent[1]
@@ -18,22 +19,24 @@ class ExtraContent extends Component {
     let ingredLabel = extraContentLabel[1]
     let directLabel = extraContentLabel[2]
 
-    this.setState( () => {
-    return {  extraContent, descr, descrLabel, extraContentLabel, ingred, ingredLabel, direct, directLabel }
-    }, () => console.log(this.state))
+    /* Add dropDown items to the State*/
+    this.setState({
+      extraContent, descr, descrLabel, extraContentLabel, ingred, ingredLabel, direct, directLabel
+    })
+
   }
 
+
+  /*Manage Toggle*/
   openExtraContent = (content, label) => {
-  let extraContent = document.querySelectorAll(".text-dropdown")
     // Manage Section
-    extraContent.forEach( (el) => {
+    this.state.extraContent.forEach( (el) => {
       el.classList.remove("open")
     } )
     content.classList.add("open");
 
-    let extraContentLabel = document.querySelectorAll(".extra-content h3")
     // Manage "Link"
-    extraContentLabel.forEach( (el) => {
+    this.state.extraContentLabel.forEach( (el) => {
       el.classList.add("closed")
     } )
     label.classList.remove("closed");
