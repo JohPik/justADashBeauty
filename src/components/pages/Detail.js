@@ -5,6 +5,7 @@ import { prodNames } from '../../ressources/ProductList'
 
 import NoMatch from './NoMatch'
 import Recommendation from './Recommendation'
+import ExtraContent from './ExtraContent'
 import ModalCart from '../ModalCart'
 import BreadCrumb from '../BreadCrumb'
 
@@ -45,31 +46,6 @@ class Detail extends Component {
       let currentProduct = props.value.productList.filter( prod => prod.url.includes(this.state.pageId))
       let { id, name, subName, skinType, productType, description, inCart, price, img, size, loveList, ingredients, directions, color, url } = currentProduct[0]
 
-      /* Toglle Extra Content */
-      let extraContent = document.querySelectorAll(".text-dropdown")
-      let descr = extraContent[0]
-      let ingred = extraContent[1]
-      let direct = extraContent[2]
-
-      let extraContentLabel = document.querySelectorAll(".extra-content h3")
-      let descrLabel = extraContentLabel[0]
-      let ingredLabel = extraContentLabel[1]
-      let directLabel = extraContentLabel[2]
-
-      /* Manages Extra Content Sections*/
-      let openExtraContent = (content, label) => {
-        // Manage Section
-        extraContent.forEach( (el) => {
-          el.classList.remove("open")
-        } )
-        content.classList.add("open");
-        // Manage "Link"
-        extraContentLabel.forEach( (el) => {
-          el.classList.add("closed")
-        } )
-        label.classList.remove("closed");
-      }
-
       return (
         <Fragment>
           {modalOpen ? <ModalCart /> : null}
@@ -104,36 +80,7 @@ class Detail extends Component {
                       { inCart ? <Fragment>in cart</Fragment> : <Fragment>Add to Cart</Fragment> }
                     </button>
                   </div>
-
-                  <div className="extra-content-section">
-                    <div className="extra-content">
-                      <h3 onClick={ () => openExtraContent(descr, descrLabel) }>Description</h3>
-                      <div className="text-dropdown open">
-                        <p>
-                          {description}
-                        </p>
-                          Why we love it:
-                          <ul className="loveList">
-                            {loveList.map( (li, index) => <li key={index}>{li}</li>)}
-                          </ul>
-                      </div>
-                    </div>
-
-                    <div className="extra-content">
-                      <h3 className="closed" onClick={ () => openExtraContent(ingred, ingredLabel) }>Ingredients</h3>
-                      <div className="text-dropdown">
-                        <p>{ingredients}</p>
-                      </div>
-                    </div>
-
-                    <div className="extra-content">
-                      <h3 className="closed" onClick={ () => openExtraContent(direct, directLabel) }>Directions</h3>
-                      <div className="text-dropdown">
-                        <p>{directions}</p>
-                      </div>
-                    </div>
-                  </div>
-
+                  <ExtraContent description={description} loveList={loveList} ingredients={ingredients} directions={directions}/>
               </div>
             </section>
             <hr />
