@@ -17,34 +17,30 @@ class CatalogueList extends Component {
     }
   }
 
+  /* Make sure URL and State match in Order to Render correct List */
   componentWillMount(){
     const { skinId, prodId } = this.props.match.params
     const { skinType, prodType} = this.state
+    const temp = { skinTypeTemp: skinId, prodTypeTemp: prodId }
 
-    if( skinId === skinType && prodId === prodType ) {
-      console.log("ALL G BRO");
-    } else {
-      console.log("NEED TO DO SMTH");
-      const temp = { skinTypeTemp: skinId, prodTypeTemp: prodId,}
-      this.setState({ skinType:skinId, prodType:prodId, temp })
-    }
+    return (
+      skinId === skinType && prodId === prodType ? null : this.setState({ skinType:skinId, prodType:prodId, temp })
+    )
   }
 
-  componentDidUpdate(prevProps){
+  /* Make sure URL and State match in Order to Render correct List */
+  componentDidUpdate(){
     const { skinId, prodId } = this.props.match.params
     const { skinType, prodType} = this.state
+    const temp = { skinTypeTemp: skinId, prodTypeTemp: prodId }
 
-    const temp = { skinTypeTemp: skinId, prodTypeTemp: prodId,}
+    return (
+      skinId === skinType && prodId === prodType ? null : this.setState({ skinType:skinId, prodType:prodId, temp })
+    )
 
-    if (skinId === skinType && prodId === prodType ) {
-      console.log("DONT't Worry");
-    } else {
-      const temp = { skinTypeTemp: skinId, prodTypeTemp: prodId,}
-      this.setState({ skinType:skinId, prodType:prodId, temp })
-    }
   }
 
-  /* HANDLE SIDE BAR SERACH*/
+  /* HANDLE SIDE BAR SERACH */
   handleChangeSkinType = (event) =>  {
     const temp = {...this.state.temp}
     temp.skinTypeTemp = event.target.value;
@@ -67,7 +63,7 @@ class CatalogueList extends Component {
   }
 
 
-  /* List Rendering*/
+  /* List Rendering */
   renderList = (value) => {
     if (this.state.skinType === "all" && this.state.prodType === "all" ) {
       return value.productList.map(prod => <ThumbnailProd prod={prod} key={prod.id}/>)
@@ -82,7 +78,6 @@ class CatalogueList extends Component {
   }
 
   render(){
-    //console.log(this.state);
     return (
       <section className="shop">
         <h1 className="underline">Shop</h1>
