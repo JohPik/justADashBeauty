@@ -12,7 +12,7 @@ import BreadCrumb from '../BreadCrumb'
 
 class Detail extends Component {
 
-  state = { qty: 1, location: "hello", pageId: ""}
+  state = { qty: 1, pageId: ""}
 
 
   checkModal = () => this.props.value.modalOpen ? this.props.value.closeModal() : null;
