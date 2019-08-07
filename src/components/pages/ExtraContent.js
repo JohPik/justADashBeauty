@@ -26,7 +26,6 @@ class ExtraContent extends Component {
 
   }
 
-
   /*Manage Toggle*/
   openExtraContent = (content, label) => {
     // Manage Section

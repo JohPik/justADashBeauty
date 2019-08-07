@@ -28,7 +28,7 @@ const Header = () => {
                  <div className="navbar">
                       <ul className="nav-menu">
                         <li className="primary-nav-item">
-                          <Link to="/404">SHOP</Link>
+                          <Link to="/shop">SHOP</Link>
                           <div className="dropdown-content">
                             <div className="dropdown-col-1">
                               <span>Skin Type</span>

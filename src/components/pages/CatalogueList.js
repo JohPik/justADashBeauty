@@ -10,20 +10,38 @@ class CatalogueList extends Component {
   state = {
     nbrOfProd: 18,
     skinType: "all",
-    prodType: "all"
+    prodType: "all",
+    temp: {
+      skinType: "all",
+      prodType: "all",
+    }
   }
-
   /* HANDLE SIDE BAR SERACH*/
   handleChangeSkinType = (event) =>  {
-    this.setState({skinType: event.target.value});
+
+    const temp = {...this.state.temp}
+    temp.skinType = event.target.value;
+    this.setState({ temp})
+
+    // this.setState({ temp.skinType: event.target.value });
+    // this.tempSkintype = event.target.value
   }
 
   handleChangeProdType = (event) =>  {
-    this.setState({prodType: event.target.value});
+
+    const temp = {...this.state.temp}
+    temp.prodType = event.target.value;
+    this.setState({ temp})
+
+    // this.setState({ prodType: event.target.value });
+    // this.tempProdtype = event.target.value
   }
 
   handleSubmit = (event) =>  {
-    alert("hello")
+    // alert("hello")
+    const skinType = this.state.temp.skinType
+    const prodType = this.state.temp.prodType
+    this.setState({ skinType, prodType})
     event.preventDefault();
   }
 
@@ -49,7 +67,7 @@ class CatalogueList extends Component {
         <h1 className="underline">Shop</h1>
           <section className="sidebar-filter">
                <form onSubmit={this.handleSubmit}>
-                <select name="skinType" value={this.state.skinType} onChange={this.handleChangeSkinType}>
+                <select name="skinType" value={this.state.temp.skinType} onChange={this.handleChangeSkinType}>
                   <option value="all">All</option>
                   <option value="oily" defaultValue >Oily</option>
                   <option value="problematic">Problematic</option>
@@ -58,7 +76,7 @@ class CatalogueList extends Component {
                   <option value="dry">Dry</option>
                 </select>
 
-                <select name="prodType" value={this.state.prodType} onChange={this.handleChangeProdType}>
+                <select name="prodType" value={this.state.temp.prodType} onChange={this.handleChangeProdType}>
                   <option value="all">All</option>
                   <option value="cleanser">Cleanser</option>
                   <option value="toningMist">Toning Mist</option>
