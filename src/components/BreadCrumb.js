@@ -6,7 +6,6 @@ const BreadCrumb = (props) => {
   const renderMe = () => {
     const { type, id, prodId } = props.match.params
     const path  = props.match.path.substring(1)
-    console.log("BreadCrumb Props", props)
 
     if (type && id) { //Product Category
       return(
@@ -21,7 +20,6 @@ const BreadCrumb = (props) => {
            <Link to="/">Home</Link> > <Link to="/shop/skintype=all&prodtype=all">Shop</Link> > <span>{prodName}</span>
         </section>
       )
-
     } else { //Other Page
       return(
         <section className="breadcrumb-container">

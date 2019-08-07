@@ -93,8 +93,11 @@ class ProdProvider extends  Component {
 
 /***!!! Modal Management !!!***/
   openModal = () => {
+  const cartContainer = document.querySelector(".cart-container")
   this.setState({ modalOpen: true});
   setTimeout(() => this.setState({ modalOpen: false}), 5000);
+  cartContainer.classList.add('just-added')
+  setTimeout(() => cartContainer.classList.remove('just-added'), 1000);
   }
 
   closeModal = () => this.setState({ modalOpen: false})

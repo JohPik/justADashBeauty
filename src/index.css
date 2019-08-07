@@ -201,6 +201,10 @@ li.primary-nav-item:hover {
   transform: rotate(20deg);
 }
 
+.cart-container.just-added {
+  animation: 1s ShakeMeUp ease-in;
+}
+
 .cartLink {
   position: relative;
 }
