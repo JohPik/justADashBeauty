@@ -28,24 +28,24 @@ const Header = () => {
                  <div className="navbar">
                       <ul className="nav-menu">
                         <li className="primary-nav-item">
-                          <Link to="/shop">SHOP</Link>
+                          <Link to="/shop/skintype=all&prodtype=all">SHOP</Link>
                           <div className="dropdown-content">
                             <div className="dropdown-col-1">
                               <span>Skin Type</span>
-                              <Link to="/catalogue/skin-type/oily">Oily</Link>
-                              <Link to="/catalogue/skin-type/dry">Dry</Link>
-                              <Link to="/catalogue/skin-type/sensitive">Sensitive</Link>
-                              <Link to="/catalogue/skin-type/problematic">Problematic</Link>
-                              <Link to="/catalogue/skin-type/normal">Normal</Link>
+                              <Link to="/shop/skintype=oily&prodtype=all">Oily</Link>
+                              <Link to="/shop/skintype=dry&prodtype=all">Dry</Link>
+                              <Link to="/shop/skintype=sensitive&prodtype=all">Sensitive</Link>
+                              <Link to="/shop/skintype=problematic&prodtype=all">Problematic</Link>
+                              <Link to="/shop/skintype=normal&prodtype=all">Normal</Link>
                             </div>
                             <div className="dropdown-col-2">
                               <span>Product Type</span>
-                              <Link to="/catalogue/product-type/cleanser">Cleanser</Link>
-                              <Link to="/catalogue/product-type/toningMist">Toning Mist</Link>
-                              <Link to="/catalogue/product-type/exfoliant">Exfoliant</Link>
-                              <Link to="/catalogue/product-type/serum">Serum</Link>
-                              <Link to="/catalogue/product-type/moisturiser">Moisturiser</Link>
-                              <Link to="/catalogue/product-type/treatment">Treatment</Link>
+                              <Link to="/shop/skintype=all&prodtype=cleanser">Cleanser</Link>
+                              <Link to="/shop/skintype=all&prodtype=toningMist">Toning Mist</Link>
+                              <Link to="/shop/skintype=all&prodtype=exfoliant">Exfoliant</Link>
+                              <Link to="/shop/skintype=all&prodtype=serum">Serum</Link>
+                              <Link to="/shop/skintype=all&prodtype=moisturiser">Moisturiser</Link>
+                              <Link to="/shop/skintype=all&prodtype=treatment">Treatment</Link>
                             </div>
                           </div>
 

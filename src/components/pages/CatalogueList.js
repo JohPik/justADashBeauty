@@ -12,37 +12,58 @@ class CatalogueList extends Component {
     skinType: "all",
     prodType: "all",
     temp: {
-      skinType: "all",
-      prodType: "all",
+      skinTypeTemp: "all",
+      prodTypeTemp: "all"
     }
   }
+
+  componentWillMount(){
+    const { skinId, prodId } = this.props.match.params
+    const { skinType, prodType} = this.state
+
+    if( skinId === skinType && prodId === prodType ) {
+      console.log("ALL G BRO");
+    } else {
+      console.log("NEED TO DO SMTH");
+      const temp = { skinTypeTemp: skinId, prodTypeTemp: prodId,}
+      this.setState({ skinType:skinId, prodType:prodId, temp })
+    }
+  }
+
+  componentDidUpdate(prevProps){
+    const { skinId, prodId } = this.props.match.params
+    const { skinType, prodType} = this.state
+
+    const temp = { skinTypeTemp: skinId, prodTypeTemp: prodId,}
+
+    if (skinId === skinType && prodId === prodType ) {
+      console.log("DONT't Worry");
+    } else {
+      const temp = { skinTypeTemp: skinId, prodTypeTemp: prodId,}
+      this.setState({ skinType:skinId, prodType:prodId, temp })
+    }
+  }
+
   /* HANDLE SIDE BAR SERACH*/
   handleChangeSkinType = (event) =>  {
-
     const temp = {...this.state.temp}
-    temp.skinType = event.target.value;
-    this.setState({ temp})
-
-    // this.setState({ temp.skinType: event.target.value });
-    // this.tempSkintype = event.target.value
+    temp.skinTypeTemp = event.target.value;
+    this.setState({ temp })
   }
 
   handleChangeProdType = (event) =>  {
 
     const temp = {...this.state.temp}
-    temp.prodType = event.target.value;
-    this.setState({ temp})
-
-    // this.setState({ prodType: event.target.value });
-    // this.tempProdtype = event.target.value
+    temp.prodTypeTemp = event.target.value;
+    this.setState({ temp })
   }
 
   handleSubmit = (event) =>  {
-    // alert("hello")
-    const skinType = this.state.temp.skinType
-    const prodType = this.state.temp.prodType
+    const skinType = this.state.temp.skinTypeTemp
+    const prodType = this.state.temp.prodTypeTemp
     this.setState({ skinType, prodType})
     event.preventDefault();
+    this.props.history.push(`/shop/skintype=${skinType}&prodtype=${prodType}`)
   }
 
 
@@ -61,13 +82,13 @@ class CatalogueList extends Component {
   }
 
   render(){
-    console.log(this.state);
+    //console.log(this.state);
     return (
       <section className="shop">
         <h1 className="underline">Shop</h1>
           <section className="sidebar-filter">
                <form onSubmit={this.handleSubmit}>
-                <select name="skinType" value={this.state.temp.skinType} onChange={this.handleChangeSkinType}>
+                <select name="skinType" value={this.state.temp.skinTypeTemp} onChange={this.handleChangeSkinType}>
                   <option value="all">All</option>
                   <option value="oily" defaultValue >Oily</option>
                   <option value="problematic">Problematic</option>
@@ -76,7 +97,7 @@ class CatalogueList extends Component {
                   <option value="dry">Dry</option>
                 </select>
 
-                <select name="prodType" value={this.state.temp.prodType} onChange={this.handleChangeProdType}>
+                <select name="prodType" value={this.state.temp.prodTypeTemp} onChange={this.handleChangeProdType}>
                   <option value="all">All</option>
                   <option value="cleanser">Cleanser</option>
                   <option value="toningMist">Toning Mist</option>
