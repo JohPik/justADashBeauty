@@ -12,7 +12,7 @@ class ThumbnailProd extends Component {
         <h3>{name}</h3>
         <h4>{subName}</h4>
         <Link to={{
-            pathname: `/catalogue/product-detail/${url}`
+            pathname: `/shop/product-detail/${url}`
           }}>
         <img src={img} alt={name} className="image-thumbnail"/>
         </Link>
