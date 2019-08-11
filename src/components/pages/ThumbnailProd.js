@@ -9,13 +9,20 @@ class ThumbnailProd extends Component {
     const { id, name, subName, url, img } = this.props.prod
     return (
       <div key={id} className="product-container">
-        <h3>{name}</h3>
-        <h4>{subName}</h4>
         <Link to={{
             pathname: `/shop/product-detail/${url}`
           }}>
-        <img src={img} alt={name} className="image-thumbnail"/>
+          <div class="img-container">
+            <img src={img} alt={name} className="image-thumbnail"/>
+          </div>
         </Link>
+        
+        <Link to={{
+            pathname: `/shop/product-detail/${url}`
+          }}>
+        <h3>{name}</h3>
+        </Link>
+        <h4>{subName}</h4>
       </div>
     )
   }

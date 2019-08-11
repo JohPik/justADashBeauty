@@ -406,20 +406,139 @@ li.primary-nav-item:hover {
 
 /************** Catalogue/Shop Page **************/
 
-.shop img, .catalogueMain img {
-  max-width: 150px;
-}
-
 .shop-list {
   display: flex;
+  justify-content: space-between;
+  flex-direction: row;
   flex-wrap: wrap;
 }
 
+.shop-list .product-container {
+  margin: 5px;
+}
+
+.shop-list .product-container .img-container {
+  width: 230px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.shop-list i {
+  width: 230px;
+  margin: 5px;
+}
+
+.shop-list .product-container img {
+  max-width: 230px;
+  transition: all .2s ease-out;
+}
+
+.shop-list .product-container img:hover {
+  transform: scale(1.2) rotate(10deg);
+}
+
+.shop-list .product-container h3 {
+  font-family: "selima";
+  margin: 10px 0 5px 0;
+  font-size: 1.8em;
+  font-weight: 400;
+  transition: all .2s ease-out;
+}
+
+.shop-list .product-container h3:hover {
+  transform: skew(-15deg, 0deg);
+}
+
+.shop-list .product-container h4 {
+  text-transform: uppercase;
+  font-family: "bebasNeue";
+  font-weight: normal;
+  font-size: 1.3em;
+}
 
 
 
+/* .shop img, .catalogueMain img {
+  max-width: 150px;
+} */
+
+/* .shop-list .product-container {
+  max-width: 270px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+} */
 
 
+/* START */
+
+/* .recommendation h2 {
+  margin: 20px 0;
+  text-transform: uppercase;
+  font-family: "bebasNeue";
+  font-weight: normal;
+  text-align: center;
+}
+
+.recommendation-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 50px;
+}
+
+.recommendation-container .product-container {
+  max-width: 270px;
+  width: 100%;
+}
+
+.recommendation-container .img-container {
+  max-width: 270px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.recommendation-container .img-container img {
+  width: 100%;
+  transition: all .2s ease-out;
+}
+
+
+.recommendation-container .product-container img:hover {
+  transform: scale(1.2) rotate(10deg);
+}
+
+.recommendation-container .product-container h3 {
+  font-family: "selima";
+  margin: 10px 0 5px 0;
+  font-size: 1.8em;
+  font-weight: 400;
+  transition: all .2s ease-out;
+}
+
+.recommendation-container .product-container h3:hover {
+  transform: skew(-15deg, 0deg);
+}
+
+.recommendation-container .product-container h4 {
+  text-transform: uppercase;
+  font-family: "bebasNeue";
+  font-weight: normal;
+  font-size: 1.3em;
+}
+ */
+
+/* END*/
 
 
 

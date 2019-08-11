@@ -108,6 +108,9 @@ class CatalogueList extends Component {
         <hr/>
         <section className="shop-list">
           {this.renderList(this.props.value)}
+          <i aria-hidden="true"></i>
+          <i aria-hidden="true"></i>
+          <i aria-hidden="true"></i>
         </section>
       </section>
     )
