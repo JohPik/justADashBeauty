@@ -28,13 +28,13 @@ class Recommendation extends PureComponent {
               prod => {
                 return (
                   <div key={prod.id} className="product-container">
-                    <Link to={`/catalogue/product-detail/${prod.url}`}>
+                    <Link to={`/shop/product-detail/${prod.url}`}>
                       <div className="img-container">
                         <img src={prod.img} alt={prod.name} className="image-thumbnail"/>
                       </div>
                     </Link>
 
-                    <Link to={`/catalogue/product-detail/${prod.url}`}>
+                    <Link to={`/shop/product-detail/${prod.url}`}>
                     <h3>#{prod.name}</h3>
                     </Link>
                     <h4>{prod.subName}</h4>
