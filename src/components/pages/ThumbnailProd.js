@@ -21,7 +21,7 @@ class ThumbnailProd extends Component {
         <h3>{name}</h3>
         </Link>
         <h4>{subName}</h4>
-        { inCart ? <span>Alredy in cart</span> : null }
+        { inCart ? <span>Already in Cart</span> : null }
       </div>
     )
   }

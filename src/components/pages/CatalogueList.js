@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { ProductConsumer } from '../context'
 
 // import SideBarFilter from './SideBarFilter'
+import CurrentFilter from './CurrentFilter'
 import ThumbnailProd from './ThumbnailProd'
-
 
 class CatalogueList extends Component {
 
@@ -73,7 +73,7 @@ class CatalogueList extends Component {
       return value.productList.filter( prod => prod.productType.includes(this.state.prodType)).map(prod => <ThumbnailProd prod={prod} key={prod.id}/> )
     } else {
       const nbrOfProd = value.productList.filter( prod => prod.skinType.includes(this.state.skinType) && prod.productType.includes(this.state.prodType) )
-      return nbrOfProd.length === 0 ? <p>Sorry no product match you research</p> : nbrOfProd.map(prod => <ThumbnailProd prod={prod} key={prod.id}/>)
+      return nbrOfProd.length === 0 ? <p>Sorry no product match you research</p> : nbrOfProd.map(prod => <ThumbnailProd prod={prod} key={prod.id}/> )
     }
   }
 
@@ -81,26 +81,37 @@ class CatalogueList extends Component {
     return (
       <section className="shop">
         <h1 className="underline">Shop</h1>
+          <section className="current-filter">
+          <CurrentFilter skinType={this.state.skinType} prodType={this.state.prodType} />
+          </section>
+
           <section className="sidebar-filter">
                <form onSubmit={this.handleSubmit}>
-                <select name="skinType" value={this.state.temp.skinTypeTemp} onChange={this.handleChangeSkinType}>
-                  <option value="all">All</option>
-                  <option value="oily" defaultValue >Oily</option>
-                  <option value="problematic">Problematic</option>
-                  <option value="sensitive">Sensitive</option>
-                  <option value="normal">Normal</option>
-                  <option value="dry">Dry</option>
-                </select>
 
-                <select name="prodType" value={this.state.temp.prodTypeTemp} onChange={this.handleChangeProdType}>
-                  <option value="all">All</option>
-                  <option value="cleanser">Cleanser</option>
-                  <option value="toningMist">Toning Mist</option>
-                  <option value="exfoliant">Exfoliant</option>
-                  <option value="serum">Serum</option>
-                  <option value="moisturiser">Moisturiser</option>
-                  <option value="treatment">Treatment</option>
-                </select>
+                 <div className="form-select">
+                  <label>Select a Skin Type:</label>
+                  <select name="skinType" value={this.state.temp.skinTypeTemp} onChange={this.handleChangeSkinType}>
+                    <option value="all">All</option>
+                    <option value="oily" defaultValue >Oily</option>
+                    <option value="problematic">Problematic</option>
+                    <option value="sensitive">Sensitive</option>
+                    <option value="normal">Normal</option>
+                    <option value="dry">Dry</option>
+                  </select>
+                  </div>
+
+                <div className="form-select">
+                  <label>Select a Product Type:</label>
+                  <select name="prodType" value={this.state.temp.prodTypeTemp} onChange={this.handleChangeProdType}>
+                    <option value="all">All</option>
+                    <option value="cleanser">Cleanser</option>
+                    <option value="toningMist">Toning Mist</option>
+                    <option value="exfoliant">Exfoliant</option>
+                    <option value="serum">Serum</option>
+                    <option value="moisturiser">Moisturiser</option>
+                    <option value="treatment">Treatment</option>
+                  </select>
+                </div>
 
                 <input type="submit" value="Filter" />
               </form>
