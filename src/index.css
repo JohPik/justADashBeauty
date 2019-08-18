@@ -126,6 +126,10 @@ nav {
   position: absolute;
   left: 150px;
   top: 60px;
+  transition: all .2s ease-out;
+}
+.logo-container:hover {
+ transform: rotate(20deg);
 }
 
 img.logo {
@@ -406,6 +410,161 @@ li.primary-nav-item:hover {
 
 /************** Catalogue/Shop Page **************/
 
+
+
+/* New filter */
+
+.current-filters h2 {
+  text-transform: uppercase;
+  font-family: "bebasNeue";
+  font-weight: normal;
+  font-size: 1.3em;
+  margin-bottom: 10px;
+}
+
+.single-filter {
+  display: inline-block;
+  padding: 5px 20px;
+  margin-right: 20px;
+  box-shadow: inset 1px 0 0 0 #e5e5e5, inset -1px 0 0 0 #e5e5e5, inset 0 1px 0 0 #e5e5e5, inset 0 -1px 0 0 #e5e5e5;
+}
+
+.show-form-button-container {
+  position: absolute;
+  right: 150px;
+  top: 45px;
+}
+
+button.show-form {
+  box-shadow: inset 1px 0 0 0 #e5e5e5, inset -1px 0 0 0 #e5e5e5, inset 0 1px 0 0 #e5e5e5, inset 0 -1px 0 0 #e5e5e5;
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  margin: 15px 0;
+  position: relative;
+  cursor: pointer;
+  transition: all .1s ease-out;
+}
+
+button.show-form::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  border: none;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  transform: translate(10px, 10px);
+  transition: all .1s ease-out;
+  background: #FFD1F2;
+}
+
+button.show-form:hover::before {
+  transform: translate(0);
+}
+
+/* .form-radio div {
+  display: flex;
+  flex-direction: row;
+} */
+
+/* Filter */
+/* .current-filter h2 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.filter {
+  width: 100px;
+  display: inline-block;
+  justify-content: space-between;
+  position: relative;
+  border: solid 1px #e5e5e5;
+  background: #F7F7F7;
+  margin-right: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.filter span {
+  text-transform: capitalize;
+}
+
+.filter a {
+  opacity: .5;
+  position: absolute;
+  right: 10px;
+} */
+
+
+
+.sidebar-filter form {
+  display: flex;
+}
+
+form > * {
+margin-right: 30px;
+min-width: 200px;
+}
+
+form select {
+  width: 200px;
+  height: 30px;
+}
+label {
+  display: block;
+}
+
+/* select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  background: green;
+  background-image: none;
+  border:1px solid black;
+}
+.select {
+  position: relative;
+  display: block;
+  width: 20em;
+  height: 3em;
+  line-height: 3;
+  background: #2C3E50;
+  overflow: hidden;
+  border-radius: .25em;
+}
+select {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0 0 0 .5em;
+  color: #fff;
+  cursor: pointer;
+}
+select::-ms-expand {
+  display: none;
+}
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0 1em;
+  background: #34495E;
+  pointer-events: none;
+}
+.select:hover::after {
+  color: #F39C12;
+} */
+
+
+/* List */
+
 .shop-list {
   display: flex;
   justify-content: space-between;
@@ -576,6 +735,7 @@ button.qty-slct:hover {
   transform: translate(10px, 10px);
   transition: all .1s ease-out;
 }
+
 .add-to-cart:disabled {
   background-color:  #f2f2f2;
 }
