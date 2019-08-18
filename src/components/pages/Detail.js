@@ -77,7 +77,7 @@ class Detail extends Component {
                       </div>
                     }
                     <button className={`add-to-cart ${url}`} disabled={inCart} onClick={ () => { addToCart(id, qty); openModal() } }>
-                      { inCart ? <Fragment>in cart</Fragment> : <Fragment>Add to Cart</Fragment> }
+                      { inCart ? <Fragment>in Cart</Fragment> : <Fragment>Add to Cart</Fragment> }
                     </button>
                   </div>
                   <ExtraContent description={description} loveList={loveList} ingredients={ingredients} directions={directions}/>
