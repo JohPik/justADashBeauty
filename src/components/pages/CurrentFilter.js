@@ -55,37 +55,96 @@ export default class CurrentFilter extends Component {
 
   /* Manage Drop Down Form */
   displayForm = () => {
+    const { temp, handleChangeSkinType, handleChangeProdType } = this.props
     return (
-    <form onSubmit={this.props.handleSubmit}>
+      <form onSubmit={this.props.handleSubmit}>
+        <div className="form-select form-radio">
+         <p>Select a Skin Type:</p>
+             <div><label>
+                 <input type="radio" name="skin-type" id="all" value="all"
+                   onChange={handleChangeSkinType}
+                   checked={temp.skinTypeTemp === "all"}/>
+                 All
+              </label></div>
+             <div><label>
+               <input type="radio" name="skin-type" id="oily" value="oily"
+                 onChange={handleChangeSkinType}
+                 checked={temp.skinTypeTemp === "oily"}/>
+                 Oily
+              </label></div>
+             <div><label>
+               <input type="radio" name="skin-type" id="problematic" value="problematic"
+                 onChange={handleChangeSkinType}
+                 checked={temp.skinTypeTemp === "problematic"}/>
+                 Problematic
+              </label></div>
+             <div><label>
+               <input type="radio" name="skin-type" id="sensitive" value="sensitive"
+                 onChange={handleChangeSkinType}
+                 checked={temp.skinTypeTemp === "sensitive"}/>
+                 Sensitive
+              </label></div>
+             <div><label>
+               <input type="radio" name="skin-type" id="normal" value="normal"
+                 onChange={handleChangeSkinType}
+                 checked={temp.skinTypeTemp === "normal"}/>
+                 Normal
+              </label></div>
+             <div><label>
+                 <input type="radio" name="skin-type" id="dry" value="dry"
+                 onChange={handleChangeSkinType}
+                 checked={temp.skinTypeTemp === "dry"}/>
+                 Dry
+              </label></div>
+         </div>
 
-      <div className="form-select">
-       <label>Select a Skin Type:</label>
-       <select name="skinType" value={this.props.temp.skinTypeTemp} onChange={this.props.handleChangeSkinType}>
-         <option value="all">All</option>
-         <option value="oily" defaultValue >Oily</option>
-         <option value="problematic">Problematic</option>
-         <option value="sensitive">Sensitive</option>
-         <option value="normal">Normal</option>
-         <option value="dry">Dry</option>
-       </select>
-       </div>
-
-     <div className="form-select">
-       <label>Select a Product Type:</label>
-       <select name="prodType" value={this.props.temp.prodTypeTemp} onChange={this.props.handleChangeProdType}>
-         <option value="all">All</option>
-         <option value="cleanser">Cleanser</option>
-         <option value="toningMist">Toning Mist</option>
-         <option value="exfoliant">Exfoliant</option>
-         <option value="serum">Serum</option>
-         <option value="moisturiser">Moisturiser</option>
-         <option value="treatment">Treatment</option>
-       </select>
-     </div>
-
-     <input type="submit" value="Filter" onClick={ () =>  this.setState({showForm: false}) }/>
-
-   </form>
+         <div className="form-select form-radio">
+          <p>Select a Product Type:</p>
+              <div><label>
+                <input type="radio" name="prod-type" id="all" value="all"
+                  onChange={handleChangeProdType}
+                  checked={temp.prodTypeTemp === "all"}/>
+                  all
+              </label></div>
+              <div><label>
+                <input type="radio" name="prod-type" id="cleanser" value="cleanser"
+                  onChange={handleChangeProdType}
+                  checked={temp.prodTypeTemp === "cleanser"}/>
+                  cleanser
+              </label></div>
+              <div><label>
+                <input type="radio" name="prod-type" id="toningMist" value="toningMist"
+                  onChange={handleChangeProdType}
+                  checked={temp.prodTypeTemp === "toningMist"}/>
+                  toningMist
+              </label></div>
+              <div><label>
+                <input type="radio" name="prod-type" id="exfoliant" value="exfoliant"
+                  onChange={handleChangeProdType}
+                  checked={temp.prodTypeTemp === "exfoliant"}/>
+                  exfoliant
+              </label></div>
+              <div><label>
+                <input type="radio" name="prod-type" id="serum" value="serum"
+                  onChange={handleChangeProdType}
+                  checked={temp.prodTypeTemp === "serum"}/>
+                  serum
+              </label></div>
+              <div><label>
+                <input type="radio" name="prod-type" id="moisturiser" value="moisturiser"
+                  onChange={handleChangeProdType}
+                  checked={temp.prodTypeTemp === "moisturiser"}/>
+                  moisturiser
+              </label></div>
+              <div><label>
+                <input type="radio" name="prod-type" id="treatment" value="treatment"
+                  onChange={handleChangeProdType}
+                  checked={temp.prodTypeTemp === "treatment"}/>
+                  treatment
+              </label></div>
+          </div>
+         <input type="submit" value="Filter" onClick={ () =>  this.setState({showForm: false}) }/>
+      </form>
  )}
 
 
