@@ -40,7 +40,7 @@ class CatalogueList extends Component {
 
   }
 
-  /* HANDLE SIDE BAR SERACH */
+  /* Handle Side Bar Search Inside the Form */
   handleChangeSkinType = (event) =>  {
     const temp = {...this.state.temp}
     temp.skinTypeTemp = event.target.value
@@ -62,12 +62,22 @@ class CatalogueList extends Component {
     this.props.history.push(`/shop/skintype=${skinType}&prodtype=${prodType}`)
   }
 
-  // resetFilter = (type) => {
-  //   const temp = {...this.state.temp}
-  //   const skinType = "all"
-  //   temp.skinTypeTemp = "all"
-  //   this.setState({ skinType,temp })
-  // }
+/* Reset Filter when a Current filter is being closed (click on cross) */
+  resetFilter = (type) => {
+    const temp = { skinTypeTemp: "all", prodTypeTemp: "all" }
+
+    if (type === "skinType" ) {
+      const skinType = "all"
+      const prodType = this.state.prodType
+      this.setState({ skinType, prodType, temp })
+      this.props.history.push(`/shop/skintype=${skinType}&prodtype=${prodType}`)
+    } else {
+      const skinType = this.state.skinType
+      const prodType = "all"
+      this.setState({ skinType, prodType, temp })
+      this.props.history.push(`/shop/skintype=${skinType}&prodtype=${prodType}`)
+    }
+  }
 
 
   /* List Rendering */
