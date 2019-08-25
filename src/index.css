@@ -410,10 +410,6 @@ li.primary-nav-item:hover {
 
 /************** Catalogue/Shop Page **************/
 
-
-
-/* New filter */
-
 .current-filters h2 {
   text-transform: uppercase;
   font-family: "bebasNeue";
@@ -422,13 +418,28 @@ li.primary-nav-item:hover {
   margin-bottom: 10px;
 }
 
+/* Single Filter */
 .single-filter {
   display: inline-block;
   padding: 5px 20px;
+  padding-right: 10px;
   margin-right: 20px;
   box-shadow: inset 1px 0 0 0 #e5e5e5, inset -1px 0 0 0 #e5e5e5, inset 0 1px 0 0 #e5e5e5, inset 0 -1px 0 0 #e5e5e5;
 }
 
+.single-filter button {
+  border: 0;
+  margin-left: 20px;
+  font-size: 1em;
+  padding: 0;
+}
+
+.single-filter button:hover {
+  color: grey;
+  cursor: pointer;
+}
+
+/* Button to Add Filter */
 .show-form-button-container {
   position: absolute;
   right: 150px;
@@ -465,103 +476,145 @@ button.show-form:hover::before {
   transform: translate(0);
 }
 
-/* .form-radio div {
-  display: flex;
-  flex-direction: row;
-} */
 
-/* Filter */
-/* .current-filter h2 {
-  font-size: 1.2em;
-  margin-bottom: 10px;
+/* form Container */
+.sidebar-filter {
+  box-shadow: inset 1px 0 0 0 #e5e5e5, inset -1px 0 0 0 #e5e5e5, inset 0 1px 0 0 #e5e5e5, inset 0 -1px 0 0 #e5e5e5;
+  padding: 20px;
+  position: relative;
 }
 
-.filter {
-  width: 100px;
+.sidebar-filter h3, .sidebar-filter p {
+  text-transform: uppercase;
+}
+
+.sidebar-filter h3 {
+  margin-bottom: 20px;
   display: inline-block;
-  justify-content: space-between;
-  position: relative;
-  border: solid 1px #e5e5e5;
-  background: #F7F7F7;
-  margin-right: 10px;
-  padding: 10px;
-  margin-bottom: 10px;
 }
 
-.filter span {
-  text-transform: capitalize;
-}
 
-.filter a {
-  opacity: .5;
+.sidebar-filter span.close-form {
   position: absolute;
-  right: 10px;
-} */
-
-
-
-.sidebar-filter form {
-  display: flex;
-}
-
-form > * {
-margin-right: 30px;
-min-width: 200px;
-}
-
-form select {
-  width: 200px;
-  height: 30px;
-}
-label {
-  display: block;
-}
-
-/* select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  appearance: none;
-  outline: 0;
-  background: green;
-  background-image: none;
-  border:1px solid black;
-}
-.select {
-  position: relative;
-  display: block;
-  width: 20em;
-  height: 3em;
-  line-height: 3;
-  background: #2C3E50;
-  overflow: hidden;
-  border-radius: .25em;
-}
-select {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0 0 0 .5em;
-  color: #fff;
+  right: 20px;
   cursor: pointer;
 }
-select::-ms-expand {
-  display: none;
+
+.sidebar-filter span.close-form:hover {
+  color: grey;
 }
-.select::after {
-  content: '\25BC';
+
+.sidebar-filter .form-select {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.sidebar-filter p.form-subheading {
+  font-style: italic;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+
+/* START Radio Custom*/
+
+.sidebar-filter .radio-container {
+  position: relative;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-right: 20px;
+  padding-left: 25px;
+}
+
+.radio-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
   position: absolute;
   top: 0;
-  right: 0;
-  bottom: 0;
-  padding: 0 1em;
-  background: #34495E;
-  pointer-events: none;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  box-shadow: inset 1px 0 0 0 #e5e5e5, inset -1px 0 0 0 #e5e5e5, inset 0 1px 0 0 #e5e5e5, inset 0 -1px 0 0 #e5e5e5;
 }
-.select:hover::after {
-  color: #F39C12;
-} */
 
+/* On mouse-over, add a grey background color */
+.radio-container:hover input ~ .checkmark {
+  background-color: #fff;
+}
+
+/* When the radio button is checked, add a white bkrg */
+.radio-container input:checked ~ .checkmark {
+  background-color: #fff;
+}
+
+/* add a Tick when checked */
+.checkmark:after {
+  content: url("/images/black-tick.svg");
+  margin: auto;
+  position: absolute;
+  display: none;
+}
+
+/* Show the tick when checked */
+.radio-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the tick */
+.radio-container .checkmark:after {
+  top: calc(50% - 7.5px);
+  left: calc(50% - 7.5px);
+  height: 15px;
+  width: 15px;
+	border-radius: 50%;
+}
+
+.radio-container input:checked+label { 
+  font-weight: bold;
+}
+
+/* END Radio Custom*/
+
+button.form-submit{
+  box-shadow: inset 1px 0 0 0 #e5e5e5, inset -1px 0 0 0 #e5e5e5, inset 0 1px 0 0 #e5e5e5, inset 0 -1px 0 0 #e5e5e5;
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  /* margin: 15px 0; */
+  position: relative;
+  cursor: pointer;
+  transition: all .1s ease-out;
+}
+
+button.form-submit::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  border: none;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  transform: translate(10px, 10px);
+  transition: all .1s ease-out;
+  background: #FFD1F2;
+}
+
+button.form-submit:hover::before {
+  transform: translate(0);
+}
 
 /* List */
 

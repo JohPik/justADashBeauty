@@ -57,94 +57,80 @@ export default class CurrentFilter extends Component {
   displayForm = () => {
     const { temp, handleChangeSkinType, handleChangeProdType } = this.props
     return (
-      <form onSubmit={this.props.handleSubmit}>
-        <div className="form-select form-radio">
-         <p>Select a Skin Type:</p>
-             <div><label>
-                 <input type="radio" name="skin-type" id="all" value="all"
-                   onChange={handleChangeSkinType}
-                   checked={temp.skinTypeTemp === "all"}/>
-                 All
-              </label></div>
-             <div><label>
-               <input type="radio" name="skin-type" id="oily" value="oily"
-                 onChange={handleChangeSkinType}
-                 checked={temp.skinTypeTemp === "oily"}/>
-                 Oily
-              </label></div>
-             <div><label>
-               <input type="radio" name="skin-type" id="problematic" value="problematic"
-                 onChange={handleChangeSkinType}
-                 checked={temp.skinTypeTemp === "problematic"}/>
-                 Problematic
-              </label></div>
-             <div><label>
-               <input type="radio" name="skin-type" id="sensitive" value="sensitive"
-                 onChange={handleChangeSkinType}
-                 checked={temp.skinTypeTemp === "sensitive"}/>
-                 Sensitive
-              </label></div>
-             <div><label>
-               <input type="radio" name="skin-type" id="normal" value="normal"
-                 onChange={handleChangeSkinType}
-                 checked={temp.skinTypeTemp === "normal"}/>
-                 Normal
-              </label></div>
-             <div><label>
-                 <input type="radio" name="skin-type" id="dry" value="dry"
-                 onChange={handleChangeSkinType}
-                 checked={temp.skinTypeTemp === "dry"}/>
-                 Dry
-              </label></div>
-         </div>
+      // DONT TOUCH MOTHER FUCKER
 
-         <div className="form-select form-radio">
-          <p>Select a Product Type:</p>
-              <div><label>
-                <input type="radio" name="prod-type" id="all" value="all"
-                  onChange={handleChangeProdType}
-                  checked={temp.prodTypeTemp === "all"}/>
-                  all
-              </label></div>
-              <div><label>
-                <input type="radio" name="prod-type" id="cleanser" value="cleanser"
-                  onChange={handleChangeProdType}
-                  checked={temp.prodTypeTemp === "cleanser"}/>
-                  cleanser
-              </label></div>
-              <div><label>
-                <input type="radio" name="prod-type" id="toningMist" value="toningMist"
-                  onChange={handleChangeProdType}
-                  checked={temp.prodTypeTemp === "toningMist"}/>
-                  toningMist
-              </label></div>
-              <div><label>
-                <input type="radio" name="prod-type" id="exfoliant" value="exfoliant"
-                  onChange={handleChangeProdType}
-                  checked={temp.prodTypeTemp === "exfoliant"}/>
-                  exfoliant
-              </label></div>
-              <div><label>
-                <input type="radio" name="prod-type" id="serum" value="serum"
-                  onChange={handleChangeProdType}
-                  checked={temp.prodTypeTemp === "serum"}/>
-                  serum
-              </label></div>
-              <div><label>
-                <input type="radio" name="prod-type" id="moisturiser" value="moisturiser"
-                  onChange={handleChangeProdType}
-                  checked={temp.prodTypeTemp === "moisturiser"}/>
-                  moisturiser
-              </label></div>
-              <div><label>
-                <input type="radio" name="prod-type" id="treatment" value="treatment"
-                  onChange={handleChangeProdType}
-                  checked={temp.prodTypeTemp === "treatment"}/>
-                  treatment
-              </label></div>
-          </div>
-         <input type="submit" value="Filter" onClick={ () =>  this.setState({showForm: false}) }/>
-      </form>
+      // ORIGINAL FORM
+
+      <Fragment>
+        <h3>Filter Products</h3>
+        <span className="close-form" onClick={ () => this.setState({ showForm: false}) }>x</span>
+        <form onSubmit={this.props.handleSubmit}>
+
+          <div className="form-select form-radio">
+           <p className="form-subheading">Skin Type</p>
+               <label className="radio-container">All
+                <input type="radio" name="skin-type" id="all" value="all" onChange={handleChangeSkinType} checked={temp.skinTypeTemp === "all"}/>
+                <span className="checkmark"></span>
+               </label>
+               <label className="radio-container">Oily
+                  <input type="radio" name="skin-type" id="oily" value="oily" onChange={handleChangeSkinType} checked={temp.skinTypeTemp === "oily"}/>
+                  <span className="checkmark"></span>
+               </label>
+               <label className="radio-container">Problematic
+                 <input type="radio" name="skin-type" id="problematic" value="problematic" onChange={handleChangeSkinType} checked={temp.skinTypeTemp === "problematic"}/>
+                <span className="checkmark"></span>
+               </label>
+               <label className="radio-container">Sensitive
+                <input type="radio" name="skin-type" id="sensitive" value="sensitive" onChange={handleChangeSkinType} checked={temp.skinTypeTemp === "sensitive"}/>
+                <span className="checkmark"></span>
+               </label>
+               <label className="radio-container">Normal
+                  <input type="radio" name="skin-type" id="normal" value="normal" onChange={handleChangeSkinType} checked={temp.skinTypeTemp === "normal"}/>
+                  <span className="checkmark"></span>
+               </label>
+               <label className="radio-container">Dry
+                 <input type="radio" name="skin-type" id="dry" value="dry" onChange={handleChangeSkinType} checked={temp.skinTypeTemp === "dry"}/>
+                <span className="checkmark"></span>
+               </label>
+           </div>
+
+           <div className="form-select form-radio">
+            <p className="form-subheading">Skin Type</p>
+                <label className="radio-container">All
+                  <input type="radio" name="prod-type" id="all" value="all" onChange={handleChangeProdType} checked={temp.prodTypeTemp === "all"}/>
+                  <span className="checkmark"></span>
+                </label>
+                <label className="radio-container">Cleanser
+                  <input type="radio" name="prod-type" id="cleanser" value="cleanser" onChange={handleChangeProdType} checked={temp.prodTypeTemp === "cleanser"}/>
+                <span className="checkmark"></span>
+                </label>
+                <label className="radio-container">Toning Mist
+                  <input type="radio" name="prod-type" id="toningMist" value="toningMist" onChange={handleChangeProdType} checked={temp.prodTypeTemp === "toningMist"}/>
+                <span className="checkmark"></span>
+                </label>
+                <label className="radio-container">Exfoliant
+                  <input type="radio" name="prod-type" id="exfoliant" value="exfoliant" onChange={handleChangeProdType} checked={temp.prodTypeTemp === "exfoliant"}/>
+                <span className="checkmark"></span>
+                </label>
+                <label className="radio-container">Serum
+                  <input type="radio" name="prod-type" id="serum" value="serum" onChange={handleChangeProdType} checked={temp.prodTypeTemp === "serum"}/>
+                <span className="checkmark"></span>
+                </label>
+                <label className="radio-container">Moisturiser
+                  <input type="radio" name="prod-type" id="moisturiser" value="moisturiser" onChange={handleChangeProdType} checked={temp.prodTypeTemp === "moisturiser"}/>
+                <span className="checkmark"></span>
+                </label>
+                <label className="radio-container">Treatment
+                  <input type="radio" name="prod-type" id="treatment" value="treatment" onChange={handleChangeProdType} checked={temp.prodTypeTemp === "treatment"}/>
+                <span className="checkmark"></span>
+                </label>
+            </div>
+
+            <div className="form-submit-container">
+              <button className="form-submit"  type="submit" onClick={ () =>  this.setState({showForm: false}) }><span>Filter</span></button>
+            </div>
+        </form>
+      </Fragment>
  )}
 
 
