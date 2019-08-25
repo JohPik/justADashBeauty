@@ -105,7 +105,7 @@ export default class CurrentFilter extends Component {
                 <span className="checkmark"></span>
                 </label>
                 <label className="radio-container">Toning Mist
-                  <input type="radio" name="prod-type" id="toningMist" value="toningMist" onChange={handleChangeProdType} checked={temp.prodTypeTemp === "toningMist"}/>
+                  <input type="radio" name="prod-type" id="toning mist" value="toning mist" onChange={handleChangeProdType} checked={temp.prodTypeTemp === "toning mist"}/>
                 <span className="checkmark"></span>
                 </label>
                 <label className="radio-container">Exfoliant

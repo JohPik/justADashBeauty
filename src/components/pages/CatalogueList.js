@@ -110,7 +110,6 @@ class CatalogueList extends Component {
             resetFilter={this.resetFilter}
             />
         </section>
-        <hr/>
         <section className="shop-list">
           {this.renderList(this.props.value)}
           <i aria-hidden="true"></i>

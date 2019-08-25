@@ -28,7 +28,7 @@ export const productList = [
     url: 'allUnderControl',
     subName: 'Toning Mist',
     skinType: ['oily','problematic'],
-    productType: ['toningMist'],
+    productType: ['toning mist'],
     description:
     'Just a few spritzes of the All Under Control Toning Mist and your skin will instantly benefit from its amazing anti-inflammatory and hydrating properties. You can spritz this all over you face during the day for a quick refreshing pick me up.',
     loveList: [
@@ -148,7 +148,7 @@ export const productList = [
     url: 'quickFix',
     subName: 'Toning Mist',
     skinType: ['sensitive'],
-    productType: ['toningMist'],
+    productType: ['toning mist'],
     description:
     "Just a spray of the Quick Fix Toning Mist after the using our cleanser and throughout the day will deliver an immediate much needed moisture boost to you skin and prevent any tightness and itchiness. This natural toner will soothe and refresh even the most sensitive skin type while keeping it hydrated.",
     loveList: [
@@ -221,7 +221,7 @@ export const productList = [
     url: 'berryFresh',
     subName: 'Toning Mist',
     skinType: ['dry', 'normal'],
-    productType: ['toningMist'],
+    productType: ['toning mist'],
     description:
     "Your skin will literally celebrate after every use of our Berry Fresh Toning Mist. This zesty toner contains three different superfoods rich in anti-oxidants, vitamins and nutrients to feed, protect and refresh your skin!",
     loveList: [
@@ -442,7 +442,7 @@ export const skinTypes = [
 
 export const prodTypes = [
   "cleanser",
-  "toningMist",
+  "toning mist",
   "exfoliant",
   "serum",
   "moisturiser",

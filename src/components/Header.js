@@ -41,7 +41,7 @@ const Header = () => {
                             <div className="dropdown-col-2">
                               <span>Product Type</span>
                               <Link to="/shop/skintype=all&prodtype=cleanser">Cleanser</Link>
-                              <Link to="/shop/skintype=all&prodtype=toningMist">Toning Mist</Link>
+                              <Link to="/shop/skintype=all&prodtype=toning mist">Toning Mist</Link>
                               <Link to="/shop/skintype=all&prodtype=exfoliant">Exfoliant</Link>
                               <Link to="/shop/skintype=all&prodtype=serum">Serum</Link>
                               <Link to="/shop/skintype=all&prodtype=moisturiser">Moisturiser</Link>
