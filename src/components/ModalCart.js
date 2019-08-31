@@ -23,11 +23,11 @@ render() {
               </div>
 
                 <div className="modal-button-section">
-                  <button onClick={()=> value.closeModal()}>
+                  <button className="keep-shopping" onClick={()=> value.closeModal()}>
                     Keep Shopping
                   </button>
 
-                  <button onClick={()=> value.closeModal()}>
+                  <button className="go-to-cart" onClick={()=> value.closeModal()}>
                     <Link to="/cart">
                     Go to Cart
                     </Link>
