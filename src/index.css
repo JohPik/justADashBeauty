@@ -1058,3 +1058,313 @@ button.qty-slct:hover {
 .modal-button-section button:hover {
   background-color: #e5e5e5;
 }
+
+
+/************** CART **************/
+
+/* Delivery Container */
+
+.delivery-container {
+  background: #F7F7F7;
+  padding: 20px;
+  font-size: .8em;
+  margin-bottom: 20px;
+}
+
+.delivery-container p {
+  text-transform: uppercase;
+  font-family: "bebasNeue";
+  font-weight: normal;
+  font-size: 1.4em;
+  margin-bottom: 5px;
+  color: #FF01B8;
+}
+
+/* Main Section */
+
+.main-cart-container {
+  display: flex;
+}
+
+.current-cart-container {
+  width: 65%;
+  margin-right: 20px;
+}
+
+.cart-sidebar {
+  width: 35%;
+}
+
+/* Sidebar */
+.summary-container {
+  padding: 20px;
+  background: #363636;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.summary-container h2, .summary-container p {
+  text-transform: uppercase;
+  font-family: "bebasNeue";
+  font-weight: normal;
+}
+
+.summary-container h2 {
+  font-size: 1.6em;
+}
+
+.summary-container p {
+  margin-top: 20px;
+  font-size: 1.2em;
+  position: relative;
+}
+
+.summary-container p span {
+  margin-top: 20px;
+  position: absolute;
+  right: 0;
+  top: -20px;
+}
+
+span.spend-more-shipping {
+  color: #FF01B8;
+  font-size: .8em;
+}
+
+.summary-container .summary-total {
+  font-size: 1.6em;
+  margin-bottom: 20px;
+}
+
+.summary-container .paypal-button {
+  box-shadow: inset 1px 0 0 0 #e5e5e5, inset -1px 0 0 0 #e5e5e5, inset 0 1px 0 0 #e5e5e5, inset 0 -1px 0 0 #e5e5e5;
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  transition: all .1s ease-out;
+  width: 100%;
+}
+
+.help-container {
+  box-shadow: inset 1px 0 0 0 #e5e5e5, inset -1px 0 0 0 #e5e5e5, inset 0 1px 0 0 #e5e5e5, inset 0 -1px 0 0 #e5e5e5;
+}
+
+.help-container h2 {
+  box-shadow: inset 1px 0 0 0 #e5e5e5, inset -1px 0 0 0 #e5e5e5, inset 0 1px 0 0 #e5e5e5;
+  background: #F7F7F7;
+  padding: 20px;
+  text-transform: uppercase;
+  font-family: "bebasNeue";
+  font-weight: normal;
+}
+
+.help-container .help-links {
+  padding: 10px;
+}
+
+.help-container a {
+  display: block;
+  padding: 5px 10px;
+  font-size: .8em;
+}
+
+.help-container a:hover {
+  text-decoration: line-through;
+}
+
+
+
+/* Container List */
+
+.current-cart-container {
+  box-shadow: inset 1px 0 0 0 #e5e5e5, inset -1px 0 0 0 #e5e5e5, inset 0 1px 0 0 #e5e5e5, inset 0 -1px 0 0 #e5e5e5;
+  height: fit-content;
+}
+
+.empty-cart {
+  padding: 20px;
+  font-size: .8em;
+}
+
+.empty-cart a {
+  color: #FF01B8;
+  font-weight: bold;
+}
+
+
+.current-cart-container h2 {
+  box-shadow: inset 1px 0 0 0 #e5e5e5, inset -1px 0 0 0 #e5e5e5, inset 0 1px 0 0 #e5e5e5;
+  background: #F7F7F7;
+  padding: 20px;
+  text-transform: uppercase;
+  font-family: "bebasNeue";
+  font-weight: normal;
+}
+
+.cart-content {
+  padding: 0 20px;
+  justify-content: space-between;
+}
+
+.cart-content-single {
+  display: flex;
+  box-shadow: inset 0 -1px 0 0 #e5e5e5;
+  margin: 20px 0;
+  padding-bottom: 10px;
+}
+
+.cart-content-single  img {
+  width: 150px;
+  margin-right: 20px;
+}
+
+.cart-content-single .align-right {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+
+/*
+<p className="summary-subtotal">Subtotal <span>A$ {total}</span></p>
+{ total < 100 ? (
+  <Fragment>
+    <p className="summary-shipping">Shipping Costs <span>A$ 20.00</span></p>
+    <span className="spend-more-shipping">Spend A$ { 100 - total } more and get free shipping</span>
+  </Fragment>
+) : (
+  <p className="summary-shipping">ShippingCosts <span>A$ 0.00</span></p>
+)}
+<p className="summary-total">Total <span>A$ {total}</span></p>
+<button className="paypal-button">Checkout with Paypal</button>
+
+
+*/
+
+
+
+
+
+
+/*
+
+Single List Item
+.cart .cart-content-single {
+  display: flex;
+  align-items:center;
+  overflow: hidden;
+}
+
+img
+.cart .img-container {
+  width: 150px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-right: 25px;
+}
+
+.cart .cart-content-single img {
+  max-width: 150px;
+  transition: all .2s ease-out;
+}
+
+.cart .cart-content-single .img-container:hover img {
+  transform: scale(1.2) rotate(10deg);
+}
+
+prodInfo
+
+.cart .cart-content-single .prod-info-container h3 {
+  font-family: "selima";
+  margin-bottom: 5px;
+  font-size: 2em;
+  font-weight: 400;
+  transition: all .2s ease-out;
+}
+
+.cart .cart-content-single .prod-info-container h3:hover {
+  transform: skew(-15deg, 0deg);
+}
+
+.cart .cart-content-single .prod-info-container h4 {
+  text-transform: uppercase;
+  font-family: "bebasNeue";
+  font-weight: normal;
+  font-size: 1.3em;
+  margin-bottom: 10px;
+}
+
+.cart .cart-content-single .prod-info-container p {
+  font-weight: bold;
+}
+
+.cart .cart-content-single .prod-info-container span {
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: .8em;
+}
+ */
+
+
+
+
+/*
+.shop-list .product-container .img-container {
+  width: 230px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.shop-list i {
+  width: 230px;
+  margin: 5px;
+}
+
+.shop-list .product-container img {
+  max-width: 230px;
+  transition: all .2s ease-out;
+}
+
+.shop-list .product-container .img-container:hover img {
+  transform: scale(1.2) rotate(10deg);
+}
+
+.shop-list .product-container h3 {
+  font-family: "selima";
+  margin: 10px 0 5px 0;
+  font-size: 1.8em;
+  font-weight: 400;
+  transition: all .2s ease-out;
+}
+
+.shop-list .product-container h3:hover {
+  transform: skew(-15deg, 0deg);
+}
+
+.shop-list .product-container h4 {
+  text-transform: uppercase;
+  font-family: "bebasNeue";
+  font-weight: normal;
+  font-size: 1.3em;
+  display: inline;
+}
+
+.product-container span {
+    background: #AAFFE5;
+    padding: 2px;
+    font-size: .8em;
+    position: absolute;
+    right: 0;
+    font-weight: bold;
+}
+
+*/
