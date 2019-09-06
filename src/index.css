@@ -744,6 +744,7 @@ button.form-submit:hover::before {
 
 .bold {
   font-weight: bold;
+  text-transform: capitalize;
 }
 
 .prod-page-price {
