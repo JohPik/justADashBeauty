@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const Cart = () => {
 
 
-  const currentCart = (cart) => {
+  const currentCart = (cart, editProdQty, deleteProd ) => {
     return (
       <div className="current-cart-container">
         <h2>Your Cart</h2>
@@ -13,7 +13,7 @@ const Cart = () => {
           <p className="empty-cart">Your Cart is empty time to do some <Link to="shop/skintype=all&prodtype=all">Shopping</Link></p>
           ) : (
           <div className="cart-content">
-            {cart.map(product => {
+            {cart.map( (product, index) => {
               return(
                 <div key={product.id} className="cart-content-single">
 
@@ -26,7 +26,7 @@ const Cart = () => {
                     <h4>{product.subName}</h4>
                       <div className="prod-qty-container">
                         <p>Quantity</p>
-                        <button className="qty-slct">+</button>
+                        <button className="qty-slct" onClick={ () => editProdQty(index, product.id)}>+</button>
                           {product.count}
                         <button className="qty-slct">-</button>
                        </div>
@@ -34,7 +34,7 @@ const Cart = () => {
 
                   <div className="align-right">
                     <p>AU$ {product.total}</p>
-                    <button>DELETE</button>
+                    <button onClick={ () => deleteProd(index) } >DELETE</button>
                   </div>
 
                 </div>
@@ -79,7 +79,7 @@ const Cart = () => {
   }
 
   const renderCart = (value) => {
-     const { cart } = value
+     const { cart, editProdQty, deleteProd } = value
      // Array of Prices in cart
      let priceArray = cart.map( product => product.total )
      // Sum up each Price into total price
@@ -87,7 +87,7 @@ const Cart = () => {
 
      return (
       <Fragment>
-        { currentCart(cart) }
+        { currentCart(cart, editProdQty, deleteProd ) }
         <div className="cart-sidebar">
           { summary(total) }
           { help() }

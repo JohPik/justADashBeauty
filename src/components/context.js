@@ -91,6 +91,21 @@ class ProdProvider extends  Component {
   }
 
 
+/*cart Management For Cart Section */
+
+  // Need to edit this Part
+  editProdQty = (index, id) => {
+    console.log("the Index : ", index)
+    console.log("the id : ", id)
+    let curentCart
+  }
+
+  deleteProd = (index) => {
+    let cart = this.state.cart
+    cart.splice(index, 1)
+    this.setState({ cart })
+  }
+
 /***!!! Modal Management !!!***/
   openModal = () => {
   const cartContainer = document.querySelector(".cart-container")
@@ -110,7 +125,9 @@ class ProdProvider extends  Component {
           addToCart: this.addToCart,
           getItem: this.getItem,
           openModal: this.openModal,
-          closeModal: this.closeModal
+          closeModal: this.closeModal,
+          editProdQty: this.editProdQty,
+          deleteProd: this.deleteProd
           }}>
         {this.props.children}
       </ProductContext.Provider>
