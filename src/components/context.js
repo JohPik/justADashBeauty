@@ -100,10 +100,25 @@ class ProdProvider extends  Component {
     let curentCart
   }
 
-  deleteProd = (index) => {
-    let cart = this.state.cart
-    cart.splice(index, 1)
-    this.setState({ cart })
+  deleteProd = (index, id) => {
+
+    //delet prod from cart
+    let newCart = this.state.cart
+    newCart.splice(index, 1)
+
+    // this.setState({ cart: newCart })
+
+    //making sure prod in prod list is not in cart either
+    let tempProducts = [ ...this.state.productList ]
+    const prodIndex = tempProducts.indexOf(this.getItem(id))
+    const product = tempProducts[prodIndex]
+    product.inCart = false
+    product.count = 0
+    product.total = product.price
+
+    // need to Remove Cookie HERE !!!!
+    this.setState({ productList: tempProducts, cart: newCart })
+
   }
 
 /***!!! Modal Management !!!***/

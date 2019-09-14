@@ -34,7 +34,7 @@ const Cart = () => {
 
                   <div className="align-right">
                     <p>AU$ {product.total}</p>
-                    <button onClick={ () => deleteProd(index) } >DELETE</button>
+                    <button onClick={ () => deleteProd(index, product.id) } >DELETE</button>
                   </div>
 
                 </div>
@@ -108,7 +108,6 @@ const Cart = () => {
       <section className="main-cart-container">
         <ProductConsumer>
           {(value) => {
-          console.log(value)
           return renderCart(value)
           }}
         </ProductConsumer>
