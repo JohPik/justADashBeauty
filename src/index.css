@@ -775,6 +775,15 @@ button.qty-slct:hover {
   background-color: #f2f2f2;
 }
 
+button.qty-slct:disabled {
+  opacity: .5;
+  cursor: default;
+}
+
+button.qty-slct:disabled:hover {
+  background-color: inherit;
+}
+
 .add-to-cart {
   box-shadow: inset 1px 0 0 0 #e5e5e5, inset -1px 0 0 0 #e5e5e5, inset 0 1px 0 0 #e5e5e5, inset 0 -1px 0 0 #e5e5e5;
   padding: 20px 30px;
@@ -1216,7 +1225,7 @@ span.spend-more-shipping {
   padding-bottom: 10px;
 }
 
-.cart-content-single  img {
+.cart-content-single img {
   width: 150px;
   margin-right: 20px;
 }
@@ -1225,147 +1234,3 @@ span.spend-more-shipping {
   margin-left: auto;
   margin-right: 0;
 }
-
-
-/*
-<p className="summary-subtotal">Subtotal <span>A$ {total}</span></p>
-{ total < 100 ? (
-  <Fragment>
-    <p className="summary-shipping">Shipping Costs <span>A$ 20.00</span></p>
-    <span className="spend-more-shipping">Spend A$ { 100 - total } more and get free shipping</span>
-  </Fragment>
-) : (
-  <p className="summary-shipping">ShippingCosts <span>A$ 0.00</span></p>
-)}
-<p className="summary-total">Total <span>A$ {total}</span></p>
-<button className="paypal-button">Checkout with Paypal</button>
-
-
-*/
-
-
-
-
-
-
-/*
-
-Single List Item
-.cart .cart-content-single {
-  display: flex;
-  align-items:center;
-  overflow: hidden;
-}
-
-img
-.cart .img-container {
-  width: 150px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  margin-right: 25px;
-}
-
-.cart .cart-content-single img {
-  max-width: 150px;
-  transition: all .2s ease-out;
-}
-
-.cart .cart-content-single .img-container:hover img {
-  transform: scale(1.2) rotate(10deg);
-}
-
-prodInfo
-
-.cart .cart-content-single .prod-info-container h3 {
-  font-family: "selima";
-  margin-bottom: 5px;
-  font-size: 2em;
-  font-weight: 400;
-  transition: all .2s ease-out;
-}
-
-.cart .cart-content-single .prod-info-container h3:hover {
-  transform: skew(-15deg, 0deg);
-}
-
-.cart .cart-content-single .prod-info-container h4 {
-  text-transform: uppercase;
-  font-family: "bebasNeue";
-  font-weight: normal;
-  font-size: 1.3em;
-  margin-bottom: 10px;
-}
-
-.cart .cart-content-single .prod-info-container p {
-  font-weight: bold;
-}
-
-.cart .cart-content-single .prod-info-container span {
-  text-transform: uppercase;
-  font-weight: normal;
-  font-size: .8em;
-}
- */
-
-
-
-
-/*
-.shop-list .product-container .img-container {
-  width: 230px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-.shop-list i {
-  width: 230px;
-  margin: 5px;
-}
-
-.shop-list .product-container img {
-  max-width: 230px;
-  transition: all .2s ease-out;
-}
-
-.shop-list .product-container .img-container:hover img {
-  transform: scale(1.2) rotate(10deg);
-}
-
-.shop-list .product-container h3 {
-  font-family: "selima";
-  margin: 10px 0 5px 0;
-  font-size: 1.8em;
-  font-weight: 400;
-  transition: all .2s ease-out;
-}
-
-.shop-list .product-container h3:hover {
-  transform: skew(-15deg, 0deg);
-}
-
-.shop-list .product-container h4 {
-  text-transform: uppercase;
-  font-family: "bebasNeue";
-  font-weight: normal;
-  font-size: 1.3em;
-  display: inline;
-}
-
-.product-container span {
-    background: #AAFFE5;
-    padding: 2px;
-    font-size: .8em;
-    position: absolute;
-    right: 0;
-    font-weight: bold;
-}
-
-*/
