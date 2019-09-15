@@ -30,7 +30,7 @@ class ProdProvider extends  Component {
     this.setState({ productList: tempProducts })
   }
 
-  /***!!! Cart Management !!!***/
+  /***!!! Cart Management in Catalogue !!!***/
   addToCart = (id, qty) => {
     let tempProducts = [ ...this.state.productList ]
     const index = tempProducts.indexOf(this.getItem(id))
@@ -90,24 +90,58 @@ class ProdProvider extends  Component {
     return product
   }
 
+  /***!!! Edit Items in Cart Element !!!***/
+  incrementProdInCart = (index, id) => {
+    //Increment prod qty in Cart
+    let cart = this.state.cart
+    let productCart = cart[index]
+    productCart.count++
+    productCart.total = productCart.price * productCart.count
+    cart.splice(index, 1, productCart)
 
-/* cart Management For Cart Section */
+    //Increment prod qty in Prod List
+    let productList = this.state.productList
+    const prodIndex = productList.indexOf(this.getItem(id))
+    productList.splice(prodIndex, 1, productCart)
+    //updateCookieList
+    const cartCookieList = [ ...this.state.cartCookieList ]
+    cartCookieList[index].qty++
 
-  // Need to edit this Part
-  editProdQty = (index, id) => {
-    console.log("the Index : ", index)
-    console.log("the id : ", id)
-    // let curentCart
+    this.setState( () => {
+    return {  cart, productList, cartCookieList }
+    }, () => this.editCartCookie())
   }
 
+  /***!!! Edit Items in Cart Element !!!***/
+  decrementProdInCart = (index, id) => {
+    //Increment prod qty in Cart
+    let cart = this.state.cart
+    let productCart = cart[index]
+    productCart.count--
+    productCart.total = productCart.price * productCart.count
+    cart.splice(index, 1, productCart)
+
+    //Increment prod qty in Prod List
+    let productList = this.state.productList
+    const prodIndex = productList.indexOf(this.getItem(id))
+    productList.splice(prodIndex, 1, productCart)
+    //updateCookieList
+    const cartCookieList = [ ...this.state.cartCookieList ]
+    cartCookieList[index].qty--
+
+    this.setState( () => {
+    return {  cart, productList, cartCookieList }
+    }, () => this.editCartCookie())
+  }
+
+
   // Delete Product from Cart, from cookies and restore default setting to productList
-  deleteProd = (index, id) => {
-
+  deleteProdInCart = (index, id) => {
     //delete prod from cart
-    let newCart = this.state.cart
-    newCart.splice(index, 1)
+    let cart = this.state.cart
+    cart.splice(index, 1)
 
-    //making sure prod in prod list is not in cart either
+    //restore product to default in product List
     let tempProducts = [ ...this.state.productList ]
     const prodIndex = tempProducts.indexOf(this.getItem(id))
     const product = tempProducts[prodIndex]
@@ -120,10 +154,11 @@ class ProdProvider extends  Component {
     cookieList.splice(index, 1)
 
     this.setState( () => {
-    return {  productList: tempProducts, cart: newCart, cartCookieList: cookieList }
+    return {  productList: tempProducts, cart, cartCookieList: cookieList }
     }, () => this.editCartCookie())
 
   }
+
 
 /***!!! Modal Management !!!***/
   openModal = () => {
@@ -143,11 +178,11 @@ class ProdProvider extends  Component {
       <ProductContext.Provider value={{
           ...this.state,
           addToCart: this.addToCart,
-          getItem: this.getItem,
           openModal: this.openModal,
           closeModal: this.closeModal,
-          editProdQty: this.editProdQty,
-          deleteProd: this.deleteProd
+          incrementProdInCart: this.incrementProdInCart,
+          decrementProdInCart: this.decrementProdInCart,
+          deleteProdInCart: this.deleteProdInCart
           }}>
         {this.props.children}
       </ProductContext.Provider>

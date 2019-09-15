@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const Cart = () => {
 
 
-  const currentCart = (cart, editProdQty, deleteProd ) => {
+  const currentCart = (cart, incrementProdInCart, decrementProdInCart, deleteProdInCart ) => {
     return (
       <div className="current-cart-container">
         <h2>Your Cart</h2>
@@ -26,15 +26,15 @@ const Cart = () => {
                     <h4>{product.subName}</h4>
                       <div className="prod-qty-container">
                         <p>Quantity</p>
-                        <button className="qty-slct" onClick={ () => editProdQty(index, product.id)}>+</button>
-                          {product.count}
-                        <button className="qty-slct">-</button>
+                        <button className="qty-slct" disabled={ product.count < 2 } onClick={ () => decrementProdInCart(index, product.id) }>-</button>
+                        {product.count}
+                        <button className="qty-slct" onClick={ () => incrementProdInCart(index, product.id) }>+</button>
                        </div>
                   </div>
 
                   <div className="align-right">
                     <p>AU$ {product.total}</p>
-                    <button onClick={ () => deleteProd(index, product.id) } >DELETE</button>
+                    <button onClick={ () => deleteProdInCart(index, product.id) } >DELETE</button>
                   </div>
 
                 </div>
@@ -79,7 +79,7 @@ const Cart = () => {
   }
 
   const renderCart = (value) => {
-     const { cart, editProdQty, deleteProd } = value
+     const { cart, incrementProdInCart, decrementProdInCart, deleteProdInCart } = value
      // Array of Prices in cart
      let priceArray = cart.map( product => product.total )
      // Sum up each Price into total price
@@ -87,7 +87,7 @@ const Cart = () => {
 
      return (
       <Fragment>
-        { currentCart(cart, editProdQty, deleteProd ) }
+        { currentCart(cart, incrementProdInCart, decrementProdInCart, deleteProdInCart ) }
         <div className="cart-sidebar">
           { summary(total) }
           { help() }

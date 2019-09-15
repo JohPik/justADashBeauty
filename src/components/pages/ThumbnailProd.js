@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom'
 class ThumbnailProd extends Component {
 
   render(){
-    console.log("list props", this.props);
     const { id, name, subName, url, img, inCart } = this.props.prod
     return (
       <div key={id} className="product-container">
