@@ -91,22 +91,21 @@ class ProdProvider extends  Component {
   }
 
 
-/*cart Management For Cart Section */
+/* cart Management For Cart Section */
 
   // Need to edit this Part
   editProdQty = (index, id) => {
     console.log("the Index : ", index)
     console.log("the id : ", id)
-    let curentCart
+    // let curentCart
   }
 
+  // Delete Product from Cart, from cookies and restore default setting to productList
   deleteProd = (index, id) => {
 
-    //delet prod from cart
+    //delete prod from cart
     let newCart = this.state.cart
     newCart.splice(index, 1)
-
-    // this.setState({ cart: newCart })
 
     //making sure prod in prod list is not in cart either
     let tempProducts = [ ...this.state.productList ]
@@ -116,8 +115,13 @@ class ProdProvider extends  Component {
     product.count = 0
     product.total = product.price
 
-    // need to Remove Cookie HERE !!!!
-    this.setState({ productList: tempProducts, cart: newCart })
+    //clear product item in cookie list
+    let cookieList = this.state.cartCookieList
+    cookieList.splice(index, 1)
+
+    this.setState( () => {
+    return {  productList: tempProducts, cart: newCart, cartCookieList: cookieList }
+    }, () => this.addToCookies())
 
   }
 
@@ -134,6 +138,7 @@ class ProdProvider extends  Component {
 
 /***!!! Rendering !!!***/
   render(){
+    console.log("State Please", this.state);
     return (
       <ProductContext.Provider value={{
           ...this.state,
