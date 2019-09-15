@@ -40,15 +40,15 @@ class ProdProvider extends  Component {
     product.total = product.price * qty
     //ORIGINAL DONT DELETE
     // this.setState({ productList: tempProducts, cart: [ ...this.state.cart, product ], cartCookieList: [ ...this.state.cartCookieList, id ] })
-    // this.addToCookies(id)
+    // this.editCartCookie(id)
 
     this.setState( () => {
     return {  productList: tempProducts, cart: [ ...this.state.cart, product ], cartCookieList: [ ...this.state.cartCookieList, {id: id, qty: qty} ] }
-    }, () => this.addToCookies())
+    }, () => this.editCartCookie())
 
     // this.setState( () => {
     // return {  productList: tempProducts, cart: [ ...this.state.cart, product ] }
-    // }, () => this.addToCookies())
+    // }, () => this.editCartCookie())
     // console.log(this.state);
     // this.setState( () => {
     // return {  productList: tempProducts, cart: [ ...this.state.cart, product ] }
@@ -61,7 +61,7 @@ class ProdProvider extends  Component {
   }
 
   /***!!! Cookies Management !!!***/
-  addToCookies = () => {
+  editCartCookie = () => {
     const { cookies } = this.props
     cookies.set('cart', this.state.cartCookieList, { path: '/' } )
   }
@@ -121,7 +121,7 @@ class ProdProvider extends  Component {
 
     this.setState( () => {
     return {  productList: tempProducts, cart: newCart, cartCookieList: cookieList }
-    }, () => this.addToCookies())
+    }, () => this.editCartCookie())
 
   }
 
