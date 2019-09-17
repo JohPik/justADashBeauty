@@ -71,9 +71,9 @@ class Detail extends Component {
                     { inCart ? null :
                       <div className="prod-qty-section">
                         Qty:
-                        <button className="qty-slct" onClick={() => this.setState({ qty: qty + 1 }) }>+</button>
+                        <button className="qty-slct" disabled={ qty < 2 } onClick={ () => this.setState({ qty: this.state.qty - 1 }) }>-</button>
                           { qty }
-                        <button className="qty-slct" onClick={() => this.state.qty === 1 ? null : this.setState({ qty: this.state.qty - 1 }) }>-</button>
+                        <button className="qty-slct" onClick={() => this.setState({ qty: qty + 1 }) }>+</button>
                       </div>
                     }
                     <button className={`add-to-cart ${url}`} disabled={inCart} onClick={ () => { addToCart(id, qty); openModal() } }>
