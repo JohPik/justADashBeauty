@@ -14,6 +14,35 @@ class Recommendation extends PureComponent {
       return a.slice(0, 3)
   }
 
+  /***!!! Smooth Scrolling !!!***/
+  smoothScrolling = (el, duration) => {
+    let target = document.querySelector(el)
+    let targetPostion = target.getBoundingClientRect().top
+    const startPosition = window.pageYOffset
+    const distance = targetPostion - startPosition
+    let startTime = null
+
+    const animation = (currentTime) => {
+      if (startTime === null) startTime = currentTime
+      const timeElpased = currentTime -startTime
+      const run = ease(timeElpased, startPosition, distance, duration )
+      window.scrollTo(0,run)
+      if (timeElpased < duration) {
+        window.requestAnimationFrame(animation)
+      }
+    }
+
+    const ease = (t, b, c, d) => {
+    	t /= d
+    	return -c * t*(t-2) + b
+    }
+
+    window.requestAnimationFrame(animation)
+
+  }
+
+
+
   render(){
     const { currentProduct } = this.props
 
@@ -29,7 +58,8 @@ class Recommendation extends PureComponent {
                 return (
                   <div key={prod.id} className="product-container">
                     <Link to={`/shop/product-detail/${prod.url}`}>
-                      <div className="img-container">
+                      <div className="img-container"
+                           onClick={ () => this.smoothScrolling('.main', 1000) } >
                         <img src={prod.img} alt={prod.name} className="image-thumbnail"/>
                       </div>
                     </Link>
