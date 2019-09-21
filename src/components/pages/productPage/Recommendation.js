@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 
 import { Link } from 'react-router-dom'
 
-import { productList } from '../../ressources/ProductList'
+import { productList } from '../../../ressources/ProductList'
 
 class Recommendation extends PureComponent {
 
