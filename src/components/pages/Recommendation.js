@@ -23,8 +23,8 @@ class Recommendation extends PureComponent {
     let startTime = null
 
     const animation = (currentTime) => {
-      if (startTime === null) startTime = currentTime
-      const timeElpased = currentTime -startTime
+      if (startTime === null) { startTime = currentTime }
+      const timeElpased = currentTime - startTime
       const run = ease(timeElpased, startPosition, distance, duration )
       window.scrollTo(0,run)
       if (timeElpased < duration) {
@@ -32,6 +32,7 @@ class Recommendation extends PureComponent {
       }
     }
 
+    // from http://www.gizma.com/easing/
     const ease = (t, b, c, d) => {
     	t /= d
     	return -c * t*(t-2) + b
