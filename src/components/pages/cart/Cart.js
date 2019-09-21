@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { ProductConsumer } from '../context'
+import { ProductConsumer } from '../../context'
 import { Link } from 'react-router-dom'
 
 const Cart = () => {

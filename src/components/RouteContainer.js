@@ -8,7 +8,7 @@ import Contact from './pages/Contact'
 import Policy from './pages/Policy'
 import CatalogueList from './pages/productCatalogue/CatalogueList'
 import Detail from './pages/productPage/Detail'
-import Cart from './pages/Cart'
+import Cart from './pages/cart/Cart'
 import NoMatch from './pages/NoMatch'
 
 const RouteContainer = () => {

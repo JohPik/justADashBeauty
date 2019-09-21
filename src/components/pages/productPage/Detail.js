@@ -6,7 +6,7 @@ import { prodNames } from '../../../ressources/ProductList'
 import NoMatch from '../NoMatch'
 import Recommendation from './Recommendation'
 import ExtraContent from './ExtraContent'
-import ModalCart from '../../ModalCart'
+import ModalCart from './ModalCart'
 import BreadCrumb from '../../BreadCrumb'
 
 

@@ -1115,6 +1115,8 @@ button.qty-slct:disabled:hover {
 }
 
 .empty-cart {
+  font-family: sans-serif;
+  text-transform: none;
   padding: 20px;
   font-size: .8em;
 }
@@ -1203,25 +1205,6 @@ button.qty-slct:disabled:hover {
   color: white;
   font-weight: bold;
 }
-
-/* button.delete-product {
-  border: 0;
-  cursor: pointer;
-  position: relative;
-  padding: 0;
-} */
-
-/* button.delete-product::before {
-  content: url("/images/closed-bin.svg");
-  position: absolute;
-  width: 23px;
-  bottom: 5px;
-}
-
-button.delete-product:hover::before {
-  content: url("/images/opened-bin.svg");
-} */
-
 
 /* Sidebar */
 .summary-container {
