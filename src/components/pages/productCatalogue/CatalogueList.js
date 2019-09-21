@@ -4,6 +4,8 @@ import { ProductConsumer } from '../../context'
 // import SideBarFilter from './SideBarFilter'
 import CurrentFilter from './CurrentFilter'
 import ThumbnailProd from './ThumbnailProd'
+import BreadCrumb from '../../BreadCrumb'
+
 
 class CatalogueList extends Component {
 
@@ -97,8 +99,8 @@ class CatalogueList extends Component {
   render(){
     return (
       <section className="shop">
+      <BreadCrumb match={this.props.match} shop={true} />
         <h1 className="underline">Shop</h1>
-
         <section className="filter-container">
           <CurrentFilter
             skinType={this.state.skinType}

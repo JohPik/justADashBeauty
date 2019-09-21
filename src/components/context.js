@@ -173,7 +173,6 @@ class ProdProvider extends  Component {
 
 /***!!! Rendering !!!***/
   render(){
-    console.log("State Please", this.state);
     return (
       <ProductContext.Provider value={{
           ...this.state,

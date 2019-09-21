@@ -1,8 +1,10 @@
 import React from 'react';
+import BreadCrumb from '../BreadCrumb'
 
-const Contact = () => {
+const Contact = (props) => {
   return(
     <div>
+      <BreadCrumb match={props.match}/>
       <h1 className="underline">
         Contact
       </h1>

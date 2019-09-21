@@ -49,7 +49,7 @@ class Detail extends Component {
       return (
         <Fragment>
           {modalOpen ? <ModalCart /> : null}
-          <BreadCrumb match={props.match} location={props.location} prodName={name}/>
+          <BreadCrumb match={props.match} prodName={name}/>
 
           <section className="single-product-page">
 
