@@ -4,23 +4,22 @@ import { Link } from 'react-router-dom'
 const BreadCrumb = (props) => {
 
   const renderMe = () => {
-    const { type, id, prodId } = props.match.params
+    const { shop, prodName } = props
     const path  = props.match.path.substring(1)
 
-    if (type && id) { //Product Category
-      return(
-        <section className="breadcrumb-container">
-           <Link to="/">Home</Link> > <span>{type}: {id}</span>
-        </section>
-      )
-    } else if (prodId) { // Single Product just loaded
-      const prodName = props.prodName
+    if (prodName) { //Single Product
       return (
         <section className="breadcrumb-container">
            <Link to="/">Home</Link> > <Link to="/shop/skintype=all&prodtype=all">Shop</Link> > <span>{prodName}</span>
         </section>
       )
-    } else { //Other Page
+    } else if (shop){ //Shop
+      return (
+        <section className="breadcrumb-container">
+           <Link to="/">Home</Link> > <Link to="/shop/skintype=all&prodtype=all"><span>Shop</span></Link>
+        </section>
+      )
+    } else { //other Pages
       return(
         <section className="breadcrumb-container">
            <Link to="/">Home</Link> > <span>{path}</span>
