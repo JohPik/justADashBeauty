@@ -65,8 +65,9 @@ class Recommendation extends PureComponent {
                       </div>
                     </Link>
 
+
                     <Link to={`/shop/product-detail/${prod.url}`}>
-                    <h3>#{prod.name}</h3>
+                    <h3 onClick={ () => this.smoothScrolling('.main', 1000) }>#{prod.name}</h3>
                     </Link>
                     <h4>{prod.subName}</h4>
                   </div>
