@@ -1110,6 +1110,8 @@ button.qty-slct:disabled:hover {
 .current-cart-container {
   box-shadow: inset 1px 0 0 0 #e5e5e5, inset -1px 0 0 0 #e5e5e5, inset 0 1px 0 0 #e5e5e5, inset 0 -1px 0 0 #e5e5e5;
   height: fit-content;
+  text-transform: uppercase;
+  font-family: "bebasNeue";
 }
 
 .empty-cart {
@@ -1126,8 +1128,6 @@ button.qty-slct:disabled:hover {
   box-shadow: inset 1px 0 0 0 #e5e5e5, inset -1px 0 0 0 #e5e5e5, inset 0 1px 0 0 #e5e5e5;
   background: #F7F7F7;
   padding: 20px;
-  text-transform: uppercase;
-  font-family: "bebasNeue";
   font-weight: normal;
 }
 
@@ -1167,11 +1167,8 @@ button.qty-slct:disabled:hover {
 .cart-content-single h4 {
   display: inline-block;
   font-weight: normal;
-  text-transform: uppercase;
-  font-family: "bebasNeue";
   font-size: 1.3em;
 }
-
 
 .cart-content-single .prod-info-container {
   display: flex;
@@ -1185,14 +1182,36 @@ button.qty-slct:disabled:hover {
   margin-bottom: 5px;
 }
 
-button.delete-product {
+.cart-content-single .total-price {
+  font-size: 1.5em;
+  color:  #FF01B8;
+  margin-left: auto;
+}
+
+.cart-content-single button.delete-product {
+  box-shadow: inset 1px 0 0 0 #e5e5e5, inset -1px 0 0 0 #e5e5e5, inset 0 1px 0 0 #e5e5e5, inset 0 -1px 0 0 #e5e5e5;
+  padding: 10px 20px;
+  background-color: #F7F7F7;
+  font-size: .8em;
+  border: none;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.cart-content-single button.delete-product:hover {
+  background: #FA1754;
+  color: white;
+  font-weight: bold;
+}
+
+/* button.delete-product {
   border: 0;
   cursor: pointer;
   position: relative;
   padding: 0;
-}
+} */
 
-button.delete-product::before {
+/* button.delete-product::before {
   content: url("/images/closed-bin.svg");
   position: absolute;
   width: 23px;
@@ -1201,7 +1220,7 @@ button.delete-product::before {
 
 button.delete-product:hover::before {
   content: url("/images/opened-bin.svg");
-}
+} */
 
 
 /* Sidebar */

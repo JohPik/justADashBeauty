@@ -33,12 +33,13 @@ const Cart = () => {
                         <button className="qty-slct" disabled={ product.count < 2 } onClick={ () => decrementProdInCart(index, product.id) }>-</button>
                         {product.count}
                         <button className="qty-slct" onClick={ () => incrementProdInCart(index, product.id) }>+</button>
+                        <span>@ A$ {product.price}</span>
                        </div>
                   </div>
 
                   <div className="align-right">
-                    <p>AU$ {product.total}</p>
-                    <button alt="delete product" onClick={ () => deleteProdInCart(index, product.id) } className="delete-product"></button>
+                    <p className="total-price">A$ {product.total}</p>
+                    <button alt="delete product" onClick={ () => deleteProdInCart(index, product.id) } className="delete-product">Remove from Cart</button>
                   </div>
 
                 </div>
