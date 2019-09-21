@@ -18,14 +18,18 @@ const Cart = () => {
                 <div key={product.id} className="cart-content-single">
 
                   <div className="img-container">
+                    <Link to={`/shop/product-detail/${product.url}`}>
                     <img src={product.img} alt={product.name} className="image-thumbnail"/>
+                    </Link>
                   </div>
 
                   <div className="prod-info-container">
-                    <h3>{product.name}</h3>
+                    <Link to={`/shop/product-detail/${product.url}`}>
+                      <h3>{product.name}</h3>
+                    </Link>
                     <h4>{product.subName}</h4>
                       <div className="prod-qty-container">
-                        <p>Quantity</p>
+                        Qty:
                         <button className="qty-slct" disabled={ product.count < 2 } onClick={ () => decrementProdInCart(index, product.id) }>-</button>
                         {product.count}
                         <button className="qty-slct" onClick={ () => incrementProdInCart(index, product.id) }>+</button>
@@ -34,7 +38,7 @@ const Cart = () => {
 
                   <div className="align-right">
                     <p>AU$ {product.total}</p>
-                    <button onClick={ () => deleteProdInCart(index, product.id) } >DELETE</button>
+                    <button alt="delete product" onClick={ () => deleteProdInCart(index, product.id) } className="delete-product"></button>
                   </div>
 
                 </div>
