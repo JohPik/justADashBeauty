@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { ProductConsumer } from '../../context'
 import { Link } from 'react-router-dom'
+import PaypalButton from './PaypalButton'
 
 const Cart = () => {
 
@@ -65,7 +66,8 @@ const Cart = () => {
           <p className="summary-shipping">Shipping Costs <span>A$ 0.00</span></p>
         )}
         <p className="summary-total">Total <span>A$ {total}</span></p>
-        <button className="paypal-button">Checkout with Paypal</button>
+        {/*<button className="paypal-button">Checkout with Paypal</button>*/}
+        <PaypalButton total={total} />
       </div>
     )
   }

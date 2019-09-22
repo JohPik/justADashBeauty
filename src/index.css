@@ -1247,7 +1247,13 @@ span.spend-more-shipping {
   margin-bottom: 20px;
 }
 
-.summary-container .paypal-button {
+#paypal-button-container {
+ width: 250px;
+ background-color: red !important;
+ }
+
+
+/* .summary-container .paypal-button {
   box-shadow: inset 1px 0 0 0 #e5e5e5, inset -1px 0 0 0 #e5e5e5, inset 0 1px 0 0 #e5e5e5, inset 0 -1px 0 0 #e5e5e5;
   padding: 10px 20px;
   font-size: 1em;
@@ -1263,7 +1269,7 @@ span.spend-more-shipping {
   box-shadow: inset 1px 0 0 0 #FF01B8, inset -1px 0 0 0 #FF01B8, inset 0 1px 0 0 #FF01B8, inset 0 -1px 0 0 #FF01B8;
   color: white;
   font-weight: bold;
-}
+} */
 
 .help-container {
   box-shadow: inset 1px 0 0 0 #e5e5e5, inset -1px 0 0 0 #e5e5e5, inset 0 1px 0 0 #e5e5e5, inset 0 -1px 0 0 #e5e5e5;
