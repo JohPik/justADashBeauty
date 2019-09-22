@@ -159,6 +159,12 @@ class ProdProvider extends  Component {
 
   }
 
+  clearCart = () => {
+    this.setProducts()
+    this.setState({ cart: [] })
+    console.log("Cart has been Cleared");
+  }
+
 
 /***!!! Modal Management !!!***/
   openModal = () => {
@@ -181,7 +187,8 @@ class ProdProvider extends  Component {
           closeModal: this.closeModal,
           incrementProdInCart: this.incrementProdInCart,
           decrementProdInCart: this.decrementProdInCart,
-          deleteProdInCart: this.deleteProdInCart
+          deleteProdInCart: this.deleteProdInCart,
+          clearCart: this.clearCart
           }}>
         {this.props.children}
       </ProductContext.Provider>

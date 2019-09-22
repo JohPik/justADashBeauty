@@ -52,7 +52,7 @@ const Cart = () => {
     )
   }
 
-  const summary = (total) => {
+  const summary = (total, clearCart) => {
     return (
       <div className="summary-container">
         <h2>Summary</h2>
@@ -67,7 +67,7 @@ const Cart = () => {
         )}
         <p className="summary-total">Total <span>A$ {total}</span></p>
         {/*<button className="paypal-button">Checkout with Paypal</button>*/}
-        <PaypalButton total={total} />
+        <PaypalButton total={total} clearCart={clearCart}/>
       </div>
     )
   }
@@ -86,7 +86,7 @@ const Cart = () => {
   }
 
   const renderCart = (value) => {
-     const { cart, incrementProdInCart, decrementProdInCart, deleteProdInCart } = value
+     const { cart, incrementProdInCart, decrementProdInCart, deleteProdInCart, clearCart } = value
      // Array of Prices in cart
      let priceArray = cart.map( product => product.total )
      // Sum up each Price into total price
@@ -94,9 +94,9 @@ const Cart = () => {
 
      return (
       <Fragment>
-        { currentCart(cart, incrementProdInCart, decrementProdInCart, deleteProdInCart ) }
+        { currentCart(cart, incrementProdInCart, decrementProdInCart, deleteProdInCart) }
         <div className="cart-sidebar">
-          { summary(total) }
+          { summary(total, clearCart) }
           { help() }
         </div>
       </Fragment>
