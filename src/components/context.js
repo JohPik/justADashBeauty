@@ -92,6 +92,7 @@ class ProdProvider extends  Component {
 
   /***!!! Edit Items in Cart Element !!!***/
   incrementProdInCart = (index, id) => {
+    console.log("Props", this.props);
     //Increment prod qty in Cart
     let cart = this.state.cart
     let productCart = cart[index]
@@ -135,7 +136,7 @@ class ProdProvider extends  Component {
   }
 
 
-  // Delete Product from Cart, from cookies and restore default setting to productList
+  // Delete single Product from Cart, from cookies and restore default setting to productList
   deleteProdInCart = (index, id) => {
     //delete prod from cart
     let cart = this.state.cart
@@ -159,10 +160,12 @@ class ProdProvider extends  Component {
 
   }
 
+  // Clear Cart after Successful Payment
   clearCart = () => {
-    this.setProducts()
-    this.setState({ cart: [] })
-    console.log("Cart has been Cleared");
+    this.setProducts() //restore prod List
+    this.setState( () => {
+    return {  cart: [], cartCookieList: [] } //restore cart and cartList
+    }, () => this.editCartCookie()) //restore Cookies
   }
 
 

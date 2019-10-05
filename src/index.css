@@ -1297,3 +1297,28 @@ span.spend-more-shipping {
 .help-container a:hover {
   text-decoration: line-through;
 }
+
+
+/************** Responsive **************/
+
+/**** Tablet *****/
+@media only screen and (max-width: 992px) {
+
+/**** header *****/
+  .shipping-banner {
+    font-size: .8em;
+  }
+  .navbar {
+    display: none;
+  }
+}
+
+
+/**** Phone *****/
+@media only screen and (max-width: 992px) {
+
+/**** header *****/
+  body {
+    background-color: lightblue;
+  }
+}
