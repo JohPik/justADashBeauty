@@ -1,10 +1,10 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import { ProductConsumer } from '../../context'
 import { Link } from 'react-router-dom'
 import PaypalButton from './PaypalButton'
+import AfterPayment from './AfterPayment'
 
-const Cart = () => {
-
+const Cart = (props) => {
 
   const currentCart = (cart, incrementProdInCart, decrementProdInCart, deleteProdInCart ) => {
     return (
@@ -67,7 +67,7 @@ const Cart = () => {
         )}
         <p className="summary-total">Total <span>A$ {total}</span></p>
         {/*<button className="paypal-button">Checkout with Paypal</button>*/}
-        <PaypalButton total={total} clearCart={clearCart}/>
+        <PaypalButton total={total} clearCart={clearCart} openModal={openModal}/>
       </div>
     )
   }
@@ -103,10 +103,24 @@ const Cart = () => {
      )
   }
 
-  return(
-    <section className="cart">
-       <h1 className="underline">Cart</h1>
+  const [ modalPaymentSuccessful, setModalPaymentSuccessful] = useState(false)
 
+  const openModal = () => {
+    setModalPaymentSuccessful(true)
+
+    const restoreModal = () => setModalPaymentSuccessful(false)
+    const redirect = () => props.history.push("/")
+
+    setTimeout( (() => {
+      restoreModal()
+      redirect()
+    }), 11000)
+  }
+
+  return (
+    <section className="cart">
+      { modalPaymentSuccessful ? <AfterPayment/> : null }
+       <h1 className="underline">Cart</h1>
      <section className="delivery-container">
          <p>Free Delivery</p>
          Applies to any orders of A$50 or more. Returns Policy are the same. <Link to="/">View Detail</Link>

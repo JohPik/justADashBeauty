@@ -10,7 +10,7 @@ class ProdProvider extends  Component {
     productList: [],
     cart: [],
     cartCookieList: [],
-    modalOpen: false
+    modalAddedToCart: false
   }
 
   componentWillMount(){
@@ -164,21 +164,23 @@ class ProdProvider extends  Component {
   clearCart = () => {
     this.setProducts() //restore prod List
     this.setState( () => {
-    return {  cart: [], cartCookieList: [] } //restore cart and cartList
+      return {  cart: [], cartCookieList: [] } //restore cart and cartList
     }, () => this.editCartCookie()) //restore Cookies
   }
 
 
 /***!!! Modal Management !!!***/
-  openModal = () => {
+//Single Product Page 
+  openModalAddedToCart = () => {
   const cartContainer = document.querySelector(".cart-container")
-  this.setState({ modalOpen: true});
-  setTimeout(() => this.setState({ modalOpen: false}), 5000);
+  this.setState({ modalAddedToCart: true});
+  setTimeout(() => this.setState({ modalAddedToCart: false}), 5000);
   cartContainer.classList.add('just-added')
   setTimeout(() => cartContainer.classList.remove('just-added'), 1000);
   }
 
-  closeModal = () => this.setState({ modalOpen: false})
+  closeModalAddedToCart = () => this.setState({ modalAddedToCart: false})
+
 
 /***!!! Rendering !!!***/
   render(){
@@ -186,8 +188,8 @@ class ProdProvider extends  Component {
       <ProductContext.Provider value={{
           ...this.state,
           addToCart: this.addToCart,
-          openModal: this.openModal,
-          closeModal: this.closeModal,
+          openModalAddedToCart: this.openModalAddedToCart,
+          closeModalAddedToCart: this.closeModalAddedToCart,
           incrementProdInCart: this.incrementProdInCart,
           decrementProdInCart: this.decrementProdInCart,
           deleteProdInCart: this.deleteProdInCart,

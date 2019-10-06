@@ -15,7 +15,7 @@ class Detail extends Component {
   state = { qty: 1, pageId: ""}
 
 
-  checkModal = () => this.props.value.modalOpen ? this.props.value.closeModal() : null;
+  checkModal = () => this.props.value.modalAddedToCart ? this.props.value.closeModalAddedToCart() : null;
 
   componentWillMount(){
     this.setState({ pageId: this.props.match.params.prodId })
@@ -36,9 +36,9 @@ class Detail extends Component {
   }
 
   render(){
-    const { addToCart, modalOpen } = this.props.value
+    const { addToCart, modalAddedToCart } = this.props.value
 
-    const openModal = () => this.props.value.openModal()
+    const openModalAddedToCart = () => this.props.value.openModalAddedToCart()
 
     const renderProduct = () => {
       let props = this.props
@@ -48,7 +48,7 @@ class Detail extends Component {
 
       return (
         <Fragment>
-          {modalOpen ? <ModalCart /> : null}
+          {modalAddedToCart ? <ModalCart /> : null}
           <BreadCrumb match={props.match} prodName={name}/>
 
           <section className="single-product-page">
@@ -76,7 +76,7 @@ class Detail extends Component {
                         <button className="qty-slct" onClick={() => this.setState({ qty: qty + 1 }) }>+</button>
                       </div>
                     }
-                    <button className={`add-to-cart ${url}`} disabled={inCart} onClick={ () => { addToCart(id, qty); openModal() } }>
+                    <button className={`add-to-cart ${url}`} disabled={inCart} onClick={ () => { addToCart(id, qty); openModalAddedToCart() } }>
                       { inCart ? <Fragment>in Cart</Fragment> : <Fragment>Add to Cart</Fragment> }
                     </button>
                   </div>

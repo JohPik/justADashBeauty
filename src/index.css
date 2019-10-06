@@ -991,7 +991,7 @@ button.qty-slct:disabled:hover {
 
 .modal-container {
   background: white;
-  position: absolute;
+  position: fixed;
   right: 0;
   padding: 20px;
 }
@@ -1298,6 +1298,60 @@ span.spend-more-shipping {
   text-decoration: line-through;
 }
 
+/* Successful Payment */
+/*
+.successful-payment {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    padding: 20px;
+    z-index: 200;
+    display: flex;
+    justify-content: center;
+    background: hsla(0, 0%, 20%, 0.3);
+    font-size: .9em;
+}*/
+
+.successful-payment {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - 300px);
+    height: calc(100% - 40px);
+    padding: 20px 150px;
+    z-index: 200;
+    background: hsla(0, 0%, 20%, 0.3);
+    font-size: .9em;
+}
+
+.successful-payment span {
+  color: #FF01B8;
+  font-weight: bold;
+}
+
+.successful-payment a {
+  font-family: "bebasNeue";
+  font-size: 1.2em;
+}
+
+.successful-payment a:hover {
+  text-decoration: line-through;
+}
+
+.successful-payment-text-container {
+    position: sticky;
+    top: 20px;
+    background: white;
+    padding: 20px;
+    border: solid 4px #FF01B8;
+    text-align: center;
+}
+
+.successful-payment-text-container .timer {
+  margin-top: 10px;
+}
 
 /************** Responsive **************/
 
