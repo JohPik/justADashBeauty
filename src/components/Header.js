@@ -9,23 +9,21 @@ const Header = () => {
       {(value) => {
         const cartLength = value.cart.length
         return (
-          <nav>
+          <section className="header">
 
-            <section>
-                <div className="shipping-banner">
+            <section className="shipping-banner">
                 Free Shipping in Australia over $100 Orders
-              </div>
             </section>
 
-             <section>
-               <div className="header-navigation">
+             <section className="header-navigation">
+
                  <div className="logo-container">
                    <Link to="/">
                      <img src= "/images/Just-A-Dash-Beauty_Logo.svg" alt="Just A Dash Beauty Logo" className="logo"/>
                    </Link>
                  </div>
 
-                 <div className="navbar">
+                 <nav className="navbar-desktop">
                       <ul className="nav-menu">
                         <li className="primary-nav-item">
                           <Link to="/shop/skintype=all&prodtype=all">SHOP</Link>
@@ -60,8 +58,7 @@ const Header = () => {
                           <Link to="/contact">CONTACTS</Link>
                         </li>
                       </ul>
-                      </div>
-                 </div>
+                  </nav>
 
                  <div className="cart-container">
                    <Link to="/cart" className="cartLink">
@@ -70,9 +67,51 @@ const Header = () => {
                    </Link>
                  </div>
 
+
+                 <div className="button-menu-toggle">
+                   <img src= "/images/hamburger.svg" alt="Menu Toggle" className="menu-toggle-icon"/>
+                 </div>
+
+                 <nav className="navbar-mobile">
+                      <ul className="nav-menu">
+                        <li className="primary-nav-item">
+                          <Link to="/shop/skintype=all&prodtype=all">SHOP</Link>
+                          <div className="dropdown-content">
+                            <div className="dropdown-col-1">
+                              <span>Skin Type</span>
+                              <Link to="/shop/skintype=oily&prodtype=all">Oily</Link>
+                              <Link to="/shop/skintype=dry&prodtype=all">Dry</Link>
+                              <Link to="/shop/skintype=sensitive&prodtype=all">Sensitive</Link>
+                              <Link to="/shop/skintype=problematic&prodtype=all">Problematic</Link>
+                              <Link to="/shop/skintype=normal&prodtype=all">Normal</Link>
+                            </div>
+                            <div className="dropdown-col-2">
+                              <span>Product Type</span>
+                              <Link to="/shop/skintype=all&prodtype=cleanser">Cleanser</Link>
+                              <Link to="/shop/skintype=all&prodtype=toning mist">Toning Mist</Link>
+                              <Link to="/shop/skintype=all&prodtype=exfoliant">Exfoliant</Link>
+                              <Link to="/shop/skintype=all&prodtype=serum">Serum</Link>
+                              <Link to="/shop/skintype=all&prodtype=moisturiser">Moisturiser</Link>
+                              <Link to="/shop/skintype=all&prodtype=treatment">Treatment</Link>
+                            </div>
+                          </div>
+
+                        </li>
+                        <li className="primary-nav-item">
+                          <Link to="/about">ABOUT</Link>
+                        </li>
+                        <li className="primary-nav-item">
+                          <Link to="/faqs">FAQs</Link>
+                        </li>
+                        <li className="primary-nav-item">
+                          <Link to="/contact">CONTACTS</Link>
+                        </li>
+                      </ul>
+                  </nav>
+
             </section>
 
-          </nav>
+          </section>
         )
       }}
     </ProductConsumer>

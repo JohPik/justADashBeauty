@@ -35,8 +35,8 @@ const Footer = () => {
       </section>
 
       <section className="copyright">
-        <span>© 2019 Just A Dash Beauty. All Rights Reserved</span>
-        <span><Link to="/">Term of Use</Link> and <Link to="/">Privacy Policy</Link></span>
+        <p>© 2019 Just A Dash Beauty. All Rights Reserved</p>
+        <p><Link to="/">Term of Use</Link> and <Link to="/">Privacy Policy</Link></p>
       </section>
     </footer>
   )
