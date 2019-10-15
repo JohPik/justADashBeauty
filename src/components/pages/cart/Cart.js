@@ -103,7 +103,7 @@ const Cart = (props) => {
      )
   }
 
-  const [ modalPaymentSuccessful, setModalPaymentSuccessful] = useState(true)
+  const [ modalPaymentSuccessful, setModalPaymentSuccessful] = useState(false)
 
   const openModal = () => {
     setModalPaymentSuccessful(true)

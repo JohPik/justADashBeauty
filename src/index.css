@@ -100,6 +100,13 @@ a {
 
 /************** Header **************/
 
+section.header { /*NEW HEADER CSS*/
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: white;
+}
+
 nav {
   /* background-color: white;
   width: 100%; */
@@ -168,7 +175,7 @@ img.logo {
   opacity: 1;
   visibility: hidden;
   overflow: auto;
-  background:white;
+  background: white;
   right: 0;
   left: 0;
   top: 140px;
@@ -191,7 +198,7 @@ img.logo {
   overflow: auto
 }
 
-/* Dropdown Desktop */
+/* Nav Bar Dropdown Desktop */
 .navbar-desktop .dropdown-content {
   display: flex;
   /* justify-content: center;
@@ -231,6 +238,10 @@ img.logo {
 .navbar-desktop .dropdown-col-1 > a:hover, .navbar-desktop .dropdown-col-2 > a:hover {
   text-decoration: line-through;
 }
+
+/* Mobile Navigation */
+
+/* HHHHHHHEEEERRRRE */
 
 /* Cart */
 .cart-container {
@@ -1253,24 +1264,6 @@ span.spend-more-shipping {
  }
 
 
-/* .summary-container .paypal-button {
-  box-shadow: inset 1px 0 0 0 #e5e5e5, inset -1px 0 0 0 #e5e5e5, inset 0 1px 0 0 #e5e5e5, inset 0 -1px 0 0 #e5e5e5;
-  padding: 10px 20px;
-  font-size: 1em;
-  border: none;
-  position: relative;
-  cursor: pointer;
-  transition: all .3s ease;
-  width: 100%;
-}
-
-.summary-container .paypal-button:hover {
-  background-color: #FF01B8;
-  box-shadow: inset 1px 0 0 0 #FF01B8, inset -1px 0 0 0 #FF01B8, inset 0 1px 0 0 #FF01B8, inset 0 -1px 0 0 #FF01B8;
-  color: white;
-  font-weight: bold;
-} */
-
 .help-container {
   box-shadow: inset 1px 0 0 0 #e5e5e5, inset -1px 0 0 0 #e5e5e5, inset 0 1px 0 0 #e5e5e5, inset 0 -1px 0 0 #e5e5e5;
 }
@@ -1301,15 +1294,15 @@ span.spend-more-shipping {
 /* Successful Payment */
 
 .successful-payment {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: calc(100% - 300px);
-    height: calc(100% - 40px);
-    padding: 20px 150px;
-    z-index: 200;
-    background: hsla(0, 0%, 20%, 0.3);
-    font-size: .9em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 300px);
+  height: calc(100% - 40px);
+  padding: 20px 150px;
+  z-index: 200;
+  background: hsla(0, 0%, 20%, 0.3);
+  font-size: .9em;
 }
 
 .successful-payment span {
@@ -1327,12 +1320,12 @@ span.spend-more-shipping {
 }
 
 .successful-payment-text-container {
-    position: sticky;
-    top: 20px;
-    background: white;
-    padding: 20px;
-    border: solid 4px #FF01B8;
-    text-align: center;
+  position: sticky;
+  top: 20px;
+  background: white;
+  padding: 20px;
+  border: solid 4px #FF01B8;
+  text-align: center;
 }
 
 .successful-payment-text-container .timer {
@@ -1341,26 +1334,147 @@ span.spend-more-shipping {
 
 /************** Responsive **************/
 
-.navbar-mobile, .button-menu-toggle {
-    display: none;
+.navbar-mobile {
+  visibility: hidden;
+  opacity: 0;
+  transition: all .2s ease-out .2s;
+  top: 137px;
+  position: fixed;
+  height: calc(100% - 137px);
+  width: 100%;
+  z-index: 900;
+  background: hsla(0, 0%, 90%, 0.5);
 }
 
+.navbar-mobile.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.navbar-mobile .main-mobile-items ul {
+  visibility: hidden;
+  opacity: 0;
+  height: 100%;
+  width: 70%;
+  margin: 0;
+  position: fixed;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  list-style: none;
+  background: white;
+  box-shadow: inset 1px 0 0 0 #e5e5e5;
+  transform: translate(100%);
+  transition: all .2s ease-out .2s;
+}
+
+.navbar-mobile.visible .main-mobile-items ul{
+  visibility: visible;
+  opacity: 1;
+  transform: translate(0);
+}
+
+
+.navbar-mobile li.primary-nav-item {
+  padding: 20px 0;
+  padding-left: 40px;
+  width: calc(100% - 40px);
+  box-shadow: inset 0 -1px 0 0 #e5e5e5;
+}
+
+.navbar-mobile span.open-secondary-menu-icon {
+  position: fixed;
+  right: 40px;
+  cursor: pointer;
+}
+
+/* hamburger button  */
 .button-menu-toggle {
-    padding-top: 5px;
-    height: 14px;
+  display: none;
+  padding-top: 5px;
+  height: 14px;
 }
 
-img.menu-toggle-icon {
-    /* margin: auto; */
-    height: 100%;
+.menu-toggle-icon {
+  height: 100%;
+  overflow: visible;
+}
+
+.menu-toggle-icon:hover{
+  cursor: pointer;
+}
+
+.button-menu-toggle .menu-toggle-icon,.button-menu-toggle .menu-toggle-icon .top, .button-menu-toggle .menu-toggle-icon .mid, .button-menu-toggle .menu-toggle-icon .bot  {
+  transition: all .2s ease-out;
+}
+
+.button-menu-toggle.visible .menu-toggle-icon .mid{
+  display: none;
+}
+
+.button-menu-toggle.visible .menu-toggle-icon .top {
+  transform: rotate(45deg) translate(-3px, -8px);
+}
+
+.button-menu-toggle.visible .menu-toggle-icon .bot {
+  transform: rotate(-45deg) translate(-6px, -6px);
+}
+
+/* navbar-mobile secondary menu */
+.secondary-mobile-items {
+  visibility: hidden;
+  opacity: 0;
+  transform: translate(100%);
+  transition: all .2s ease-out;
+}
+
+
+.secondary-mobile-items.visible {
+  visibility: visible;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  background: white;
+  right: 0;
+  height: calc(100% - 20px);
+  width: calc(70% - 40px);
+  padding-top: 20px;
+  padding-left: 40px;
+  transform: translate(0);
+  box-shadow: inset 0 -1px 0 0 #e5e5e5, inset -1px 0 0 0 #e5e5e5, inset 1px 0 0 0 #e5e5e5;
+}
+
+.sublist-col-1, .sublist-col-2 {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+}
+
+
+.sublist-col-1 span, .sublist-col-2 span {
+  font-style: italic;
+  padding-bottom: 10px;
+}
+
+.sublist-col-1 a, .sublist-col-2 a {
+  margin-bottom: 10px;
+  font-size: .8em;
+}
+
+.secondary-mobile-items span.go-back-link {
+  position: fixed;
+  right: 40px;
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 1023px) {
   /**** header *****/
-  /* .button-menu-toggle {
+  nav.navbar-mobile, nav.navbar-mobile.visible{
     display: none;
-    opacity: 0;
-  } */
+  }
 }
 
 @media only screen and (max-width: 1024px) {
@@ -1384,6 +1498,7 @@ img.menu-toggle-icon {
     top:78px;
     right: 150px;
   }
+
   /**** Footer ****/
   .footer-col-2 {
     padding-left: 100px;
@@ -1483,6 +1598,10 @@ img.menu-toggle-icon {
     right: 20px;
   }
 
+  .navbar-mobile span.open-secondary-menu-icon, .secondary-mobile-items span.go-back-link {
+    right: 20px
+  }
+
   /**** Footer *****/
   .main-footer {
     padding: 20px;
@@ -1513,4 +1632,14 @@ img.menu-toggle-icon {
   .copyright p {
     padding-top: 5px;
   }
+}
+
+
+@media only screen and (max-height: 567px) {
+  .secondary-mobile-items {
+    height: auto;
+    padding-bottom: 20px;
+  }
+
+
 }
