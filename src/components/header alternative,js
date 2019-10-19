@@ -2,27 +2,31 @@ import React, { useState, useEffect, useRef } from 'react'
 import { Link, withRouter } from 'react-router-dom';
 import { ProductConsumer } from './context'
 
+
+
 const Header = (props) => {
 
   const [mobileMenu, mobileMenuToggle] = useState(false)
   const [secondaryMobileMenu, SecondarymobileMenuToggle] = useState(false)
-  const { key } = props.location
-  const keyRef = useRef(key)
 
-  useEffect(() => {//Toggle mobile menu and change look of mobile menu Button
-      const menu = document.querySelector(".navbar-mobile") //mobile menu
-      const menuButton = document.querySelector(".button-menu-toggle") //menu button
-      return mobileMenu ? (
-        menu.classList.add("visible"), menuButton.classList.add("visible")
-      ) : (
-        menu.classList.remove("visible"), menuButton.classList.remove("visible")
-      )
-    }, [mobileMenu])
+  const { pathname, key } = props.location
+  const keyRef = useRef(key);
 
-  useEffect(() => { //make sure the mobile menu is closed after url change
-    if (key !== keyRef.current) mobileMenuToggle(false)
+  useEffect(() => {
+    if (key !== keyRef.current && mobileMenu === true ) toggleMobileMenu() //make sure the mobile menu is closed after url change
+    if (secondaryMobileMenu) SecondarymobileMenuToggle(false) //make sure the secondary mobile menu is closed after url change
     return
-  }, [keyRef, key])
+  }, [pathname, keyRef])
+
+//Toggle mobile menu and change look of mobile menu Button
+  const toggleMobileMenu = () => {
+    const menu = document.querySelector(".navbar-mobile") //mobile menu
+    const menuButton = document.querySelector(".button-menu-toggle") //menu button
+    mobileMenu === false ?  mobileMenuToggle(true) :  mobileMenuToggle(false) //update mobile menu state
+    // toggle button and menu
+    menu.classList.toggle("visible")
+    menuButton.classList.toggle("visible")
+  }
 
   return (
     <ProductConsumer>
@@ -89,8 +93,7 @@ const Header = (props) => {
 
 
                  <div className="button-menu-toggle">
-                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.01 16.91" alt="Menu Toggle" className="menu-toggle-icon"
-                        onClick={() => mobileMenu ? mobileMenuToggle(false) : mobileMenuToggle(true)}>
+                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.01 16.91" alt="Menu Toggle" className="menu-toggle-icon" onClick={() => toggleMobileMenu()}>
                      <title>Menu Toggle</title>
                      <g id="Layer_2" data-name="Layer 2">
                        <g id="Layer_1-2" data-name="Layer 1">
@@ -122,7 +125,7 @@ const Header = (props) => {
 
 
                    <div className={secondaryMobileMenu ? "secondary-mobile-items visible" : "secondary-mobile-items"}>
-                     <Link to="/shop/skintype=all&prodtype=all">SHOP</Link><span className="go-back-link" onClick={() => SecondarymobileMenuToggle(false)}>return</span>
+                     <Link to="/shop/skintype=all&prodtype=all">SHOP</Link><span className="go-back-link" onClick={() => SecondarymobileMenuToggle(false)}>go back</span>
                      <div className="sublist-col-1">
                        <span>Skin Type</span>
                        <Link to="/shop/skintype=oily&prodtype=all">Oily</Link>

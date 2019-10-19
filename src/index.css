@@ -1470,6 +1470,17 @@ span.spend-more-shipping {
   cursor: pointer;
 }
 
+span.go-back-link:before {
+    content: "<";
+    padding-right: 5px;
+}
+
+.secondary-mobile-items span.go-back-link:hover {
+  text-decoration: line-through;
+  box-shadow: none;
+}
+
+
 @media only screen and (min-width: 1023px) {
   /**** header *****/
   nav.navbar-mobile, nav.navbar-mobile.visible{
