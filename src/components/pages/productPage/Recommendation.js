@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React, { Component, PureComponent } from 'react'
 
 import { Link } from 'react-router-dom'
 
@@ -13,36 +13,6 @@ class Recommendation extends PureComponent {
       }
       return a.slice(0, 3)
   }
-
-  /***!!! Smooth Scrolling !!!***/
-  smoothScrolling = (el, duration) => {
-    let target = document.querySelector(el)
-    let targetPostion = target.getBoundingClientRect().top
-    const startPosition = window.pageYOffset
-    const distance = targetPostion - startPosition
-    let startTime = null
-
-    const animation = (currentTime) => {
-      if (startTime === null) { startTime = currentTime }
-      const timeElpased = currentTime - startTime
-      const run = ease(timeElpased, startPosition, distance, duration )
-      window.scrollTo(0,run)
-      if (timeElpased < duration) {
-        window.requestAnimationFrame(animation)
-      }
-    }
-
-    // from http://www.gizma.com/easing/
-    const ease = (t, b, c, d) => {
-    	t /= d
-    	return -c * t*(t-2) + b
-    }
-
-    window.requestAnimationFrame(animation)
-
-  }
-
-
 
   render(){
     const { currentProduct } = this.props
@@ -59,15 +29,14 @@ class Recommendation extends PureComponent {
                 return (
                   <div key={prod.id} className="product-container">
                     <Link to={`/shop/product-detail/${prod.url}`}>
-                      <div className="img-container"
-                           onClick={ () => this.smoothScrolling('.main', 1000) } >
+                      <div className="img-container">
                         <img src={prod.img} alt={prod.name} className="image-thumbnail"/>
                       </div>
                     </Link>
 
 
                     <Link to={`/shop/product-detail/${prod.url}`}>
-                    <h3 onClick={ () => this.smoothScrolling('.main', 1000) }>#{prod.name}</h3>
+                    <h3>#{prod.name}</h3>
                     </Link>
                     <h4>{prod.subName}</h4>
                   </div>

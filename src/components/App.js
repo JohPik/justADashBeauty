@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { CSSTransition } from 'react-transition-group'
 
 import Header from './Header'
 import RouteContainer from './RouteContainer'
 import Footer from './Footer'
+import ScrollToTop from './ScrollToTop'
 
 class App extends Component {
 
@@ -17,11 +18,12 @@ class App extends Component {
         timeout={1000}
         classNames="fade"
         >
-        <div>
+        <Fragment>
           <Header/>
           <RouteContainer/>
+          <ScrollToTop/>
           <Footer/>
-        </div>
+        </Fragment>
       </CSSTransition>
     )
   }
