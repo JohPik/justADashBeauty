@@ -90,12 +90,23 @@ a {
   text-decoration: none;
 }
 
+/* .main {
+  min-height: calc(100vh - 426px);
+  padding: 20px 150px;
+  height: 100%;
+  position: relative;
+} */
+
 .main {
+  margin: auto;
+  max-width: 1500px;
+  width: calc(100% - 300px);
   min-height: calc(100vh - 426px);
   padding: 20px 150px;
   height: 100%;
   position: relative;
 }
+
 
 
 /************** Header **************/
@@ -370,11 +381,16 @@ img.logo {
 /* Copyright */
 .copyright {
   font-size: 10px;
-  display: flex;
   background-color: white;
-  justify-content: space-between;
   padding: 11px 150px;
 }
+
+.copyright-container {
+  justify-content: space-between;
+  display: flex;
+  margin: auto;
+}
+
 
 .copyright a {
   font-weight: bold;
@@ -663,7 +679,7 @@ button.form-submit:hover::before {
 
 .shop-list i {
   width: 230px;
-  margin: 5px;
+  margin: 20px;
 }
 
 .shop-list .product-container img {
@@ -1480,6 +1496,39 @@ span.go-back-link:before {
   box-shadow: none;
 }
 
+@media only screen and (min-width: 1800px) {
+  /*** Header ***/
+  .header-navigation {
+    max-width: 1500px;
+    margin: auto;
+    position: relative;
+  }
+
+  .logo-container {
+    position: absolute;
+    left: 0;
+    top: 20px;
+  }
+
+  .cart-container {
+    right: 0;
+    top: 38px;
+  }
+
+  /*** Footer ***/
+  footer {
+    background: #F7F7F7;
+  }
+
+  .main-footer {
+    margin: auto;
+    max-width: 1500px;
+  }
+
+  .copyright-container {
+    max-width: 1500px;
+  }
+}
 
 @media only screen and (min-width: 1023px) {
   /**** header *****/

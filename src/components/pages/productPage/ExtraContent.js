@@ -23,7 +23,6 @@ class ExtraContent extends Component {
     this.setState({
       extraContent, descr, descrLabel, extraContentLabel, ingred, ingredLabel, direct, directLabel
     })
-
   }
 
   /*Manage Toggle*/
@@ -41,6 +40,14 @@ class ExtraContent extends Component {
     label.classList.remove("closed");
   }
 
+
+  componentDidUpdate(prevProps){
+    if (this.props.id !== prevProps.userID) {
+      this.openExtraContent(this.state.descr, this.state.descrLabel)
+    }
+  }
+
+
   render() {
     const { description, loveList, ingredients, directions } = this.props
     const { descr, descrLabel, ingred, ingredLabel, direct, directLabel } = this.state
@@ -50,9 +57,7 @@ class ExtraContent extends Component {
         <div className="extra-content">
           <h3 onClick={ () => this.openExtraContent(descr, descrLabel) }>Description</h3>
           <div className="text-dropdown open">
-            <p>
-              {description}
-            </p>
+            <p>{description}</p>
               Why we love it:
               <ul className="loveList">
                 {loveList.map( (li, index) => <li key={index}>{li}</li>)}

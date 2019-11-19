@@ -80,7 +80,7 @@ class Detail extends Component {
                       { inCart ? <Fragment>in Cart</Fragment> : <Fragment>Add to Cart</Fragment> }
                     </button>
                   </div>
-                  <ExtraContent description={description} loveList={loveList} ingredients={ingredients} directions={directions}/>
+                  <ExtraContent id={id} description={description} loveList={loveList} ingredients={ingredients} directions={directions}/>
               </div>
             </section>
             <hr />

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { ProductConsumer } from '../../context'
 
 // import SideBarFilter from './SideBarFilter'
@@ -98,27 +98,32 @@ class CatalogueList extends Component {
 
   render(){
     return (
-      <section className="shop">
-      <BreadCrumb match={this.props.match} shop={true} />
-        <h1 className="underline">Shop</h1>
-        <section className="filter-container">
-          <CurrentFilter
-            skinType={this.state.skinType}
-            prodType={this.state.prodType}
-            temp={this.state.temp}
-            handleChangeSkinType={this.handleChangeSkinType}
-            handleChangeProdType={this.handleChangeProdType}
-            handleSubmit={this.handleSubmit}
-            resetFilter={this.resetFilter}
-            />
+      <Fragment>
+        {/*<BreadCrumb match={this.props.match} shop={true} />*/}
+        <section className="shop">
+          <h1 className="underline">Shop</h1>
+          <section className="filter-container">
+            <CurrentFilter
+              skinType={this.state.skinType}
+              prodType={this.state.prodType}
+              temp={this.state.temp}
+              handleChangeSkinType={this.handleChangeSkinType}
+              handleChangeProdType={this.handleChangeProdType}
+              handleSubmit={this.handleSubmit}
+              resetFilter={this.resetFilter}
+              />
+          </section>
+          {/*
+
+
+          */}
+          <div className="shop-list">
+            {this.renderList(this.props.value)}
+            <i aria-hidden="true"></i>
+            <i aria-hidden="true"></i>
+          </div>
         </section>
-        <section className="shop-list">
-          {this.renderList(this.props.value)}
-          <i aria-hidden="true"></i>
-          <i aria-hidden="true"></i>
-          <i aria-hidden="true"></i>
-        </section>
-      </section>
+      </Fragment>
     )
   }
 }
