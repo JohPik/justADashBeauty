@@ -99,7 +99,7 @@ class CatalogueList extends Component {
   render(){
     return (
       <Fragment>
-        {/*<BreadCrumb match={this.props.match} shop={true} />*/}
+        <BreadCrumb match={this.props.match} shop={true} />
         <section className="shop">
           <h1 className="underline">Shop</h1>
           <section className="filter-container">
@@ -113,15 +113,11 @@ class CatalogueList extends Component {
               resetFilter={this.resetFilter}
               />
           </section>
-          {/*
-
-
-          */}
-          <div className="shop-list">
+          <section className="shop-list">
             {this.renderList(this.props.value)}
             <i aria-hidden="true"></i>
             <i aria-hidden="true"></i>
-          </div>
+          </section>
         </section>
       </Fragment>
     )

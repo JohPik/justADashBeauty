@@ -35,11 +35,10 @@ const Footer = () => {
       </section>
 
       <section className="copyright">
-        <div className="copyright-container">
           <p>© 2019 Just A Dash Beauty. All Rights Reserved</p>
           <p><Link to="/">Term of Use</Link> and <Link to="/">Privacy Policy</Link></p>
-        </div>
       </section>
+
     </footer>
   )
 }
