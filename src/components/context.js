@@ -170,7 +170,7 @@ class ProdProvider extends  Component {
 
 
 /***!!! Modal Management !!!***/
-//Single Product Page 
+//Single Product Page
   openModalAddedToCart = () => {
   const cartContainer = document.querySelector(".cart-container")
   this.setState({ modalAddedToCart: true});

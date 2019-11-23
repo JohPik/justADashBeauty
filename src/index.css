@@ -34,6 +34,10 @@
 
 /************** General **************/
 
+html {
+  overflow-y: scroll;
+}
+
 @font-face {
 font-family: "selima";
 src: url("/fonts/selima.otf") format("opentype");
@@ -91,12 +95,16 @@ a {
 
 
 .main {
-   margin: auto;
-   max-width: 1700px;
-   min-height: calc(100vh - 426px);
-   padding: 20px 150px;
-   height: 100%;
-   position: relative;
+    margin: auto;
+    max-width: 1700px;
+    min-height: calc(100vh - 426px);
+    height: 100%;
+    position: relative;
+    padding: 20px 150px;
+}
+
+button {
+  background-color: white;
 }
 
 
@@ -105,7 +113,7 @@ a {
 section.header { /*NEW HEADER CSS*/
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 100;
     background: white;
 }
 
@@ -144,6 +152,7 @@ nav {
 
 img.logo {
   height: 60px;
+  width: 66px;
 }
 
 /* Nav Bar Desktop */
@@ -180,14 +189,14 @@ img.logo {
   background: white;
   right: 0;
   left: 0;
-  top: 140px;
+  top: 141px;
   text-align: left;
   position: absolute;
   opacity: 0;
   box-shadow: inset 0 -1px 0 0 #e5e5e5;
   visibility: hidden;
   overflow: hidden;
-  z-index: 9000;
+  z-index: -1;
   transition: opacity .1s linear .4s,visibility 0ms linear .41s;
 }
 
@@ -203,9 +212,10 @@ img.logo {
 /* Nav Bar Dropdown Desktop */
 .navbar-desktop .dropdown-content {
   display: flex;
-  /* justify-content: center;
-  align-items: baseline; */
-  padding: 20px 150px;
+  justify-content: center;
+  /*align-items: baseline; */
+  padding: 20px 0;
+  /* padding: 20px 150px; */
 }
 
 .navbar-desktop .dropdown-col-1, .navbar-desktop .dropdown-col-2  {
@@ -666,8 +676,10 @@ button.form-submit:hover::before {
 }
 
 .shop-list .product-container {
-  margin: 20px;
-  position: relative;
+    margin: 20px;
+    position: relative;
+    padding-bottom: 10px;
+    box-shadow: inset 0 -1px 0 0 #e5e5e5;
 }
 
 .shop-list .product-container .img-container {
@@ -1009,19 +1021,21 @@ button.qty-slct:disabled:hover {
 }
 
 /* Modal */
+
 .modal {
   z-index: 2;
   background: hsla(0, 0%, 20%, 0.3);
-  position: absolute;
+  position: fixed;
   height: 100%;
-  width: 100%;
+  width: 100vw;
   top: 0;
   left: 0;
 }
 
 .modal-container {
   background: white;
-  position: fixed;
+  position: absolute;
+  top: 141px;
   right: 0;
   padding: 20px;
 }
@@ -1282,6 +1296,10 @@ span.spend-more-shipping {
  background-color: red !important;
  }
 
+.paypal-button .zoid-outlet {
+  z-index: 0;
+}
+
 
 .help-container {
   box-shadow: inset 1px 0 0 0 #e5e5e5, inset -1px 0 0 0 #e5e5e5, inset 0 1px 0 0 #e5e5e5, inset 0 -1px 0 0 #e5e5e5;
@@ -1499,7 +1517,6 @@ span.go-back-link:before {
   box-shadow: none;
 }
 
-
 @media only screen and (min-width: 1023px) {
   /**** header *****/
   nav.navbar-mobile, nav.navbar-mobile.visible{
@@ -1507,54 +1524,7 @@ span.go-back-link:before {
   }
 }
 
-@media only screen and (max-width: 1024px) {
-  /**** header *****/
-  .shipping-banner {
-    font-size: .8em;
-  }
-
-  .navbar-desktop {
-    display: none;
-  }
-
-  .cart-container {
-    right: 200px;
-  }
-
-  .button-menu-toggle {
-    display: block;
-    opacity: 1;
-    position: absolute;
-    top:78px;
-    right: 150px;
-  }
-
-  /**** Footer ****/
-  .footer-col-2 {
-    padding-left: 100px;
-  }
-  /*** Catalogue/Shop Page ***/
-  .shop-list {
-    justify-content: space-around;
-  }
-
-  .shop-list .product-container {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  .shop-list .product-container .img-container {
-    width: 18em;
-  }
-
-  .shop-list .product-container img {
-    max-width: 18em;
-  }
-
-}
-
-
-@media only screen and (max-width: 960px) {
+@media only screen and (max-width: 1300px) {
   /**** General *****/
   .main {
     padding: 20px 40px;
@@ -1586,8 +1556,116 @@ span.go-back-link:before {
   .show-form-button-container {
     right: 40px;
   }
+
+  /*** Cart Page***/
+  .main-cart-container {
+      display: flex;
+      flex-wrap: wrap;
+  }
+
+  .current-cart-container {
+      width: 100%;
+      margin-right: 0px;
+  }
+
+  .cart-sidebar {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+  }
+
+  .summary-container {
+      padding: 20px;
+      background: #363636;
+      color: white;
+      margin-bottom: 0;
+      margin-right: 20px;
+  }
+
+  .summary-container {
+    max-width: 600px;
+    width: 100%;
+  }
+
+  .help-container {
+    max-width: 300px;
+    width: 100%;
+  }
 }
 
+@media only screen and (max-width: 1024px) {
+  /**** header *****/
+  .shipping-banner {
+    font-size: .8em;
+  }
+
+  .navbar-desktop {
+    display: none;
+  }
+
+  .cart-container {
+    /* right: 200px; */
+  }
+
+  .button-menu-toggle {
+    display: block;
+    opacity: 1;
+    position: absolute;
+    top:78px;
+    /* right: 150px; */
+  }
+
+  /**** Footer ****/
+  .footer-col-2 {
+    padding-left: 100px;
+  }
+  /*** Catalogue/Shop Page ***/
+  .shop-list {
+    justify-content: space-around;
+  }
+
+  .shop-list .product-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .shop-list .product-container .img-container {
+    width: 18em;
+  }
+
+  .shop-list .product-container img {
+    max-width: 18em;
+  }
+
+  .modal-container {
+    top: 137px;
+  }
+
+}
+
+@media only screen and (max-width: 828px) {
+  /*** Cart Page ***/
+  .summary-container, .help-container {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .main-cart-container {
+      display: block;
+  }
+
+  .cart-sidebar {
+    display: block;
+  }
+
+  .summary-container {
+    margin-right: 0;
+    max-width: none;
+    width: auto;
+    margin-bottom: 20px;
+  }
+
+}
 
 @media only screen and (max-width: 768px) {
   /**** Footer *****/
@@ -1602,6 +1680,13 @@ span.go-back-link:before {
 
   .shop-list .product-container img {
     max-width: 16em;
+  }
+
+  .product-container span {
+    position: inherit;
+    display: block;
+    width: max-content;
+    margin: auto;
   }
 
   /*** Single Product ***/
@@ -1657,6 +1742,30 @@ span.go-back-link:before {
   }
 
   .recommendation-container .img-container {
+    margin: auto;
+  }
+
+  /*** Cart Page ***/
+  .cart-content-single {
+    display: block;
+    text-align: center;
+  }
+
+  .cart-content-single .total-price {
+    margin-left: 0;
+  }
+
+  .cart-content-single img {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .prod-info-container h4, .cart-content-single .prod-qty-container, .total-price, .delete-product {
+    margin: 7px;
+  }
+
+  .img-container, .delete-product {
+    max-width: 300px;
     margin: auto;
   }
 }
