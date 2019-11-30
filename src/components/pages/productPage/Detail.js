@@ -7,12 +7,13 @@ import NoMatch from '../NoMatch'
 import Recommendation from './Recommendation'
 import ExtraContent from './ExtraContent'
 import ModalCart from './ModalCart'
+import ModalImg from './ModalImg'
 import BreadCrumb from '../../BreadCrumb'
 
 
 class Detail extends Component {
 
-  state = { qty: 1, pageId: ""}
+  state = { qty: 1, pageId: "", modalImg: false}
 
 
   checkModal = () => this.props.value.modalAddedToCart ? this.props.value.closeModalAddedToCart() : null;
@@ -35,6 +36,10 @@ class Detail extends Component {
     this.checkModal()
   }
 
+  toggleModalImg = () => {
+    this.state.modalImg === true ? this.setState({modalImg:false}) : this.setState({modalImg:true})
+  }
+
   render(){
     const { addToCart, modalAddedToCart } = this.props.value
 
@@ -48,13 +53,14 @@ class Detail extends Component {
 
       return (
         <Fragment>
+          {this.state.modalImg ? <ModalImg img={img} name={name} toggle={this.toggleModalImg} /> : null}
           {modalAddedToCart ? <ModalCart /> : null}
           <BreadCrumb match={props.match} prodName={name}/>
 
           <section className="single-product-page">
 
               <div className="img-container">
-                <img src={img} alt={name} className="image-thumbnail"/>
+                <img src={img} alt={name} className="image-thumbnail" onClick={ () => this.toggleModalImg() }/>
               </div>
 
               <div className="text-box">
