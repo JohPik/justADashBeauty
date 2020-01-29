@@ -2,7 +2,7 @@ import React from 'react';
 import { Route , Switch, withRouter} from 'react-router-dom'
 // import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
-import Home from './pages/Home'
+import Home from './pages/home/Home'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Policy from './pages/Policy'
