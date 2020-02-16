@@ -17,7 +17,7 @@ const Skintype = (props) => {
         <h2>Shop By Skin Type</h2>
       <div className="skintypes-container">
         {skins.map( skin =>
-          <div className="single-skintype-container">
+          <div className="single-skintype-container" key={skin.name}>
             <Link to={skin.url}>
               <div className="skintype-txt-container">
                 <h3>{skin.name}</h3>

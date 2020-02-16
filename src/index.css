@@ -432,52 +432,138 @@ footer {
 
 /************** Home Page **************/
 
-/* Hero Section */
 .home h1 {
   display: none;
 }
 
+/* Hero Section */
 .hero-slider {
-  background: lightblue;
-  display: flex;
-  justify-content: space-between;
-  /* align-items: center; */
+  position: relative;
 }
 
-.hero-slider .img-container {
-  width: 60%;
-  background: wheat;
+
+.hero-img-container {
+  max-width: 70%;
+  width: 100%;
+  min-height: 800px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.polaroid-container {
+  background: white;
+  padding: 1%;
+  box-shadow: 0 0.2rem 1.2rem rgba(0,0,0,0.2);
+  max-width: 400px;
+  width: 100%;
+  position: absolute;
+}
+
+
+.hero-img-container img {
+ max-width: 100%;
+}
+
+.hero-img-container span {
+  font-family: "selima";
+  font-size: 1.8em;
+  display: block;
+  padding-top: 1%;
+}
+
+
+
+.polaroid-container.first {
+  transform: rotate(20deg);
+  animation: 2s first 1;
+}
+@keyframes first {
+  from { transform: translate(-50vw, 0) rotate(-60deg); }
+  to { transform: translate(0, 0) rotate(20deg); }
+}
+
+.polaroid-container.second {
+  bottom: 0;
+  left: 50%;
+  transform: rotate(-10deg) translate(-50%, -15%);
+  animation: 2s second 1;
+}
+@keyframes second {
+  from { transform: translate(0, -100vh) rotate(-90deg); }
+  to { transform: rotate(-10deg) translate(-50%, -15%) }
+}
+
+.polaroid-container.third {
+  right: 0;
+  transform: rotate(-15deg);
+  animation: 2s third 1;
+}
+@keyframes third {
+  from { transform: translate(50vw, 0) rotate(60deg); }
+  to { transform: translate(0, 0) rrotate(-15deg); }
 }
 
 .hero-slider .text-container {
-  width: 40%;
-  background: wheat;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 100%;
-  padding: 20px;
-  padding-right: 0;
-  text-align: right;
-  margin: auto;
-}
-
-
-.hero-slider img {
+  max-width: 25%;
   width: 100%;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(0%, -50%);
+  z-index: 2;
 }
 
-.hero-slider h2 {
+.hero-slider .text-container h2 {
   font-family: "selima";
+  font-size: 4em;
   font-weight: normal;
-  font-size: 3.5em;
-  line-height: 45px;
+  line-height: .7em;
+  text-shadow: -3px 2px 2px #fff;
+  margin-bottom: 15px;
 }
 
-.hero-slider h3 {
-  font-weight: normal;
+.hero-slider .text-container h3 {
+  color: #FF01B8;
   font-size: 1.2em;
-  margin: 20px 0;
+  margin: 15px 0;
+}
+
+.hero-slider button {
+  box-shadow: inset 1px 0 0 0 #e5e5e5, inset -1px 0 0 0 #e5e5e5, inset 0 1px 0 0 #e5e5e5, inset 0 -1px 0 0 #e5e5e5;
+  padding: 20px 30px;
+  font-size: 1em;
+  border: none;
+  margin: 15px 0;
+  position: relative;
+  cursor: pointer;
+  transition: all .1s ease-out;
+}
+
+.hero-slider button::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  border: none;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  transform: translate(10px, 10px);
+  transition: all .1s ease-out;
+  background: #FFD1F2;
+}
+
+.hero-slider button:hover::before {
+  transform: translate(0);
+}
+
+/* Our Values */
+section.our-values {
+    min-height: 500px;
+    background: red;
+    margin: 25px 0;
 }
 
 /* Shop By Skin Type */
@@ -508,6 +594,7 @@ footer {
   background: #AAFFE5;
   padding: 5px 0;
   z-index: 2;
+  cursor: pointer
 }
 
 .skintype-txt-container h3 {
@@ -805,7 +892,7 @@ button.form-submit:hover::before {
 
 .shop-list i {
   width: 230px;
-  margin: 5px;
+  margin: 20px;
 }
 
 .shop-list .product-container img {
@@ -1678,6 +1765,15 @@ span.go-back-link:before {
   }
 }
 
+@media only screen and (max-width: 1700px) {
+  /*** HOME PAGE ***/
+  /* Hero Section */
+  .polaroid-container {
+    max-width: 350px;
+  }
+}
+
+
 @media only screen and (max-width: 1300px) {
   /**** General *****/
   .main {
@@ -1690,7 +1786,7 @@ span.go-back-link:before {
   }
 
   .cart-container {
-    right: 100px;
+    right: 40px;
   }
 
   .button-menu-toggle {
@@ -1704,6 +1800,16 @@ span.go-back-link:before {
 
   .copyright {
     padding: 11px 40px;
+  }
+
+  /*** HOME PAGE ***/
+  /* Hero Section */
+  .hero-slider .text-container h2 {
+    font-size: 3em;
+  }
+
+  .hero-slider .text-container h3 {
+    font-size: 1em;
   }
 
   /*** Cart Page***/
@@ -1752,16 +1858,16 @@ span.go-back-link:before {
     display: none;
   }
 
-  .cart-container {
-    /* right: 200px; */
-  }
 
   .button-menu-toggle {
     display: block;
     opacity: 1;
     position: absolute;
     top:78px;
-    /* right: 150px; */
+  }
+
+  .cart-container {
+    right: 80px;
   }
 
   /**** Footer ****/
@@ -1775,7 +1881,6 @@ span.go-back-link:before {
   .single-skintype-container {
     max-width: calc(50% - 20px);
   }
-
 
   /*** Catalogue/Shop Page ***/
   .shop-list {
@@ -1802,6 +1907,39 @@ span.go-back-link:before {
 }
 
 @media only screen and (max-width: 828px) {
+  /** Home Page**/
+  .polaroid-container {
+    max-width: 50vw;
+  }
+
+  .hero-slider .text-container {
+    top: unset;
+    bottom: 0;
+    transform: translate(0);
+  }
+
+  /* Hero Section */
+  .hero-img-container {
+   max-width: 100%;
+   min-height: 500px;
+  }
+
+  .polaroid-container {
+    max-width: 220px;
+  }
+
+  .hero-slider .text-container {
+    padding-top: 20px;
+    padding-left: 0;
+    max-width: 100%;
+    transform: none;
+    position: initial;
+  }
+
+  .hero-img-container span {
+    font-size: 1.5em;
+  }
+
   /*** Cart Page ***/
   .summary-container, .help-container {
     max-width: 100%;
@@ -2051,6 +2189,21 @@ span.go-back-link:before {
   .copyright p {
     padding-top: 5px;
   }
+
+  /*** HOME PAGE ***/
+  /* Hero Section */
+  .hero-img-container {
+   min-height: 450px;
+  }
+
+  .polaroid-container {
+    max-width: 180px;
+  }
+
+  .hero-img-container span {
+    font-size: 1.3em;
+  }
+
 }
 
 
@@ -2063,6 +2216,20 @@ span.go-back-link:before {
 
 
 @media only screen and (max-width: 430px) {
+  /*** HOME PAGE ***/
+  /* Hero Section */
+  .hero-img-container {
+   min-height: 380px;
+  }
+
+  .polaroid-container {
+    max-width: 150px;
+  }
+
+  .hero-img-container span {
+    font-size: 1.1em;
+  }
+
   /*** Catalogue/Shop Page ***/
   .sidebar-filter .form-select {
     margin-right: 10px;
