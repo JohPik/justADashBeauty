@@ -8,11 +8,9 @@ const Footer = () => {
 
         <div className="footer-col-1">
           <span>Get Help</span>
-          <Link to="/shipping-delivery">Shipping & Delivery</Link>
-          <Link to="/catalogue/skin-type/dry">Dry</Link>
-          <Link to="/catalogue/skin-type/sensitive">Sensitive</Link>
-          <Link to="/catalogue/skin-type/problematic">Problematic</Link>
-          <Link to="/catalogue/skin-type/normal">Normal</Link>
+          <Link to="/contact">Contact</Link>
+          <Link to="/shipping-return">Shipping & Return</Link>
+          <Link to="/privacy-policy">Privacy Policy</Link>
         </div>
 
         <div className="footer-col-2">
@@ -36,7 +34,7 @@ const Footer = () => {
 
       <section className="copyright">
           <p>© 2019 Just A Dash Beauty. All Rights Reserved</p>
-          <p><Link to="/">Term of Use</Link> and <Link to="/">Privacy Policy</Link></p>
+          <p><Link to="/">Term of Use</Link></p>
       </section>
 
     </footer>

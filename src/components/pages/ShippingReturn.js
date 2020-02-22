@@ -8,7 +8,7 @@ const ShippingReturn = (props) => {
     <Fragment>
       <BreadCrumb match={props.match}/>
         <section className="ShippingReturn-page">
-            <h1 className="underline">Shipping Return</h1>
+            <h1 className="underline">Shipping & Return</h1>
               <p>After choosing to place an order with <span className="bold">JUST A DASH</span>, we are pleased to advise of the following process:</p>
               <br/><br/>
               <p>
@@ -18,16 +18,17 @@ const ShippingReturn = (props) => {
               </p>
               <br/><br/>
               <p className="question hot-pink italic">NATIONAL SHIPPING</p>
+              <span className="light-green-highlight">Shipping to Australian residents is charged at a flat rate of $6.95.</span>
+              <span className="light-green-highlight">Orders over $90.00 will receive FREE standard shipping.</span>
               <p>
-              Shipping to Australian residents is charged at a flat rate of $6.95.
-              Orders over $90.00 will receive FREE standard shipping.
-              Track your parcel here https://try.sendle.com/tracking
+              <span className="hot-pink">Track your parcel here https://try.sendle.com/tracking</span>
+              <br/>
               www.justadashbeauty.com.au may not be able to provide delivery to all areas, and if so, a full refund of your order will be provided. Orders are processed and dispatched within 48 hours (weekdays) of being received except during sale and promotional periods, on public holidays or during festive seasons. Orders will arrive between approximately 2-5 business days from dispatch except during periods above outlined. However please note: JUST A DASH cannot make guarantees on behalf of Sendle, particularly where delivery times, e-parcel emails and tracking information are concerned.
               If you have a problem with your parcels arrival after dispatch, you must contact Sendle with your Tracking information.
               </p>
               <br/><br/>
               <p className="question hot-pink italic">SHIPPING TO NEW ZEALAND</p>
-              <p>Express shipping to New Zealand Residents is offered at a flat rate of $15 through Australia Post.</p>
+              <span className="light-green-highlight">Express shipping to New Zealand Residents is offered at a flat rate of $15 through Australia Post.</span>
               <br/><br/>
               <p className="question hot-pink italic">PRICING</p>
               <p>All pricing is displayed in Australian Dollar (AUD) inclusive of GST (Goods and Services Tax).</p>

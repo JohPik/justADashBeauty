@@ -134,9 +134,11 @@ button {
   color: #FFD1F2;
 }
 
-.light-green {
-  color: #AAFFE5;
+.light-green-highlight {
+  background-color: #AAFFE5;
 }
+
+
 .align-right {
   text-align: right;
 }
@@ -403,6 +405,7 @@ footer {
 }
 
 .footer-col-2 input {
+  padding: 0 5px;
   width: 280px;
   height: 30px;
 }
@@ -436,10 +439,6 @@ footer {
 
 .copyright p {
   padding: 3px 0;
-}
-
-.copyright a {
-  font-weight: bold;
 }
 
 .copyright a:hover {
