@@ -122,6 +122,10 @@ button {
   font-style: italic;
 }
 
+.capitalize {
+  text-transform: capitalize;
+}
+
 .hot-pink {
   color: #FF01B8;
 }
@@ -653,19 +657,14 @@ section.our-values {
 }
 
 
-/************** About Page **************/
+/************** About Page , FAQs, Policy, Returns **************/
 
-.about-page {
-  margin-bottom: 20px;
-}
-
-/************** FAQs Page **************/
-
-.FAQs-page {
+.about-page, .FAQs-page, .PrivacyPolicy-page, .ShippingReturn-page {
   margin-bottom: 20px;
 }
 
 .question {
+  text-transform: uppercase;
   font-weight: 500;
 }
 

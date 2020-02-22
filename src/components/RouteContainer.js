@@ -6,7 +6,8 @@ import Home from './pages/home/Home'
 import About from './pages/About'
 import FAQs from './pages/FAQs'
 import Contact from './pages/Contact'
-import Policy from './pages/Policy'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import ShippingReturn from './pages/ShippingReturn'
 import CatalogueList from './pages/productCatalogue/CatalogueList'
 import Detail from './pages/productPage/Detail'
 import Cart from './pages/cart/Cart'
@@ -21,7 +22,8 @@ const RouteContainer = () => {
         <Route path="/about" exact component={About} />
         <Route path="/faqs" exact component={FAQs} />
         <Route path="/contact" exact component={Contact} />
-        <Route path="/policy" exact component={Policy} />
+        <Route path="/privacy-policy" exact component={PrivacyPolicy} />
+        <Route path="/shipping-return" exact component={ShippingReturn} />
         <Route path="/shop/skintype=:skinId&prodtype=:prodId" exact component={CatalogueList} />
         <Route path={"/shop/product-detail/:prodId"} exact component={Detail} />
         <Route path="/cart" exact component={Cart} />
