@@ -7,9 +7,9 @@ const About = (props) => {
     return (
     <Fragment>
       <BreadCrumb match={props.match}/>
-        <section classNameName="about-page">
+        <section className="about-page">
 
-            <h1 classNameName="underline">About</h1>
+            <h1 className="underline">About</h1>
             <p>Hi there,<br/><br/>
               I’m so happy you stopped by to read more about us.
               <br/><br/>
@@ -29,7 +29,7 @@ const About = (props) => {
               </ul>
               We are always happy to create a custom skincare routine to match your skin type and help you smash those #skingoals so feel free to get in touch on messenger/instagram or by shooting us an email!
               <br/><br/>
-              <p className="selima">-Greta</p>
+              <p className="selima hot-pink">-Greta</p>
               <p className="bold">JUST A DASH</p>
         </section>
     </Fragment>
