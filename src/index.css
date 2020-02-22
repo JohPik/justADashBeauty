@@ -112,15 +112,27 @@ button {
   text-transform: capitalize;
 }
 
-.italic {
+
+.selima {
   font-family: "selima";
   font-size: 2em;
+}
+
+.italic {
+  font-style: italic;
 }
 
 .hot-pink {
   color: #FF01B8;
 }
 
+.light-pink {
+  color: #FFD1F2;
+}
+
+.light-green {
+  color: #AAFFE5;
+}
 .align-right {
   text-align: right;
 }
@@ -645,6 +657,16 @@ section.our-values {
 
 .about-page {
   margin-bottom: 20px;
+}
+
+/************** FAQs Page **************/
+
+.FAQs-page {
+  margin-bottom: 20px;
+}
+
+.question {
+  font-weight: 500;
 }
 
 /************** Catalogue/Shop Page **************/
