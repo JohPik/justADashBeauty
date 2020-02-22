@@ -107,6 +107,23 @@ button {
   background-color: white;
 }
 
+.bold {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.italic {
+  font-family: "selima";
+  font-size: 2em;
+}
+
+.hot-pink {
+  color: #FF01B8;
+}
+
+.align-right {
+  text-align: right;
+}
 
 /************** Header **************/
 
@@ -625,21 +642,9 @@ section.our-values {
 
 
 /************** About Page **************/
+
 .about-page {
-  display: flex;
-  /* background: lightblue; */
-}
-
-.about-page div {
-  flex: 5;
-}
-
-.about-page .text-box {
-  margin-right: 50px;
-}
-
-.about-page img {
-  width: 100%;
+  margin-bottom: 20px;
 }
 
 /************** Catalogue/Shop Page **************/
@@ -981,11 +986,6 @@ button.form-submit:hover::before {
 .prod-page-size {
   display: inline-block;
   padding: 0 15px;
-}
-
-.bold {
-  font-weight: bold;
-  text-transform: capitalize;
 }
 
 .prod-page-price {
