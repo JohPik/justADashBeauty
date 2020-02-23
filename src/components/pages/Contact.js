@@ -3,41 +3,42 @@ import BreadCrumb from '../BreadCrumb'
 
 const Contact = (props) => {
   return(
-    <div>
+    <section className="contact-page">
       <BreadCrumb match={props.match}/>
       <h1 className="underline">Contact</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae justo eget magna fermentum iaculis eu non. Dignissim enim sit amet venenatis urna cursus. Facilisis gravida neque convallis a cras semper. Egestas sed tempus urna et. Pulvinar elementum integer enim neque volutpat ac. Morbi blandit cursus risus at ultrices mi tempus. Facilisis magna etiam tempor orci eu lobortis. Nulla pharetra diam sit amet nisl suscipit adipiscing bibendum. Ac odio tempor orci dapibus ultrices in iaculis nunc sed.
+      <h2>Get in Touch</h2>
+      <p>Don't hesitate to contact us if you have any question, comment or feedback. We are all ears!</p>
 
-        Integer malesuada nunc vel risus commodo. Donec pretium vulputate sapien nec sagittis. Ullamcorper eget nulla facilisi etiam dignissim. Sit amet aliquam id diam maecenas ultricies mi eget. Consequat ac felis donec et odio. Dignissim cras tincidunt lobortis feugiat vivamus at augue eget arcu. Est placerat in egestas erat imperdiet sed euismod nisi. Posuere morbi leo urna molestie. Elementum sagittis vitae et leo duis. Aliquam sem fringilla ut morbi tincidunt augue. Pulvinar mattis nunc sed blandit libero volutpat. Vitae justo eget magna fermentum iaculis eu. Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis.
+      <div className="contact-main-container">
+        <div className="contact-sub-container">
+          <h2>Contact</h2>
+          <h2>Follow US</h2>
+        </div>
 
-        Tincidunt praesent semper feugiat nibh sed pulvinar proin. Varius duis at consectetur lorem donec massa sapien. Tincidunt dui ut ornare lectus sit amet est placerat. Nibh tortor id aliquet lectus proin nibh nisl condimentum. Quam quisque id diam vel quam elementum pulvinar etiam. Sit amet luctus venenatis lectus magna fringilla urna porttitor rhoncus. Dolor sed viverra ipsum nunc. Vel risus commodo viverra maecenas accumsan. Neque gravida in fermentum et. Quis varius quam quisque id. Pulvinar pellentesque habitant morbi tristique. Tempus imperdiet nulla malesuada pellentesque elit. In vitae turpis massa sed elementum tempus. Et netus et malesuada fames ac turpis egestas sed tempus. Nullam non nisi est sit amet facilisis. Vitae congue mauris rhoncus aenean vel elit scelerisque. In arcu cursus euismod quis. Diam sollicitudin tempor id eu. Nisi porta lorem mollis aliquam.
-
-        Gravida in fermentum et sollicitudin ac orci phasellus egestas. Rhoncus dolor purus non enim praesent elementum facilisis leo vel. Quis lectus nulla at volutpat diam ut venenatis tellus in. In hendrerit gravida rutrum quisque non. Egestas pretium aenean pharetra magna ac. Nibh praesent tristique magna sit amet purus gravida quis. Ipsum faucibus vitae aliquet nec ullamcorper sit. Urna id volutpat lacus laoreet. Ut etiam sit amet nisl purus in. Ipsum nunc aliquet bibendum enim facilisis. Enim nulla aliquet porttitor lacus luctus accumsan tortor. Nec feugiat in fermentum posuere. Vitae proin sagittis nisl rhoncus mattis rhoncus urna neque. Ullamcorper sit amet risus nullam eget felis eget.
-
-        Mauris commodo quis imperdiet massa tincidunt. Imperdiet massa tincidunt nunc pulvinar sapien et ligula ullamcorper. Diam maecenas sed enim ut sem viverra aliquet eget sit. Mi ipsum faucibus vitae aliquet nec ullamcorper sit. Pellentesque elit ullamcorper dignissim cras tincidunt lobortis. Tortor posuere ac ut consequat. Enim nunc faucibus a pellentesque. Augue ut lectus arcu bibendum at varius vel pharetra. Est ante in nibh mauris cursus mattis molestie. Blandit libero volutpat sed cras ornare arcu dui. Gravida in fermentum et sollicitudin ac orci. Ut sem viverra aliquet eget sit amet tellus cras.
-
-        Sed risus pretium quam vulputate dignissim. Nunc faucibus a pellentesque sit amet porttitor eget dolor morbi. Mus mauris vitae ultricies leo integer malesuada nunc. Accumsan tortor posuere ac ut consequat semper viverra nam libero. Faucibus turpis in eu mi. Est ullamcorper eget nulla facilisi etiam dignissim diam quis. Erat pellentesque adipiscing commodo elit at imperdiet. Donec ac odio tempor orci dapibus. Diam quam nulla porttitor massa id neque. Pellentesque pulvinar pellentesque habitant morbi tristique senectus. Sed viverra tellus in hac habitasse platea. Mauris sit amet massa vitae tortor condimentum lacinia. Consequat ac felis donec et. Laoreet suspendisse interdum consectetur libero id faucibus nisl tincidunt eget. Rhoncus urna neque viverra justo nec ultrices dui sapien eget. Vel fringilla est ullamcorper eget nulla facilisi etiam. Enim ut tellus elementum sagittis vitae et leo duis. Lobortis mattis aliquam faucibus purus in. Lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt.
-
-        Neque sodales ut etiam sit amet nisl purus. Bibendum ut tristique et egestas. Justo laoreet sit amet cursus. Nulla facilisi etiam dignissim diam. Dolor sit amet consectetur adipiscing. Duis tristique sollicitudin nibh sit amet. Gravida arcu ac tortor dignissim convallis aenean. Felis eget nunc lobortis mattis. Suspendisse faucibus interdum posuere lorem ipsum dolor sit amet. Gravida cum sociis natoque penatibus et magnis dis.
-
-        Leo urna molestie at elementum. Porttitor rhoncus dolor purus non enim. Fermentum leo vel orci porta non pulvinar neque laoreet suspendisse. Ornare lectus sit amet est placerat in egestas. Aliquet enim tortor at auctor urna nunc id cursus metus. In hac habitasse platea dictumst vestibulum rhoncus est pellentesque. Euismod lacinia at quis risus sed. Amet mauris commodo quis imperdiet massa tincidunt nunc. Viverra nibh cras pulvinar mattis nunc sed blandit libero. Elit at imperdiet dui accumsan sit. Et netus et malesuada fames ac turpis egestas integer. Egestas dui id ornare arcu odio ut sem nulla. Suscipit tellus mauris a diam maecenas. Ornare massa eget egestas purus viverra. Justo laoreet sit amet cursus. Morbi tempus iaculis urna id volutpat. Pellentesque habitant morbi tristique senectus et netus et.
-
-        Mattis pellentesque id nibh tortor id aliquet lectus proin nibh. Sodales ut etiam sit amet nisl. Pellentesque habitant morbi tristique senectus et netus et. Facilisi nullam vehicula ipsum a arcu cursus vitae congue mauris. Euismod lacinia at quis risus sed vulputate. Ut porttitor leo a diam sollicitudin tempor id eu nisl. Sit amet mauris commodo quis imperdiet massa tincidunt nunc. Quam nulla porttitor massa id neque aliquam. In fermentum et sollicitudin ac orci phasellus egestas tellus. Eget aliquet nibh praesent tristique magna sit amet purus. Sodales ut etiam sit amet nisl purus in mollis. Sit amet porttitor eget dolor morbi non arcu. Tincidunt augue interdum velit euismod in pellentesque massa placerat. Odio morbi quis commodo odio. Mauris commodo quis imperdiet massa tincidunt nunc pulvinar. Maecenas pharetra convallis posuere morbi leo urna.
-
-        Donec adipiscing tristique risus nec feugiat in fermentum. Dui faucibus in ornare quam. Id ornare arcu odio ut sem nulla. Mollis aliquam ut porttitor leo a diam sollicitudin tempor id. Nam libero justo laoreet sit amet. Lobortis elementum nibh tellus molestie nunc non blandit massa. Tristique sollicitudin nibh sit amet commodo nulla facilisi. Lectus sit amet est placerat in egestas erat. Nec ullamcorper sit amet risus nullam eget. Aliquam malesuada bibendum arcu vitae elementum. Egestas integer eget aliquet nibh praesent tristique magna. Non nisi est sit amet. Eget lorem dolor sed viverra ipsum nunc aliquet. Bibendum ut tristique et egestas quis ipsum suspendisse ultrices. Odio euismod lacinia at quis risus sed vulputate.
-
-        Magna etiam tempor orci eu lobortis elementum nibh. Dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Id aliquet lectus proin nibh. Erat nam at lectus urna duis convallis convallis tellus. Ullamcorper malesuada proin libero nunc consequat interdum varius sit amet. Congue mauris rhoncus aenean vel. Tincidunt eget nullam non nisi est sit amet. Sit amet dictum sit amet justo donec enim diam. Libero justo laoreet sit amet cursus sit. Id cursus metus aliquam eleifend mi in nulla posuere. Tristique magna sit amet purus gravida quis blandit turpis. Viverra nibh cras pulvinar mattis nunc sed. Egestas diam in arcu cursus euismod quis viverra nibh cras. Aliquam malesuada bibendum arcu vitae elementum.
-
-        Tellus orci ac auctor augue mauris augue neque. Molestie nunc non blandit massa. Sem nulla pharetra diam sit amet. Tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce. Pellentesque elit eget gravida cum. Ultricies leo integer malesuada nunc vel risus commodo viverra maecenas. Viverra ipsum nunc aliquet bibendum enim facilisis. Tincidunt nunc pulvinar sapien et. Felis eget velit aliquet sagittis id consectetur purus ut. Et netus et malesuada fames ac turpis egestas maecenas. Bibendum est ultricies integer quis auctor elit sed. Dui sapien eget mi proin sed. Sed risus pretium quam vulputate. Scelerisque in dictum non consectetur a erat nam at lectus. A erat nam at lectus urna duis. Quam vulputate dignissim suspendisse in est ante. Ut porttitor leo a diam sollicitudin. Vitae congue eu consequat ac felis donec et odio pellentesque.
-
-        Tortor condimentum lacinia quis vel eros donec. Id faucibus nisl tincidunt eget nullam non nisi. Nisl nunc mi ipsum faucibus vitae aliquet nec. Id aliquet lectus proin nibh nisl condimentum id venenatis. Sed vulputate mi sit amet mauris. Ut faucibus pulvinar elementum integer enim neque volutpat. Amet venenatis urna cursus eget nunc scelerisque viverra mauris. Natoque penatibus et magnis dis parturient. Sed arcu non odio euismod. Adipiscing at in tellus integer feugiat scelerisque varius morbi enim. Sagittis eu volutpat odio facilisis mauris sit amet massa vitae. Metus dictum at tempor commodo. Vitae purus faucibus ornare suspendisse sed nisi lacus sed. Urna id volutpat lacus laoreet non curabitur gravida arcu ac. Turpis tincidunt id aliquet risus feugiat in.
-
-        Et leo duis ut diam quam nulla porttitor massa id. Fermentum dui faucibus in ornare quam viverra orci. Quisque sagittis purus sit amet volutpat consequat mauris nunc congue. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Porttitor rhoncus dolor purus non enim praesent elementum facilisis. Dignissim suspendisse in est ante in nibh. Mauris augue neque gravida in fermentum et sollicitudin ac orci. Elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at augue. In mollis nunc sed id semper risus in hendrerit gravida. Vitae sapien pellentesque habitant morbi tristique. Ornare arcu dui vivamus arcu felis bibendum ut tristique. Vel eros donec ac odio. Convallis aenean et tortor at risus viverra adipiscing. Et malesuada fames ac turpis egestas sed tempus. Nec feugiat in fermentum posuere. Mi bibendum neque egestas congue quisque egestas diam in arcu. Ipsum consequat nisl vel pretium lectus quam. At urna condimentum mattis pellentesque id nibh tortor. Consequat id porta nibh venenatis cras sed. Libero volutpat sed cras ornare arcu dui.
-
-        Nisl suscipit adipiscing bibendum est ultricies integer. Ac turpis egestas sed tempus urna et pharetra pharetra massa. Sed lectus vestibulum mattis ullamcorper velit sed ullamcorper. Lorem ipsum dolor sit amet consectetur adipiscing elit duis tristique. Vitae congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque. Facilisi morbi tempus iaculis urna id volutpat lacus. Urna nec tincidunt praesent semper. Ornare lectus sit amet est placerat in egestas erat imperdiet. Sagittis id consectetur purus ut faucibus. Ut consequat semper viverra nam libero justo laoreet sit amet.
-      </p>
-    </div>
+        <div className="contact-sub-container">
+          <h2>Contact Form</h2>
+            <form method="post" action="/contact#contact_form" accept-charset="UTF-8" class="contact-form">
+              <div className="form-container">
+                <label for="inputName">Name:</label>
+                <input name="contact[name]" type="text" placeholder="Your name"/>
+              </div>
+              <div className="form-container">
+                <label for="inputEmail">Email:</label>
+                <input name="contact[email]" type="email" placeholder="Your e-mail"/>
+              </div>
+              <div className="form-container">
+                <label for="inputEmail">Phone:</label>
+                <input name="contact[phone]" type="tel" placeholder="Your phone"/>
+              </div>
+              <div className="form-container">
+                <label for="inputName">Message:</label>
+                <textarea name="contact[body]"rows="8" placeholder="Write your message here" id="textareaMessage"></textarea>
+              </div>
+              <button type="submit">Submit</button>
+            </form>
+        </div>
+      </div>
+    </section>
   )
 }
 
