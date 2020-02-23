@@ -2,7 +2,8 @@ import React from 'react';
 
 import SkinType from './SkinType'
 import HeroSlider from './HeroSlider'
-// import OurValues from './OurValues'
+import OurValues from './OurValues'
+import Instagram from './Instagram'
 
 
 const Home = (props) => {
@@ -11,9 +12,9 @@ const Home = (props) => {
     <section className="home">
       <h1>Just A Dash Beauty</h1>
       <HeroSlider/>
-      <section className="our-values">Oour Values</section>
+      <OurValues/>
       <SkinType/>
-      <section className="insta-feed">Instagram</section>
+      <Instagram />
     </section>
 
   )

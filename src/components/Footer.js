@@ -21,13 +21,13 @@ const Footer = () => {
 
         <div className="footer-col-3">
           <Link to="/">
-            <img src= "/images/facebook.svg" alt="facebook" className="social facebook"/>
+            <img src= "/images/pictograms/facebook.svg" alt="facebook" className="social facebook"/>
           </Link>
           <Link to="/">
-            <img src= "/images/instagram.svg" alt="instagram" className="social instagram"/>
+            <img src= "/images/pictograms/instagram.svg" alt="instagram" className="social instagram"/>
           </Link>
           <Link to="/">
-            <img src= "/images/linkedin.svg" alt="linkedin" className="social linkedin"/>
+            <img src= "/images/pictograms/linkedin.svg" alt="linkedin" className="social linkedin"/>
           </Link>
         </div>
       </section>

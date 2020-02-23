@@ -39,7 +39,7 @@ const Header = (props) => {
 
                  <div className="logo-container">
                    <Link to="/">
-                     <img src= "/images/Just-A-Dash-Beauty_Logo.svg" alt="Just A Dash Beauty Logo" className="logo"/>
+                     <img src= "/images/pictograms/Just-A-Dash-Beauty_Logo.svg" alt="Just A Dash Beauty Logo" className="logo"/>
                    </Link>
                  </div>
 
@@ -82,7 +82,7 @@ const Header = (props) => {
 
                  <div className="cart-container">
                    <Link to="/cart" className="cartLink">
-                     <img src= "/images/basket.svg" alt="Cart" className="cart-icon"/>
+                     <img src= "/images/pictograms//basket.svg" alt="Cart" className="cart-icon"/>
                      { cartLength < 1 ? null : <div className="cartItems">{cartLength}</div>}
                    </Link>
                  </div>

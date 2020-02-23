@@ -1,3 +1,9 @@
+/* need to do  */
+/*
+Original Pink
+#fd7e96
+*/
+
 /*** Animations ***/
 
 .fade-appear {
@@ -150,11 +156,6 @@ section.header { /*NEW HEADER CSS*/
     top: 0;
     z-index: 100;
     background: white;
-}
-
-nav {
-  /* background-color: white;
-  width: 100%; */
 }
 
 .shipping-banner {
@@ -592,10 +593,88 @@ footer {
 }
 
 /* Our Values */
-section.our-values {
-    min-height: 500px;
-    background: red;
-    margin: 25px 0;
+
+.our-values {
+    background-image: url("/images/homePage/our-values-left.jpg");
+    background-size: auto 550px;
+    background-repeat: no-repeat;
+    background-position: center top;
+    display: grid;
+}
+.our-values-container {
+    max-width: 450px;
+    margin: 42px 0 42px 20px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    background-color: white;
+    border: #fd7e96 solid 7px;
+}
+
+.pictogram-main-container {
+  padding: 0;
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.pictogram-sub-container {
+  max-width: 100%;
+  width: 20%;
+}
+
+.ingredients {
+  padding-top: 15px;
+}
+
+.ingredients h3, .ingredients ul {
+  text-align: left;
+}
+
+.ingredients ul {
+  padding: 0;
+  margin: 0;
+  margin-top: 5px;
+  list-style: none;
+}
+
+.styledlistNo li, .styledlistYes li {
+  font-size: 16px;
+  background-size: 17px auto;
+  background-repeat: no-repeat;
+  background-position: 0 6px;
+  padding-left: 25px;
+}
+
+.styledlistYes li {
+  background-image: url("/images/pictograms/Green_Tick.svg");
+}
+
+.styledlistNo li {
+  background-image: url("/images/pictograms/Pink_Cross.svg");
+}
+
+@media only screen and (max-width: 768px) {
+  .our-values-container {
+      margin: 190px auto 10px;
+  }
+
+  .our-values {
+    background-image: url("/images/homePage/our-values-center.jpg");
+    background-size: auto 260px;
+    padding: 0 10px;
+    margin-top: 30px;
+  }
+}
+
+/* Instagram */
+
+.instagram {
+  text-align: center;
+}
+
+.instagram a {
+  color: #FF01B8;
 }
 
 /* Shop By Skin Type */
@@ -832,7 +911,7 @@ button.show-form:hover::before {
 
 /* add a Tick when checked */
 .checkmark:after {
-  content: url("/images/black-tick.svg");
+  content: url("/images/pictograms/black-tick.svg");
   margin: auto;
   position: absolute;
   display: none;
@@ -1266,7 +1345,7 @@ button.qty-slct:disabled:hover {
 }
 
 .modal h3::before {
-  content: url("/images/tick.svg");
+  content: url("/images/pictograms/tick.svg");
   padding-right: 10px;
 }
 
@@ -2260,3 +2339,11 @@ span.go-back-link:before {
     position: inherit;
   }
 }
+
+
+/** working CSS **/
+
+
+/* .pictogram-sub-container {
+    max-width: 100px;
+} */
