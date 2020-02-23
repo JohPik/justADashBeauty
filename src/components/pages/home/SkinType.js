@@ -14,7 +14,7 @@ const Skintype = (props) => {
 
   return (
       <section className="shop-by-skintype">
-        <h2>Shop By Skin Type</h2>
+        <h2>SHOP BY SKIN TYPE</h2>
       <div className="skintypes-container">
         {skins.map( skin =>
           <div className="single-skintype-container" key={skin.name}>

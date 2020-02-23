@@ -4,10 +4,10 @@ const OurValues = () => {
 
   return (
     <section className="our-values">
-      
+
       <div className="our-values-container">
 
-        <h3>Our Ingredients Standard</h3>
+        <h3>OUR INGREDIENTS STANDARDS</h3>
 
         <div className="pictogram-main-container">
             <div className="pictogram-sub-container">

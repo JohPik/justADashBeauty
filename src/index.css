@@ -2,6 +2,7 @@
 /*
 Original Pink
 #fd7e96
+#FFD1F2
 */
 
 /*** Animations ***/
@@ -469,6 +470,9 @@ footer {
   display: none;
 }
 
+.our-values, .shop-by-skintype, .instagram {
+  margin: 35px 0;
+}
 /* Hero Section */
 .hero-slider {
   position: relative;
@@ -593,7 +597,6 @@ footer {
 }
 
 /* Our Values */
-
 .our-values {
     background-image: url("/images/homePage/our-values-left.jpg");
     background-size: auto 550px;
@@ -601,6 +604,7 @@ footer {
     background-position: center top;
     display: grid;
 }
+
 .our-values-container {
     max-width: 450px;
     margin: 42px 0 42px 20px;
@@ -608,7 +612,7 @@ footer {
     text-align: center;
     position: relative;
     background-color: white;
-    border: #fd7e96 solid 7px;
+    border: #FFD1F2 solid 7px;
 }
 
 .pictogram-main-container {
@@ -654,28 +658,6 @@ footer {
   background-image: url("/images/pictograms/Pink_Cross.svg");
 }
 
-@media only screen and (max-width: 768px) {
-  .our-values-container {
-      margin: 190px auto 10px;
-  }
-
-  .our-values {
-    background-image: url("/images/homePage/our-values-center.jpg");
-    background-size: auto 260px;
-    padding: 0 10px;
-    margin-top: 30px;
-  }
-}
-
-/* Instagram */
-
-.instagram {
-  text-align: center;
-}
-
-.instagram a {
-  color: #FF01B8;
-}
 
 /* Shop By Skin Type */
 .shop-by-skintype {
@@ -684,6 +666,7 @@ footer {
 
 .shop-by-skintype h2 {
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .skintypes-container {
@@ -697,6 +680,10 @@ footer {
   max-width: calc(33.33% - 20px);
   margin-bottom: 20px;
   position: relative;
+}
+
+.single-skintype-container:nth-of-type(4), .single-skintype-container:nth-of-type(5), .single-skintype-container:nth-of-type(6) {
+  margin-bottom: 0;
 }
 
 .skintype-txt-container {
@@ -732,6 +719,32 @@ footer {
 
 .single-skintype-container:hover .skintype-img-container img {
   transform: scale(1.2) rotate(5deg);
+}
+
+
+/* Instagram */
+.instagram {
+  text-align: center;
+}
+
+.instagram a {
+  color: #FF01B8;
+}
+
+.insta-picts-container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  flex-wrap: wrap;
+}
+
+.insta-picts {
+  max-width: 15%;
+  width: 100%;
+}
+
+.insta-picts img {
+  max-width: 100%;
 }
 
 
@@ -1981,6 +1994,14 @@ span.go-back-link:before {
     max-width: calc(50% - 20px);
   }
 
+  .single-skintype-container:nth-of-type(4) {
+    margin-bottom: 20px;
+  }
+
+  .single-skintype-container:nth-of-type(5), .single-skintype-container:nth-of-type(6) {
+    margin-bottom: 0;
+  }
+
   /*** Catalogue/Shop Page ***/
   .shop-list {
     justify-content: space-around;
@@ -2037,6 +2058,25 @@ span.go-back-link:before {
 
   .hero-img-container span {
     font-size: 1.5em;
+  }
+
+  /* Values Section */
+  .our-values-container {
+      margin: 190px auto 10px;
+  }
+
+  .our-values {
+    background-image: url("/images/homePage/our-values-center.jpg");
+    background-size: auto 260px;
+    padding: 0 10px;
+    margin-top: 30px;
+  }
+
+  /* Instagram */
+  .insta-picts {
+    max-width: 30%;
+    width: 100%;
+    margin-bottom: 2.5%;
   }
 
   /*** Cart Page ***/
@@ -2201,6 +2241,14 @@ span.go-back-link:before {
     margin-bottom: 10px;
   }
 
+  .single-skintype-container:nth-of-type(5) {
+    margin-bottom: 20px;
+  }
+
+  .single-skintype-container:nth-of-type(6) {
+    margin-bottom: 0;
+  }
+
 
   /*** Catalogue/Shop Page ***/
   .filter-container form {
@@ -2301,6 +2349,13 @@ span.go-back-link:before {
 
   .hero-img-container span {
     font-size: 1.3em;
+  }
+
+  /* Instagram */
+  .insta-picts {
+    max-width: 45%;
+    width: 100%;
+    margin-bottom: 2.5%;
   }
 
 }
