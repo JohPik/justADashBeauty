@@ -279,7 +279,7 @@ export const productList = [
     ingredients: 'Aloe Barbadensis (Aloe Vera) juice*, Backhousia Citriodora (Lemon Myrtle) extract*, Olea Europaea (Olive Leaf) extract*, Glycerin*, Simmondsia Chinensis (Jojoba) oil*, Cetearyl Olivate, Sorbitan Olivate, Carthamus Tinctorius (Safflower) oil*, Butyrospermum Parki (Shea Butter)*, Garcinia Mangostana (Mangosteen) fruit extract, Triticum Aestivum (Wheatgrass) leaf extract, Camellia Sinensis (Green Tea) leaf extract, Hydrolysed Rice Bran Protein, Euterpe Oleracea (Acai) fruit oil, Persea Gratissima (Avocado) oil, Glyceryl Stearate SE, Pelargonium Roseum (Rose Geranium) leaf oil, Citrus Paradisi (White Grapefruit) peel oil, Tocopherol (Vitamin E), Citric Acid',
     size: '60ml',
     price: 30,
-    img: "/images/products/Açaí-Bowl-On-My-Face-Day-Cream_Just-A-Dash.jpg",
+    img: "/images/products/Acai-Bowl-On-My-Face-Day-Cream_Just-A-Dash.jpg",
     inCart: false,
     count: 0,
     total:0
