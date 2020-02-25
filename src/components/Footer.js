@@ -16,7 +16,7 @@ const Footer = () => {
         <div className="footer-col-2">
           <span>Join Our Newsletter</span>
           <p>Stay Ahead and Receive Exclusive Deals</p>
-          <input type="text" name="lastname" placeHolder="Your Email..."/>
+          <input type="text" name="lastname" placeholder="Your Email..."/>
         </div>
 
         <div className="footer-col-3">

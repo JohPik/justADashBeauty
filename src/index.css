@@ -372,11 +372,6 @@ footer {
   cursor: default;
 }
 
-.footer-col-1, .footer-col-2, .footer-col-3 {
-  /* padding: 0 20px;
-  box-shadow: inset -1px 0 0 0 #e5e5e5; */
-}
-
 .footer-col-2 {
   padding-left: 150px;
 }
@@ -727,7 +722,7 @@ footer {
   text-align: center;
 }
 
-.instagram a {
+.instagram span {
   color: #FF01B8;
 }
 
@@ -747,6 +742,26 @@ footer {
   max-width: 100%;
 }
 
+.follow-us {
+  margin: 20px 0;
+}
+
+.follow-us {
+  margin-left: auto;
+}
+
+.follow-us .social {
+  height: 26px;
+  transition: all .2s ease-out;
+}
+
+.follow-us .social.instagram {
+  margin: 0 10px;
+}
+
+.follow-us .social:hover {
+  transform: rotate(-20deg);
+}
 
 /************** About Page , FAQs, Policy, Returns **************/
 
