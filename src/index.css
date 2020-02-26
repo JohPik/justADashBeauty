@@ -1,44 +1,3 @@
-/* need to do  */
-/*
-Original Pink
-#fd7e96
-#FFD1F2
-*/
-
-/*** Animations ***/
-
-.fade-appear {
-    opacity: 0;
-    z-index: 1;
-}
-.fade-appear.fade-appear-active {
-  opacity: 1;
-  transition: opacity 1000ms linear;
-}
-
-/* enter */
-.fade-enter {
-  opacity: 0;
-  z-index: 1;
-}
-.fade-enter.fade-enter-active {
-    opacity: 1;
-    transition: opacity 5000ms linear 5000ms;
-}
-
-/* exit */
-.fade-exit {
-    opacity: 1;
-}
-.fade-exit.fade-exit-active {
-    opacity: 0;
-    transition: opacity 5000ms linear;
-}
-.fade-exit-done {
-  opacity: 0;
-}
-
-
 /************** General **************/
 
 html {
@@ -250,9 +209,7 @@ img.logo {
 .navbar-desktop .dropdown-content {
   display: flex;
   justify-content: center;
-  /*align-items: baseline; */
   padding: 20px 0;
-  /* padding: 20px 150px; */
 }
 
 .navbar-desktop .dropdown-col-1, .navbar-desktop .dropdown-col-2  {
@@ -289,8 +246,6 @@ img.logo {
 }
 
 /* Mobile Navigation */
-
-/* HHHHHHHEEEERRRRE */
 
 /* Cart */
 .cart-container {
@@ -346,13 +301,6 @@ img.logo {
 }
 
 /************** Footer **************/
-/* .main-footer {
-  background-color:  #F7F7F7;
-  display: flex;
-  flex-wrap: wrap;
-  padding: 40px 150px;
-} */
-
 footer {
    background: #F7F7F7;
 }
@@ -1813,6 +1761,38 @@ span.spend-more-shipping {
 
 .successful-payment-text-container .timer {
   margin-top: 10px;
+}
+
+
+/************** 404 **************/
+button.smart {
+  box-shadow: inset 1px 0 0 0 #e5e5e5, inset -1px 0 0 0 #e5e5e5, inset 0 1px 0 0 #e5e5e5, inset 0 -1px 0 0 #e5e5e5;
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  margin: 15px 0;
+  position: relative;
+  cursor: pointer;
+  transition: all .1s ease-out;
+}
+
+button.smart::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  border: none;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  transform: translate(10px, 10px);
+  transition: all .1s ease-out;
+  background: #FFD1F2;
+}
+
+button.smart:hover::before {
+  transform: translate(0);
 }
 
 /************** Responsive **************/
