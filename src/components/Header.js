@@ -156,7 +156,12 @@ const Header = (props) => {
                 <div className='main-mobile-items'>
                   <ul className='nav-menu'>
                     <li className='primary-nav-item'>
-                      <Link to='/shop/skintype=all&prodtype=all'>SHOP</Link>
+                      <Link
+                        to='/shop/skintype=all&prodtype=all'
+                        onClick={() => mobileMenuToggle(false)}
+                      >
+                        SHOP
+                      </Link>
                       <span
                         className='open-secondary-menu-icon'
                         onClick={() => SecondarymobileMenuToggle(true)}
@@ -165,13 +170,22 @@ const Header = (props) => {
                       </span>
                     </li>
                     <li className='primary-nav-item'>
-                      <Link to='/about'>ABOUT</Link>
+                      <Link to='/about' onClick={() => mobileMenuToggle(false)}>
+                        ABOUT
+                      </Link>
                     </li>
                     <li className='primary-nav-item'>
-                      <Link to='/faqs'>FAQs</Link>
+                      <Link to='/faqs' onClick={() => mobileMenuToggle(false)}>
+                        FAQs
+                      </Link>
                     </li>
                     <li className='primary-nav-item'>
-                      <Link to='/contact'>CONTACTS</Link>
+                      <Link
+                        to='/contact'
+                        onClick={() => mobileMenuToggle(false)}
+                      >
+                        CONTACTS
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -192,32 +206,73 @@ const Header = (props) => {
                   </span>
                   <div className='sublist-col-1'>
                     <span>Skin Type</span>
-                    <Link to='/shop/skintype=oily&prodtype=all'>Oily</Link>
-                    <Link to='/shop/skintype=dry&prodtype=all'>Dry</Link>
-                    <Link to='/shop/skintype=sensitive&prodtype=all'>
+                    <Link
+                      to='/shop/skintype=oily&prodtype=all'
+                      onClick={() => mobileMenuToggle(false)}
+                    >
+                      Oily
+                    </Link>
+                    <Link
+                      to='/shop/skintype=dry&prodtype=all'
+                      onClick={() => mobileMenuToggle(false)}
+                    >
+                      Dry
+                    </Link>
+                    <Link
+                      to='/shop/skintype=sensitive&prodtype=all'
+                      onClick={() => mobileMenuToggle(false)}
+                    >
                       Sensitive
                     </Link>
-                    <Link to='/shop/skintype=problematic&prodtype=all'>
+                    <Link
+                      to='/shop/skintype=problematic&prodtype=all'
+                      onClick={() => mobileMenuToggle(false)}
+                    >
                       Problematic
                     </Link>
-                    <Link to='/shop/skintype=normal&prodtype=all'>Normal</Link>
+                    <Link
+                      to='/shop/skintype=normal&prodtype=all'
+                      onClick={() => mobileMenuToggle(false)}
+                    >
+                      Normal
+                    </Link>
                   </div>
                   <div className='sublist-col-2'>
                     <span>Product Type</span>
-                    <Link to='/shop/skintype=all&prodtype=cleanser'>
+                    <Link
+                      to='/shop/skintype=all&prodtype=cleanser'
+                      onClick={() => mobileMenuToggle(false)}
+                    >
                       Cleanser
                     </Link>
-                    <Link to='/shop/skintype=all&prodtype=toning mist'>
+                    <Link
+                      to='/shop/skintype=all&prodtype=toning mist'
+                      onClick={() => mobileMenuToggle(false)}
+                    >
                       Toning Mist
                     </Link>
-                    <Link to='/shop/skintype=all&prodtype=exfoliant'>
+                    <Link
+                      to='/shop/skintype=all&prodtype=exfoliant'
+                      onClick={() => mobileMenuToggle(false)}
+                    >
                       Exfoliant
                     </Link>
-                    <Link to='/shop/skintype=all&prodtype=serum'>Serum</Link>
-                    <Link to='/shop/skintype=all&prodtype=moisturiser'>
+                    <Link
+                      to='/shop/skintype=all&prodtype=serum'
+                      onClick={() => mobileMenuToggle(false)}
+                    >
+                      Serum
+                    </Link>
+                    <Link
+                      to='/shop/skintype=all&prodtype=moisturiser'
+                      onClick={() => mobileMenuToggle(false)}
+                    >
                       Moisturiser
                     </Link>
-                    <Link to='/shop/skintype=all&prodtype=treatment'>
+                    <Link
+                      to='/shop/skintype=all&prodtype=treatment'
+                      onClick={() => mobileMenuToggle(false)}
+                    >
                       Treatment
                     </Link>
                   </div>

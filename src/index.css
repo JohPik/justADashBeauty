@@ -2349,6 +2349,7 @@ span.go-back-link:before {
 
   .cart-content-single .total-price {
     margin-left: 0;
+    text-align: center;
   }
 
   .cart-content-single img {
@@ -2551,18 +2552,17 @@ span.go-back-link:before {
   .sidebar-filter .form-select {
     margin-right: 10px;
   }
-
-  /*** Catalogue/Shop Page ***/
   .show-form-button-container {
     position: inherit;
   }
+
+  /*** Single Product Page ***/
+  .modal-button-section button {
+    font-size: 0.8em;
+  }
 }
 
-/** working CSS **/
-
-/* .pictogram-sub-container {
-    max-width: 100px;
-} */
+/** Fading Css Transition **/
 
 .fade-appear {
   opacity: 0;
@@ -2594,21 +2594,3 @@ span.go-back-link:before {
 .fade-exit-done {
   opacity: 0;
 }
-
-/* .fade-enter {
-  opacity: 0;
-}
-
-.fade-enter-active {
-  opacity: 1;
-  transition: opacity 300ms;
-}
-
-.fade-exit {
-  opacity: 1;
-}
-
-.fade-exit-active {
-  opacity: 0;
-  transition: opacity 300ms;
-} */
