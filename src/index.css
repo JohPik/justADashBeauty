@@ -1546,10 +1546,28 @@ button.qty-slct:disabled:hover {
 .close-tag-container {
   position: fixed;
   background: white;
-  padding: 5px 10px;
-  border-radius: 20px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
   right: 20px;
   top: 10px;
+}
+
+.close-tag-container svg.close-tag-icon {
+  max-height: 14px;
+  overflow: initial;
+  transform: translate(1px, 5px);
+}
+
+.close-tag-container svg.close-tag-icon .top {
+  transform: rotate(45deg) translate(-3px, -8px);
+}
+
+.close-tag-container svg.close-tag-icon .bot {
+  transform: rotate(-45deg) translate(-6px, -6px);
 }
 
 .close-tag-container:hover {
