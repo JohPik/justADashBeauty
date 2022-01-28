@@ -22,7 +22,7 @@ export const productList = [
     price: 30,
     img: '/images/products/Good-Bye-Sunshine-Facial-Wash_Just-A-Dash.jpg',
     thumbImg:
-      '/images/thumbnails/thumb_Good-Bye-Sunshine-Facial-Wash_Just-A-Dash.jpg',
+      '/images/thumbnails/Good-Bye-Sunshine-Facial-Wash_Just-A-Dash.jpg',
     inCart: false,
     count: 0,
     total: 0,
@@ -51,7 +51,7 @@ export const productList = [
     price: 30,
     img: '/images/products/All-Under-Control-Toning-Mist_Just-A-Dash.jpg',
     thumbImg:
-      '/images/thumbnails/thumb_All-Under-Control-Toning-Mist_Just-A-Dash.jpg',
+      '/images/thumbnails/All-Under-Control-Toning-Mist_Just-A-Dash.jpg',
     inCart: false,
     count: 0,
     total: 0,
@@ -79,8 +79,7 @@ export const productList = [
     size: '60ml',
     price: 30,
     img: '/images/products/Lemon-Candy-Active-Peel_Just-A-Dash.jpg',
-    thumbImg:
-      '/images/thumbnails/thumb_Lemon-Candy-Active-Peel_Just-A-Dash.jpg',
+    thumbImg: '/images/thumbnails/Lemon-Candy-Active-Peel_Just-A-Dash.jpg',
     inCart: false,
     count: 0,
     total: 0,
@@ -108,8 +107,7 @@ export const productList = [
     size: '30ml',
     price: 30,
     img: '/images/products/Seal-The-Deal-Gel-Serum_Just-A-Dash.jpg',
-    thumbImg:
-      '/images/thumbnails/thumb_Seal-The-Deal-Gel-Serum_Just-A-Dash.jpg',
+    thumbImg: '/images/thumbnails/Seal-The-Deal-Gel-Serum_Just-A-Dash.jpg',
     inCart: false,
     count: 0,
     total: 0,
@@ -137,7 +135,7 @@ export const productList = [
     size: '60ml',
     price: 30,
     img: '/images/products/The-Porefect-Day-Cream_Just-A-Dash.jpg',
-    thumbImg: '/images/thumbnails/thumb_The-Porefect-Day-Cream_Just-A-Dash.jpg',
+    thumbImg: '/images/thumbnails/The-Porefect-Day-Cream_Just-A-Dash.jpg',
     inCart: false,
     count: 0,
     total: 0,
@@ -166,7 +164,7 @@ export const productList = [
     price: 30,
     img: '/images/products/Cool-As-Cucumber-Milk-Cleanser_Just-A-Dash.jpg',
     thumbImg:
-      '/images/thumbnails/thumb_Cool-As-Cucumber-Milk-Cleanser_Just-A-Dash.jpg',
+      '/images/thumbnails/Cool-As-Cucumber-Milk-Cleanser_Just-A-Dash.jpg',
     inCart: false,
     count: 0,
     total: 0,
@@ -194,7 +192,7 @@ export const productList = [
     size: '150ml',
     price: 30,
     img: '/images/products/Quick-Fix-Toning-Mist_Just-A-Dash.jpg',
-    thumbImg: '/images/thumbnails/thumb_Quick-Fix-Toning-Mist_Just-A-Dash.jpg',
+    thumbImg: '/images/thumbnails/Quick-Fix-Toning-Mist_Just-A-Dash.jpg',
     inCart: false,
     count: 0,
     total: 0,
@@ -222,8 +220,7 @@ export const productList = [
     size: '60ml',
     price: 30,
     img: '/images/products/No-Handyman-Needed-Day-Cream_Just-A-Dash.jpg',
-    thumbImg:
-      '/images/thumbnails/thumb_No-Handyman-Needed-Day-Cream_Just-A-Dash.jpg',
+    thumbImg: '/images/thumbnails/No-Handyman-Needed-Day-Cream_Just-A-Dash.jpg',
     inCart: false,
     count: 0,
     total: 0,
@@ -252,8 +249,7 @@ export const productList = [
     size: '200ml',
     price: 30,
     img: '/images/products/Green-Cocktail-Foam-Cleanser_Just-A-Dash.jpg',
-    thumbImg:
-      '/images/thumbnails/thumb_Green-Cocktail-Foam-Cleanser_Just-A-Dash.jpg',
+    thumbImg: '/images/thumbnails/Green-Cocktail-Foam-Cleanser_Just-A-Dash.jpg',
     inCart: false,
     count: 0,
     total: 0,
@@ -281,8 +277,7 @@ export const productList = [
     size: '150ml',
     price: 30,
     img: '/images/products/Berry-Fresh-Toning-Mist_Just-A-Dash.jpg',
-    thumbImg:
-      '/images/thumbnails/thumb_Berry-Fresh-Toning-Mist_Just-A-Dash.jpg',
+    thumbImg: '/images/thumbnails/Berry-Fresh-Toning-Mist_Just-A-Dash.jpg',
     inCart: false,
     count: 0,
     total: 0,
@@ -308,7 +303,7 @@ export const productList = [
     price: 30,
     img: '/images/products/All-About-Moisture-Hyaluronic-Serum_Just-A-Dash.jpg',
     thumbImg:
-      '/images/thumbnails/thumb_All-About-Moisture-Hyaluronic-Serum_Just-A-Dash.jpg',
+      '/images/thumbnails/All-About-Moisture-Hyaluronic-Serum_Just-A-Dash.jpg',
     inCart: false,
     count: 0,
     total: 0,
@@ -337,7 +332,7 @@ export const productList = [
     price: 30,
     img: '/images/products/Acai-Bowl-On-My-Face-Day-Cream_Just-A-Dash.jpg',
     thumbImg:
-      '/images/thumbnails/thumb_Acai-Bowl-On-My-Face-Day-Cream_Just-A-Dash.jpg',
+      '/images/thumbnails/Acai-Bowl-On-My-Face-Day-Cream_Just-A-Dash.jpg',
     inCart: false,
     count: 0,
     total: 0,
@@ -365,8 +360,7 @@ export const productList = [
     size: '30ml',
     price: 30,
     img: '/images/products/Land-Of-Wonders-Oil-Serum_Just-A-Dash.jpg',
-    thumbImg:
-      '/images/thumbnails/thumb_Land-Of-Wonders-Oil-Serum_Just-A-Dash.jpg',
+    thumbImg: '/images/thumbnails/Land-Of-Wonders-Oil-Serum_Just-A-Dash.jpg',
     inCart: false,
     count: 0,
     total: 0,
@@ -397,7 +391,7 @@ export const productList = [
     price: 30,
     img: '/images/products/Sunny-Day-In-Paradise-Brightening-Serum_Just-A-Dash.jpg',
     thumbImg:
-      '/images/thumbnails/thumb_Sunny-Day-In-Paradise-Brightening-Serum_Just-A-Dash.jpg',
+      '/images/thumbnails/Sunny-Day-In-Paradise-Brightening-Serum_Just-A-Dash.jpg',
     inCart: false,
     count: 0,
     total: 0,
@@ -424,8 +418,7 @@ export const productList = [
     size: '30ml',
     price: 30,
     img: '/images/products/Easy-As-Blemish-Spot-Remover_Just-A-Dash.jpg',
-    thumbImg:
-      '/images/thumbnails/thumb_Easy-As-Blemish-Spot-Remover_Just-A-Dash.jpg',
+    thumbImg: '/images/thumbnails/Easy-As-Blemish-Spot-Remover_Just-A-Dash.jpg',
     inCart: false,
     count: 0,
     total: 0,
@@ -452,7 +445,7 @@ export const productList = [
     size: '60ml',
     price: 30,
     img: '/images/products/Rescue-Me-Acne-Lotion_Just-A-Dash.jpg',
-    thumbImg: '/images/thumbnails/thumb_Rescue-Me-Acne-Lotion_Just-A-Dash.jpg',
+    thumbImg: '/images/thumbnails/Rescue-Me-Acne-Lotion_Just-A-Dash.jpg',
     inCart: false,
     count: 0,
     total: 0,
@@ -481,7 +474,7 @@ export const productList = [
     price: 30,
     img: '/images/products/Summer-Fruit-Salad-Face-Scrub_Just-A-Dash.jpg',
     thumbImg:
-      '/images/thumbnails/thumb_Summer-Fruit-Salad-Face-Scrub_Just-A-Dash.jpg',
+      '/images/thumbnails/Summer-Fruit-Salad-Face-Scrub_Just-A-Dash.jpg',
     inCart: false,
     count: 0,
     total: 0,
@@ -510,7 +503,7 @@ export const productList = [
     price: 30,
     img: '/images/products/Escape-in-Bora-Bora-Body-Scrub_Just-A-Dash.jpg',
     thumbImg:
-      '/images/thumbnails/thumb_Escape-in-Bora-Bora-Body-Scrub_Just-A-Dash.jpg',
+      '/images/thumbnails/Escape-in-Bora-Bora-Body-Scrub_Just-A-Dash.jpg',
     inCart: false,
     count: 0,
     total: 0,
@@ -557,21 +550,3 @@ export const prodNames = [
 ];
 
 export const cart = [];
-
-// id,
-// name,
-// url,
-// subName,
-// skinType,
-// productType,
-// description,
-// loveList,
-// directions,
-// ingredients,
-// size,
-// price,
-// img,
-// thumbImg:
-// inCathumbnails thumb_id, name, url, subName, skinType, productType, description, loveList, directions, ingredients, size, price, img, inCart
-//   thumbImg: inCart
-// thumbnailsthumb_
