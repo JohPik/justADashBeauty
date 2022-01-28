@@ -3,6 +3,7 @@ import { CSSTransition } from 'react-transition-group';
 
 import Header from './Header';
 import RouteContainer from './RouteContainer';
+import ScrollToTop from './ScrollToTop';
 import Footer from './Footer';
 
 class App extends Component {
@@ -12,6 +13,7 @@ class App extends Component {
         <Fragment>
           <Header />
           <RouteContainer />
+          <ScrollToTop />
           <Footer />
         </Fragment>
       </CSSTransition>

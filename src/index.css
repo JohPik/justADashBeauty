@@ -468,6 +468,7 @@ footer {
 
 .polaroid-container.first {
   transform: rotate(20deg);
+  animation-delay: 500ms;
   animation: 2s first 1;
 }
 @keyframes first {
@@ -483,6 +484,7 @@ footer {
   bottom: 0;
   left: 50%;
   transform: rotate(-10deg) translate(-50%, -15%);
+  animation-delay: 500ms;
   animation: 2s second 1;
 }
 @keyframes second {
@@ -495,8 +497,9 @@ footer {
 }
 
 .polaroid-container.third {
-  right: 0;
+  right: 2em;
   transform: rotate(-15deg);
+  animation-delay: 500ms;
   animation: 2s third 1;
 }
 @keyframes third {
@@ -2176,6 +2179,10 @@ span.go-back-link:before {
     max-width: 220px;
   }
 
+  .polaroid-container.third {
+    right: 0.5em;
+  }
+
   .hero-slider .text-container {
     padding-top: 20px;
     padding-left: 0;
@@ -2198,6 +2205,14 @@ span.go-back-link:before {
     background-size: auto 260px;
     padding: 0 10px;
     margin-top: 30px;
+  }
+
+  .our-values .mobile-hide {
+    display: none;
+  }
+
+  .pictogram-sub-container {
+    width: 28%;
   }
 
   /* Instagram */
@@ -2507,7 +2522,7 @@ span.go-back-link:before {
   }
 
   .polaroid-container {
-    max-width: 150px;
+    max-width: 175px;
   }
 
   .hero-img-container span {
@@ -2529,4 +2544,53 @@ span.go-back-link:before {
 
 /* .pictogram-sub-container {
     max-width: 100px;
+} */
+
+.fade-appear {
+  opacity: 0;
+}
+
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: opacity 500ms ease-out;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-out;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease-out;
+}
+
+.fade-exit-done {
+  opacity: 0;
+}
+
+/* .fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
 } */
