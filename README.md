@@ -5,7 +5,7 @@ The website is hosted live on [Netlify](#).
 ## Before Starting
 1. Download the [Github repository](https://github.com/JohPik/justADashBeauty/archive/master.zip).
 2. Open the folder in the command line
-3. run `npm install` and `npm start`
+3. run `yarn install` and `yarn start` (`npm install` and `npm start`)
 4. Open you browser, and go to [http://localhost:3000/](http://localhost:3000/).
 
 ### Prerequisites
